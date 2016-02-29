@@ -1,0 +1,185 @@
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- General classes ---------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.absalign-container
+{
+    position: relative;
+}
+
+[class*='abs-'],
+[class*='fix-']
+{
+    transform-style: preserve-3d;
+}
+
+[class*='abs-']
+{
+    position: absolute;
+}
+
+[class*='fix-']
+{
+    position: fixed;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Left ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-left-top,
+.fix-left-top
+{
+    top: 0;
+    left: 0;
+}
+
+
+.abs-left-middle,
+.fix-left-middle
+{
+    top: 50%;
+    left: 0;
+
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.abs-left-bottom,
+.fix-left-bottom
+{
+    top: 100%;
+    left: 0;
+
+    -webkit-transform: translate(0, -100%);
+       -moz-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+         -o-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* --------------------------------- Center --------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-center-top,
+.fix-center-top
+{
+    top: 0;
+    left: 50%;
+
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.abs-center-middle,
+.fix-center-middle
+{
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+
+.abs-center-bottom,
+.fix-center-bottom
+{
+    top: 100%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -100%);
+       -moz-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+         -o-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Right --------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-right-top,
+.fix-right-top
+{
+    top: 0;
+    left: 100%;
+
+    -webkit-transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+         -o-transform: translateX(-100%);
+            transform: translateX(-100%);
+}
+
+.abs-right-middle,
+.fix-right-middle
+{
+    top: 50%;
+    left: 100%;
+
+    -webkit-transform: translate(-100%, -50%);
+       -moz-transform: translate(-100%, -50%);
+        -ms-transform: translate(-100%, -50%);
+         -o-transform: translate(-100%, -50%);
+            transform: translate(-100%, -50%);
+}
+
+.abs-right-bottom,
+.fix-right-bottom
+{
+    top: 100%;
+    left: 100%;
+
+    -webkit-transform: translate(-100%, -100%);
+       -moz-transform: translate(-100%, -100%);
+        -ms-transform: translate(-100%, -100%);
+         -o-transform: translate(-100%, -100%);
+            transform: translate(-100%, -100%);
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------- Utilities ------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-center,
+.fix-center
+{
+    left: 50%;
+
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.abs-middle,
+.fix-middle
+{
+    top: 50%;
+
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+}

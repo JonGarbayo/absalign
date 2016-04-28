@@ -1,16 +1,15 @@
+/*!
+ * absalign v0.0.2 (CSS part)
+ * Author: Jon Garbayo <jon.garbayo@gmail.com>
+ * Repo: https://github.com/JonGarbayo/absalign
+ * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
+ */
 /* -------------------------------------------------------------------------- */
 /* ----------------------------- General classes ---------------------------- */
 /* -------------------------------------------------------------------------- */
-
 .absalign-container
 {
     position: relative;
-}
-
-[class*='abs-'],
-[class*='fix-']
-{
-    transform-style: preserve-3d;
 }
 
 [class*='abs-']
@@ -23,22 +22,26 @@
     position: fixed;
 }
 
-
-
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- Left ---------------------------------- */
 /* -------------------------------------------------------------------------- */
-
 .abs-left-top,
-.fix-left-top
+.fix-left-top,
+.abs-left-top-before::before,
+.fix-left-top-after::after,
+.abs-left-top-before::before,
+.fix-left-top-after::after
 {
     top: 0;
     left: 0;
 }
 
-
 .abs-left-middle,
-.fix-left-middle
+.fix-left-middle,
+.abs-left-middle-before::before,
+.fix-left-middle-after::after,
+.abs-left-middle-before::before,
+.fix-left-middle-after::after
 {
     top: 50%;
     left: 0;
@@ -48,10 +51,18 @@
         -ms-transform: translateY(-50%);
          -o-transform: translateY(-50%);
             transform: translateY(-50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .abs-left-bottom,
-.fix-left-bottom
+.fix-left-bottom,
+.abs-left-bottom-before::before,
+.fix-left-bottom-after::after,
+.abs-left-bottom-before::before,
+.fix-left-bottom-after::after
 {
     top: 100%;
     left: 0;
@@ -61,16 +72,21 @@
         -ms-transform: translate(0, -100%);
          -o-transform: translate(0, -100%);
             transform: translate(0, -100%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
-
-
 
 /* -------------------------------------------------------------------------- */
 /* --------------------------------- Center --------------------------------- */
 /* -------------------------------------------------------------------------- */
-
 .abs-center-top,
-.fix-center-top
+.fix-center-top,
+.abs-center-top-before::before,
+.fix-center-top-after::after,
+.abs-center-top-before::before,
+.fix-center-top-after::after
 {
     top: 0;
     left: 50%;
@@ -80,10 +96,18 @@
         -ms-transform: translateX(-50%);
          -o-transform: translateX(-50%);
             transform: translateX(-50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .abs-center-middle,
-.fix-center-middle
+.fix-center-middle,
+.abs-center-middle-before::before,
+.fix-center-middle-after::after,
+.abs-center-middle-before::before,
+.fix-center-middle-after::after
 {
     top: 50%;
     left: 50%;
@@ -93,11 +117,18 @@
         -ms-transform: translate(-50%, -50%);
          -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
-
 .abs-center-bottom,
-.fix-center-bottom
+.fix-center-bottom,
+.abs-center-bottom-before::before,
+.fix-center-bottom-after::after,
+.abs-center-bottom-before::before,
+.fix-center-bottom-after::after
 {
     top: 100%;
     left: 50%;
@@ -107,16 +138,21 @@
         -ms-transform: translate(-50%, -100%);
          -o-transform: translate(-50%, -100%);
             transform: translate(-50%, -100%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
-
-
 
 /* -------------------------------------------------------------------------- */
 /* ---------------------------------- Right --------------------------------- */
 /* -------------------------------------------------------------------------- */
-
 .abs-right-top,
-.fix-right-top
+.fix-right-top,
+.abs-right-top-before::before,
+.fix-right-top-after::after,
+.abs-right-top-before::before,
+.fix-right-top-after::after
 {
     top: 0;
     left: 100%;
@@ -126,10 +162,18 @@
         -ms-transform: translateX(-100%);
          -o-transform: translateX(-100%);
             transform: translateX(-100%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .abs-right-middle,
-.fix-right-middle
+.fix-right-middle,
+.abs-right-middle-before::before,
+.fix-right-middle-after::after,
+.abs-right-middle-before::before,
+.fix-right-middle-after::after
 {
     top: 50%;
     left: 100%;
@@ -139,10 +183,18 @@
         -ms-transform: translate(-100%, -50%);
          -o-transform: translate(-100%, -50%);
             transform: translate(-100%, -50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .abs-right-bottom,
-.fix-right-bottom
+.fix-right-bottom,
+.abs-right-bottom-before::before,
+.fix-right-bottom-after::after,
+.abs-right-bottom-before::before,
+.fix-right-bottom-after::after
 {
     top: 100%;
     left: 100%;
@@ -152,16 +204,21 @@
         -ms-transform: translate(-100%, -100%);
          -o-transform: translate(-100%, -100%);
             transform: translate(-100%, -100%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
-
-
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------- Utilities ------------------------------- */
 /* -------------------------------------------------------------------------- */
-
 .abs-center,
-.fix-center
+.fix-center,
+.abs-center-before::before,
+.fix-center-after::after,
+.abs-center-before::before,
+.fix-center-after::after
 {
     left: 50%;
 
@@ -170,10 +227,18 @@
         -ms-transform: translateX(-50%);
          -o-transform: translateX(-50%);
             transform: translateX(-50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .abs-middle,
-.fix-middle
+.fix-middle,
+.abs-middle-before::before,
+.fix-middle-after::after,
+.abs-middle-before::before,
+.fix-middle-after::after
 {
     top: 50%;
 
@@ -182,4 +247,8 @@
         -ms-transform: translateY(-50%);
          -o-transform: translateY(-50%);
             transform: translateY(-50%);
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }

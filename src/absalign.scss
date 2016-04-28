@@ -1,0 +1,162 @@
+/*!
+ * @@name v@@version (CSS part)
+ * Author: @@author
+ * Repo: @@homepage
+ * Licensed under MIT (@@homepage/blob/master/LICENSE)
+ */
+
+@import "mixins";
+
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- General classes ---------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.absalign-container
+{
+    position: relative;
+}
+
+[class*="abs-"]
+{
+    position: absolute;
+}
+
+[class*="fix-"]
+{
+    position: fixed;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Left ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-left-top,
+.fix-left-top,
+.abs-left-top-before::before,
+.fix-left-top-after::after,
+.abs-left-top-before::before,
+.fix-left-top-after::after
+{
+    @include left-top();
+}
+
+.abs-left-middle,
+.fix-left-middle,
+.abs-left-middle-before::before,
+.fix-left-middle-after::after,
+.abs-left-middle-before::before,
+.fix-left-middle-after::after
+{
+    @include left-middle();
+}
+
+.abs-left-bottom,
+.fix-left-bottom,
+.abs-left-bottom-before::before,
+.fix-left-bottom-after::after,
+.abs-left-bottom-before::before,
+.fix-left-bottom-after::after
+{
+    @include left-bottom();
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* --------------------------------- Center --------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-center-top,
+.fix-center-top,
+.abs-center-top-before::before,
+.fix-center-top-after::after,
+.abs-center-top-before::before,
+.fix-center-top-after::after
+{
+    @include center-top();
+}
+
+.abs-center-middle,
+.fix-center-middle,
+.abs-center-middle-before::before,
+.fix-center-middle-after::after,
+.abs-center-middle-before::before,
+.fix-center-middle-after::after
+{
+    @include center-middle();
+}
+
+
+.abs-center-bottom,
+.fix-center-bottom,
+.abs-center-bottom-before::before,
+.fix-center-bottom-after::after,
+.abs-center-bottom-before::before,
+.fix-center-bottom-after::after
+{
+    @include center-bottom();
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Right --------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-right-top,
+.fix-right-top,
+.abs-right-top-before::before,
+.fix-right-top-after::after,
+.abs-right-top-before::before,
+.fix-right-top-after::after
+{
+    @include right-top();
+}
+
+.abs-right-middle,
+.fix-right-middle,
+.abs-right-middle-before::before,
+.fix-right-middle-after::after,
+.abs-right-middle-before::before,
+.fix-right-middle-after::after
+{
+    @include right-middle();
+}
+
+.abs-right-bottom,
+.fix-right-bottom,
+.abs-right-bottom-before::before,
+.fix-right-bottom-after::after,
+.abs-right-bottom-before::before,
+.fix-right-bottom-after::after
+{
+    @include right-bottom();
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------- Utilities ------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-center,
+.fix-center,
+.abs-center-before::before,
+.fix-center-after::after,
+.abs-center-before::before,
+.fix-center-after::after
+{
+    @include center();
+}
+
+.abs-middle,
+.fix-middle,
+.abs-middle-before::before,
+.fix-middle-after::after,
+.abs-middle-before::before,
+.fix-middle-after::after
+{
+    @include middle();
+}

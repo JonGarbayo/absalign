@@ -9,6 +9,8 @@ window.onload = function ()
 
 	function onSelectsClassChange()
 	{
+		requestAnimationFrame(onSelectsClassChange);
+		
 		demo_block.className = 'demo-block ' +
 		select_prefix.getSelectedValue() + '-' +
 		select_suffix.getSelectedValue();

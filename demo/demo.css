@@ -8,8 +8,10 @@
 
 .demo-block
 {
-    width: 100px;
-    height: 100px;
+    width: 50vw;
+    max-width: 100px;
+    height: 50vw;
+    max-height: 100px;
 
     transition: ease 500ms;
     transition-property: top, left, transform;

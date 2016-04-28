@@ -1,0 +1,101 @@
+@mixin preserve-3d
+{
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+@mixin transform($function)
+{
+    @include preserve-3d;
+    -webkit-transform: $function;
+       -moz-transform: $function;
+        -ms-transform: $function;
+         -o-transform: $function;
+            transform: $function;
+}
+
+@mixin left-top
+{
+    top: 0;
+    left: 0;
+}
+
+@mixin left-middle
+{
+    top: 50%;
+    left: 0;
+
+    @include transform(translateY(-50%));
+}
+
+@mixin left-bottom
+{
+    top: 100%;
+    left: 0;
+
+    @include transform(translate(0, -100%));
+}
+
+@mixin center-top
+{
+    top: 0;
+    left: 50%;
+
+    @include transform(translateX(-50%));
+}
+
+@mixin center-middle
+{
+    top: 50%;
+    left: 50%;
+
+    @include transform(translate(-50%, -50%));
+}
+
+
+@mixin center-bottom
+{
+    top: 100%;
+    left: 50%;
+
+    @include transform(translate(-50%, -100%));
+}
+
+@mixin right-top
+{
+    top: 0;
+    left: 100%;
+
+    @include transform(translateX(-100%));
+}
+
+@mixin right-middle
+{
+    top: 50%;
+    left: 100%;
+
+    @include transform(translate(-100%, -50%));
+}
+
+@mixin right-bottom
+{
+    top: 100%;
+    left: 100%;
+
+    @include transform(translate(-100%, -100%));
+}
+
+@mixin center
+{
+    left: 50%;
+
+    @include transform(translateX(-50%));
+}
+
+@mixin middle
+{
+    top: 50%;
+
+    @include transform(translateY(-50%));
+}

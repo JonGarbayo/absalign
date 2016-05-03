@@ -16,12 +16,16 @@
     position: relative;
 }
 
-[class*="abs-"]
+[class*="abs-"],
+[class*="abs-"][class*="-before"]::before,
+[class*="abs-"][class*="-after"]::after
 {
     position: absolute;
 }
 
-[class*="fix-"]
+[class*="fix-"],
+[class*="fix-"][class*="-before"]::before,
+[class*="fix-"][class*="-after"]::after
 {
     position: fixed;
 }

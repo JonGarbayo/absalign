@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.2 (CSS part)
+ * absalign v0.0.2b (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -12,12 +12,16 @@
     position: relative;
 }
 
-[class*='abs-']
+[class*='abs-'],
+[class*='abs-'][class*='-before']::before,
+[class*='abs-'][class*='-after']::after
 {
     position: absolute;
 }
 
-[class*='fix-']
+[class*='fix-'],
+[class*='fix-'][class*='-before']::before,
+[class*='fix-'][class*='-after']::after
 {
     position: fixed;
 }

@@ -1,3 +1,8 @@
+#v0.0.2b (2016/05/03)
+##Fixes
+- Fixed a typo in README.md
+- Fixed the pseudo-elements was not positionned (sorry :|)
+
 #v0.0.2 (2016/04/28)
 ##Features
 - Added pseudo-elements support, adding ``-before`` or ``-after`` at the end of absalign class names

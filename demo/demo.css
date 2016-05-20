@@ -13,8 +13,42 @@
     height: 50vw;
     max-height: 100px;
 
-    transition: ease 500ms;
-    transition-property: top, left, transform;
-
     background-color: #e85656;
+}
+
+.demo-block::before,
+.demo-block::after
+{
+    width: 10px;
+    height: 10px;
+
+    content: '';
+
+    background-color: #e0e0e0;
+}
+
+.demo-block,
+.demo-block::before,
+.demo-block::after
+{
+    -webkit-transition: ease 500ms;
+       -moz-transition: ease 500ms;
+         -o-transition: ease 500ms;
+            transition: ease 500ms;
+    -webkit-transition-property: top, left, -webkit-transform;
+       -moz-transition-property: top, left, -moz-transform;
+         -o-transition-property: top, left, -o-transform;
+            transition-property: top, left, transform, -webkit-transform;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+.center-block
+{
+    display: block;
+
+    margin: 0 auto;
 }

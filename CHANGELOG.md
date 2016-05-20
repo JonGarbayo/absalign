@@ -1,3 +1,13 @@
+#v0.0.2c (2016/05/20)
+##Fixes
+- Added some stuff to get the demo more cross-browser
+- Added missing pseudo-elements case in demo
+- Fixed some mistyped pseudo element classes, like ``abs-left-top-before``, which was not working... (sorry :|)
+- Added ``!important`` labels to force absalign rules to be used
+
+##Other
+- Added the logo to the demo
+
 #v0.0.2b (2016/05/03)
 ##Fixes
 - Fixed a typo in README.md

@@ -8,47 +8,47 @@
 @mixin transform($function)
 {
     @include preserve-3d;
-    -webkit-transform: $function;
-       -moz-transform: $function;
-        -ms-transform: $function;
-         -o-transform: $function;
-            transform: $function;
+    -webkit-transform: $function !important;
+       -moz-transform: $function !important;
+        -ms-transform: $function !important;
+         -o-transform: $function !important;
+            transform: $function !important;
 }
 
 @mixin left-top
 {
-    top: 0;
-    left: 0;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 @mixin left-middle
 {
-    top: 50%;
-    left: 0;
+    top: 50% !important;
+    left: 0 !important;
 
     @include transform(translateY(-50%));
 }
 
 @mixin left-bottom
 {
-    top: 100%;
-    left: 0;
+    top: 100% !important;
+    left: 0 !important;
 
     @include transform(translate(0, -100%));
 }
 
 @mixin center-top
 {
-    top: 0;
-    left: 50%;
+    top: 0 !important;
+    left: 50% !important;
 
     @include transform(translateX(-50%));
 }
 
 @mixin center-middle
 {
-    top: 50%;
-    left: 50%;
+    top: 50% !important;
+    left: 50% !important;
 
     @include transform(translate(-50%, -50%));
 }
@@ -56,46 +56,46 @@
 
 @mixin center-bottom
 {
-    top: 100%;
-    left: 50%;
+    top: 100% !important;
+    left: 50% !important;
 
     @include transform(translate(-50%, -100%));
 }
 
 @mixin right-top
 {
-    top: 0;
-    left: 100%;
+    top: 0 !important;
+    left: 100% !important;
 
     @include transform(translateX(-100%));
 }
 
 @mixin right-middle
 {
-    top: 50%;
-    left: 100%;
+    top: 50% !important;
+    left: 100% !important;
 
     @include transform(translate(-100%, -50%));
 }
 
 @mixin right-bottom
 {
-    top: 100%;
-    left: 100%;
+    top: 100% !important;
+    left: 100% !important;
 
     @include transform(translate(-100%, -100%));
 }
 
 @mixin center
 {
-    left: 50%;
+    left: 50% !important;
 
     @include transform(translateX(-50%));
 }
 
 @mixin middle
 {
-    top: 50%;
+    top: 50% !important;
 
     @include transform(translateY(-50%));
 }

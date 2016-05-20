@@ -4,32 +4,62 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>Absalign micro framework test</title>
-		<link rel="stylesheet" href="../dist/absalign.css"/>
+		<link rel="stylesheet" href="../dist/absalign.min.css"/>
 		<link rel="stylesheet" href="demo.css"/>
 	</head>
 	<body>
-		<h1>Absalign micro framework test</h1>
+		<img src="..\absalign-logo.png" alt="absalign logo" class="center-block"/>
 
 		<div class="demo-block-container absalign-container">
-			<div class="demo-block abs-center-middle"></div>
+			<div class="demo-block abs-center-middle abs-center-middle-before"></div>
 		</div>
 
-		<select id="prefix-class-selector">
-			<option value="abs">abs</option>
-			<option value="fix">fix</option>
-		</select>
+		<div class="selector-block element">
 
-		<select id="suffix-class-selector">
-			<option value="left-top">left-top</option>
-			<option value="left-middle">left-middle</option>
-			<option value="left-bottom">left-bottom</option>
-			<option value="center-top">center-top</option>
-			<option value="center-middle">center-middle</option>
-			<option value="center-bottom">center-bottom</option>
-			<option value="right-top">right-top</option>
-			<option value="right-middle">right-middle</option>
-			<option value="right-bottom">right-bottom</option>
-		</select>
+			<select id="element-prefix-class-selector">
+				<option value="abs" selected>abs</option>
+				<option value="fix">fix</option>
+			</select>
+
+			<select id="element-suffix-class-selector">
+				<option value="left-top">left-top</option>
+				<option value="left-middle">left-middle</option>
+				<option value="left-bottom">left-bottom</option>
+				<option value="center-top">center-top</option>
+				<option value="center-middle" selected>center-middle</option>
+				<option value="center-bottom">center-bottom</option>
+				<option value="right-top">right-top</option>
+				<option value="right-middle">right-middle</option>
+				<option value="right-bottom">right-bottom</option>
+			</select>
+
+		</div>
+
+		<div class="selector-block pseudo-element">
+
+			<select id="pseudo-element-prefix-class-selector">
+				<option value="abs" selected>abs</option>
+				<option value="fix">fix</option>
+			</select>
+
+			<select id="pseudo-element-suffix-class-selector">
+				<option value="left-top">left-top</option>
+				<option value="left-middle">left-middle</option>
+				<option value="left-bottom">left-bottom</option>
+				<option value="center-top">center-top</option>
+				<option value="center-middle" selected>center-middle</option>
+				<option value="center-bottom">center-bottom</option>
+				<option value="right-top">right-top</option>
+				<option value="right-middle">right-middle</option>
+				<option value="right-bottom">right-bottom</option>
+			</select>
+
+			<select id="pseudo-element-pseudo-class-selector">
+				<option value="before" selected>before</option>
+				<option value="after">after</option>
+			</select>
+
+		</div>
 
 		<script type="text/javascript" src="../dist/absalign.min.js"></script>
 		<script type="text/javascript" src="demo.js"></script>

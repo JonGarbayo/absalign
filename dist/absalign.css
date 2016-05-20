@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.2b (CSS part)
+ * absalign v0.0.2c (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -9,21 +9,21 @@
 /* -------------------------------------------------------------------------- */
 .absalign-container
 {
-    position: relative;
+    position: relative !important;
 }
 
 [class*='abs-'],
 [class*='abs-'][class*='-before']::before,
 [class*='abs-'][class*='-after']::after
 {
-    position: absolute;
+    position: absolute !important;
 }
 
 [class*='fix-'],
 [class*='fix-'][class*='-before']::before,
 [class*='fix-'][class*='-after']::after
 {
-    position: fixed;
+    position: fixed !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -32,29 +32,29 @@
 .abs-left-top,
 .fix-left-top,
 .abs-left-top-before::before,
-.fix-left-top-after::after,
-.abs-left-top-before::before,
+.fix-left-top-before::before,
+.abs-left-top-after::after,
 .fix-left-top-after::after
 {
-    top: 0;
-    left: 0;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 .abs-left-middle,
 .fix-left-middle,
 .abs-left-middle-before::before,
-.fix-left-middle-after::after,
-.abs-left-middle-before::before,
+.fix-left-middle-before::before,
+.abs-left-middle-after::after,
 .fix-left-middle-after::after
 {
-    top: 50%;
-    left: 0;
+    top: 50% !important;
+    left: 0 !important;
 
-    -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         -o-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-50%) !important;
+       -moz-transform: translateY(-50%) !important;
+        -ms-transform: translateY(-50%) !important;
+         -o-transform: translateY(-50%) !important;
+            transform: translateY(-50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -64,18 +64,18 @@
 .abs-left-bottom,
 .fix-left-bottom,
 .abs-left-bottom-before::before,
-.fix-left-bottom-after::after,
-.abs-left-bottom-before::before,
+.fix-left-bottom-before::before,
+.abs-left-bottom-after::after,
 .fix-left-bottom-after::after
 {
-    top: 100%;
-    left: 0;
+    top: 100% !important;
+    left: 0 !important;
 
-    -webkit-transform: translate(0, -100%);
-       -moz-transform: translate(0, -100%);
-        -ms-transform: translate(0, -100%);
-         -o-transform: translate(0, -100%);
-            transform: translate(0, -100%);
+    -webkit-transform: translate(0, -100%) !important;
+       -moz-transform: translate(0, -100%) !important;
+        -ms-transform: translate(0, -100%) !important;
+         -o-transform: translate(0, -100%) !important;
+            transform: translate(0, -100%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -88,18 +88,18 @@
 .abs-center-top,
 .fix-center-top,
 .abs-center-top-before::before,
-.fix-center-top-after::after,
-.abs-center-top-before::before,
+.fix-center-top-before::before,
+.abs-center-top-after::after,
 .fix-center-top-after::after
 {
-    top: 0;
-    left: 50%;
+    top: 0 !important;
+    left: 50% !important;
 
-    -webkit-transform: translateX(-50%);
-       -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-         -o-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) !important;
+       -moz-transform: translateX(-50%) !important;
+        -ms-transform: translateX(-50%) !important;
+         -o-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -109,18 +109,18 @@
 .abs-center-middle,
 .fix-center-middle,
 .abs-center-middle-before::before,
-.fix-center-middle-after::after,
-.abs-center-middle-before::before,
+.fix-center-middle-before::before,
+.abs-center-middle-after::after,
 .fix-center-middle-after::after
 {
-    top: 50%;
-    left: 50%;
+    top: 50% !important;
+    left: 50% !important;
 
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-         -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%) !important;
+       -moz-transform: translate(-50%, -50%) !important;
+        -ms-transform: translate(-50%, -50%) !important;
+         -o-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -130,18 +130,18 @@
 .abs-center-bottom,
 .fix-center-bottom,
 .abs-center-bottom-before::before,
-.fix-center-bottom-after::after,
-.abs-center-bottom-before::before,
+.fix-center-bottom-before::before,
+.abs-center-bottom-after::after,
 .fix-center-bottom-after::after
 {
-    top: 100%;
-    left: 50%;
+    top: 100% !important;
+    left: 50% !important;
 
-    -webkit-transform: translate(-50%, -100%);
-       -moz-transform: translate(-50%, -100%);
-        -ms-transform: translate(-50%, -100%);
-         -o-transform: translate(-50%, -100%);
-            transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%) !important;
+       -moz-transform: translate(-50%, -100%) !important;
+        -ms-transform: translate(-50%, -100%) !important;
+         -o-transform: translate(-50%, -100%) !important;
+            transform: translate(-50%, -100%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -154,18 +154,18 @@
 .abs-right-top,
 .fix-right-top,
 .abs-right-top-before::before,
-.fix-right-top-after::after,
-.abs-right-top-before::before,
+.fix-right-top-before::before,
+.abs-right-top-after::after,
 .fix-right-top-after::after
 {
-    top: 0;
-    left: 100%;
+    top: 0 !important;
+    left: 100% !important;
 
-    -webkit-transform: translateX(-100%);
-       -moz-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-         -o-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-100%) !important;
+       -moz-transform: translateX(-100%) !important;
+        -ms-transform: translateX(-100%) !important;
+         -o-transform: translateX(-100%) !important;
+            transform: translateX(-100%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -175,18 +175,18 @@
 .abs-right-middle,
 .fix-right-middle,
 .abs-right-middle-before::before,
-.fix-right-middle-after::after,
-.abs-right-middle-before::before,
+.fix-right-middle-before::before,
+.abs-right-middle-after::after,
 .fix-right-middle-after::after
 {
-    top: 50%;
-    left: 100%;
+    top: 50% !important;
+    left: 100% !important;
 
-    -webkit-transform: translate(-100%, -50%);
-       -moz-transform: translate(-100%, -50%);
-        -ms-transform: translate(-100%, -50%);
-         -o-transform: translate(-100%, -50%);
-            transform: translate(-100%, -50%);
+    -webkit-transform: translate(-100%, -50%) !important;
+       -moz-transform: translate(-100%, -50%) !important;
+        -ms-transform: translate(-100%, -50%) !important;
+         -o-transform: translate(-100%, -50%) !important;
+            transform: translate(-100%, -50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -196,18 +196,18 @@
 .abs-right-bottom,
 .fix-right-bottom,
 .abs-right-bottom-before::before,
-.fix-right-bottom-after::after,
-.abs-right-bottom-before::before,
+.fix-right-bottom-before::before,
+.abs-right-bottom-after::after,
 .fix-right-bottom-after::after
 {
-    top: 100%;
-    left: 100%;
+    top: 100% !important;
+    left: 100% !important;
 
-    -webkit-transform: translate(-100%, -100%);
-       -moz-transform: translate(-100%, -100%);
-        -ms-transform: translate(-100%, -100%);
-         -o-transform: translate(-100%, -100%);
-            transform: translate(-100%, -100%);
+    -webkit-transform: translate(-100%, -100%) !important;
+       -moz-transform: translate(-100%, -100%) !important;
+        -ms-transform: translate(-100%, -100%) !important;
+         -o-transform: translate(-100%, -100%) !important;
+            transform: translate(-100%, -100%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -220,17 +220,17 @@
 .abs-center,
 .fix-center,
 .abs-center-before::before,
-.fix-center-after::after,
-.abs-center-before::before,
+.fix-center-before::before,
+.abs-center-after::after,
 .fix-center-after::after
 {
-    left: 50%;
+    left: 50% !important;
 
-    -webkit-transform: translateX(-50%);
-       -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-         -o-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) !important;
+       -moz-transform: translateX(-50%) !important;
+        -ms-transform: translateX(-50%) !important;
+         -o-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
@@ -240,17 +240,17 @@
 .abs-middle,
 .fix-middle,
 .abs-middle-before::before,
-.fix-middle-after::after,
-.abs-middle-before::before,
+.fix-middle-before::before,
+.abs-middle-after::after,
 .fix-middle-after::after
 {
-    top: 50%;
+    top: 50% !important;
 
-    -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         -o-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-50%) !important;
+       -moz-transform: translateY(-50%) !important;
+        -ms-transform: translateY(-50%) !important;
+         -o-transform: translateY(-50%) !important;
+            transform: translateY(-50%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;

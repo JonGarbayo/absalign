@@ -13,21 +13,21 @@
 
 .absalign-container
 {
-    position: relative;
+    position: relative !important;
 }
 
 [class*="abs-"],
 [class*="abs-"][class*="-before"]::before,
 [class*="abs-"][class*="-after"]::after
 {
-    position: absolute;
+    position: absolute !important;
 }
 
 [class*="fix-"],
 [class*="fix-"][class*="-before"]::before,
 [class*="fix-"][class*="-after"]::after
 {
-    position: fixed;
+    position: fixed !important;
 }
 
 
@@ -39,8 +39,8 @@
 .abs-left-top,
 .fix-left-top,
 .abs-left-top-before::before,
-.fix-left-top-after::after,
-.abs-left-top-before::before,
+.fix-left-top-before::before,
+.abs-left-top-after::after,
 .fix-left-top-after::after
 {
     @include left-top();
@@ -49,8 +49,8 @@
 .abs-left-middle,
 .fix-left-middle,
 .abs-left-middle-before::before,
-.fix-left-middle-after::after,
-.abs-left-middle-before::before,
+.fix-left-middle-before::before,
+.abs-left-middle-after::after,
 .fix-left-middle-after::after
 {
     @include left-middle();
@@ -59,8 +59,8 @@
 .abs-left-bottom,
 .fix-left-bottom,
 .abs-left-bottom-before::before,
-.fix-left-bottom-after::after,
-.abs-left-bottom-before::before,
+.fix-left-bottom-before::before,
+.abs-left-bottom-after::after,
 .fix-left-bottom-after::after
 {
     @include left-bottom();
@@ -75,8 +75,8 @@
 .abs-center-top,
 .fix-center-top,
 .abs-center-top-before::before,
-.fix-center-top-after::after,
-.abs-center-top-before::before,
+.fix-center-top-before::before,
+.abs-center-top-after::after,
 .fix-center-top-after::after
 {
     @include center-top();
@@ -85,8 +85,8 @@
 .abs-center-middle,
 .fix-center-middle,
 .abs-center-middle-before::before,
-.fix-center-middle-after::after,
-.abs-center-middle-before::before,
+.fix-center-middle-before::before,
+.abs-center-middle-after::after,
 .fix-center-middle-after::after
 {
     @include center-middle();
@@ -96,8 +96,8 @@
 .abs-center-bottom,
 .fix-center-bottom,
 .abs-center-bottom-before::before,
-.fix-center-bottom-after::after,
-.abs-center-bottom-before::before,
+.fix-center-bottom-before::before,
+.abs-center-bottom-after::after,
 .fix-center-bottom-after::after
 {
     @include center-bottom();
@@ -112,8 +112,8 @@
 .abs-right-top,
 .fix-right-top,
 .abs-right-top-before::before,
-.fix-right-top-after::after,
-.abs-right-top-before::before,
+.fix-right-top-before::before,
+.abs-right-top-after::after,
 .fix-right-top-after::after
 {
     @include right-top();
@@ -122,8 +122,8 @@
 .abs-right-middle,
 .fix-right-middle,
 .abs-right-middle-before::before,
-.fix-right-middle-after::after,
-.abs-right-middle-before::before,
+.fix-right-middle-before::before,
+.abs-right-middle-after::after,
 .fix-right-middle-after::after
 {
     @include right-middle();
@@ -132,8 +132,8 @@
 .abs-right-bottom,
 .fix-right-bottom,
 .abs-right-bottom-before::before,
-.fix-right-bottom-after::after,
-.abs-right-bottom-before::before,
+.fix-right-bottom-before::before,
+.abs-right-bottom-after::after,
 .fix-right-bottom-after::after
 {
     @include right-bottom();
@@ -148,8 +148,8 @@
 .abs-center,
 .fix-center,
 .abs-center-before::before,
-.fix-center-after::after,
-.abs-center-before::before,
+.fix-center-before::before,
+.abs-center-after::after,
 .fix-center-after::after
 {
     @include center();
@@ -158,8 +158,8 @@
 .abs-middle,
 .fix-middle,
 .abs-middle-before::before,
-.fix-middle-after::after,
-.abs-middle-before::before,
+.fix-middle-before::before,
+.abs-middle-after::after,
 .fix-middle-after::after
 {
     @include middle();

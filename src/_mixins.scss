@@ -1,18 +1,7 @@
-@mixin preserve-3d
-{
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-}
-
 @mixin transform($function)
 {
-    @include preserve-3d;
-    -webkit-transform: $function !important;
-       -moz-transform: $function !important;
-        -ms-transform: $function !important;
-         -o-transform: $function !important;
-            transform: $function !important;
+    transform-style: preserve-3d;
+    transform: $function !important;
 }
 
 @mixin left-top
@@ -86,6 +75,11 @@
     @include transform(translate(-100%, -100%));
 }
 
+@mixin left
+{
+    left: 0;
+}
+
 @mixin center
 {
     left: 50% !important;
@@ -93,9 +87,28 @@
     @include transform(translateX(-50%));
 }
 
+@mixin right
+{
+    left: 100% !important;
+
+    @include transform(translateX(-100%));
+}
+
+@mixin top
+{
+    top: 0;
+}
+
 @mixin middle
 {
     top: 50% !important;
 
     @include transform(translateY(-50%));
+}
+
+@mixin bottom
+{
+    top: 100% !important;
+
+    @include transform(translateY(-100%));
 }

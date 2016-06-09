@@ -24,6 +24,23 @@ module.exports = function(grunt)
             }
         },
 
+    // Autoprefixing the transforms and transform-styles properties
+    // There is no "all" parameter, and all prefixes are needed, so used a BIG value 
+        postcss:
+        {
+            options:
+            {
+                processors:
+                [
+                    require('autoprefixer')({browsers: 'last 9999 versions'})
+                ]
+            },
+            dist:
+            {
+                src: 'dist/absalign.css'
+            }
+        },
+
     // Cleaning, with CSSComb, the generated CSS file
         csscomb:
         {
@@ -102,11 +119,12 @@ module.exports = function(grunt)
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-csscomb');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('build', ['clean', 'compass', 'csscomb', 'replace', 'concurrent:min']);
+    grunt.registerTask('build', ['clean', 'compass', 'postcss', 'csscomb', 'replace', 'concurrent:min']);
 };

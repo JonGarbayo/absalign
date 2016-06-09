@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.2c (CSS part)
+ * absalign v0.0.3 (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -12,16 +12,64 @@
     position: relative !important;
 }
 
-[class*='abs-'],
-[class*='abs-'][class*='-before']::before,
-[class*='abs-'][class*='-after']::after
+.abs-left-top,
+.abs-left-top-before:before,
+.abs-left-top-after:after,
+.abs-left-middle,
+.abs-left-middle-before:before,
+.abs-left-middle-after:after,
+.abs-left-bottom,
+.abs-left-bottom-before:before,
+.abs-left-bottom-after:after,
+.abs-center-top,
+.abs-center-top-before:before,
+.abs-center-top-after:after,
+.abs-center-middle,
+.abs-center-middle-before:before,
+.abs-center-middle-after:after,
+.abs-center-bottom,
+.abs-center-bottom-before:before,
+.abs-center-bottom-after:after,
+.abs-right-top,
+.abs-right-top-before:before,
+.abs-right-top-after:after,
+.abs-right-middle,
+.abs-right-middle-before:before,
+.abs-right-middle-after:after,
+.abs-right-bottom,
+.abs-right-bottom-before:before,
+.abs-right-bottom-after:after
 {
     position: absolute !important;
 }
 
-[class*='fix-'],
-[class*='fix-'][class*='-before']::before,
-[class*='fix-'][class*='-after']::after
+.fix-left-top,
+.fix-left-top-before:before,
+.fix-left-top-after:after,
+.fix-left-middle,
+.fix-left-middle-before:before,
+.fix-left-middle-after:after,
+.fix-left-bottom,
+.fix-left-bottom-before:before,
+.fix-left-bottom-after:after,
+.fix-center-top,
+.fix-center-top-before:before,
+.fix-center-top-after:after,
+.fix-center-middle,
+.fix-center-middle-before:before,
+.fix-center-middle-after:after,
+.fix-center-bottom,
+.fix-center-bottom-before:before,
+.fix-center-bottom-after:after,
+.fix-right-top,
+.fix-right-top-before:before,
+.fix-right-top-after:after,
+.fix-right-middle,
+.fix-right-middle-before:before,
+.fix-right-middle-after:after,
+.fix-right-bottom,
+.fix-right-bottom-before:before,
+.fix-right-bottom-after:after
 {
     position: fixed !important;
 }
@@ -30,22 +78,22 @@
 /* ---------------------------------- Left ---------------------------------- */
 /* -------------------------------------------------------------------------- */
 .abs-left-top,
+.abs-left-top-before:before,
+.abs-left-top-after:after,
 .fix-left-top,
-.abs-left-top-before::before,
-.fix-left-top-before::before,
-.abs-left-top-after::after,
-.fix-left-top-after::after
+.fix-left-top-before:before,
+.fix-left-top-after:after
 {
     top: 0 !important;
     left: 0 !important;
 }
 
 .abs-left-middle,
+.abs-left-middle-before:before,
+.abs-left-middle-after:after,
 .fix-left-middle,
-.abs-left-middle-before::before,
-.fix-left-middle-before::before,
-.abs-left-middle-after::after,
-.fix-left-middle-after::after
+.fix-left-middle-before:before,
+.fix-left-middle-after:after
 {
     top: 50% !important;
     left: 0 !important;
@@ -62,11 +110,11 @@
 }
 
 .abs-left-bottom,
+.abs-left-bottom-before:before,
+.abs-left-bottom-after:after,
 .fix-left-bottom,
-.abs-left-bottom-before::before,
-.fix-left-bottom-before::before,
-.abs-left-bottom-after::after,
-.fix-left-bottom-after::after
+.fix-left-bottom-before:before,
+.fix-left-bottom-after:after
 {
     top: 100% !important;
     left: 0 !important;
@@ -86,11 +134,11 @@
 /* --------------------------------- Center --------------------------------- */
 /* -------------------------------------------------------------------------- */
 .abs-center-top,
+.abs-center-top-before:before,
+.abs-center-top-after:after,
 .fix-center-top,
-.abs-center-top-before::before,
-.fix-center-top-before::before,
-.abs-center-top-after::after,
-.fix-center-top-after::after
+.fix-center-top-before:before,
+.fix-center-top-after:after
 {
     top: 0 !important;
     left: 50% !important;
@@ -107,11 +155,11 @@
 }
 
 .abs-center-middle,
+.abs-center-middle-before:before,
+.abs-center-middle-after:after,
 .fix-center-middle,
-.abs-center-middle-before::before,
-.fix-center-middle-before::before,
-.abs-center-middle-after::after,
-.fix-center-middle-after::after
+.fix-center-middle-before:before,
+.fix-center-middle-after:after
 {
     top: 50% !important;
     left: 50% !important;
@@ -128,11 +176,11 @@
 }
 
 .abs-center-bottom,
+.abs-center-bottom-before:before,
+.abs-center-bottom-after:after,
 .fix-center-bottom,
-.abs-center-bottom-before::before,
-.fix-center-bottom-before::before,
-.abs-center-bottom-after::after,
-.fix-center-bottom-after::after
+.fix-center-bottom-before:before,
+.fix-center-bottom-after:after
 {
     top: 100% !important;
     left: 50% !important;
@@ -152,11 +200,11 @@
 /* ---------------------------------- Right --------------------------------- */
 /* -------------------------------------------------------------------------- */
 .abs-right-top,
+.abs-right-top-before:before,
+.abs-right-top-after:after,
 .fix-right-top,
-.abs-right-top-before::before,
-.fix-right-top-before::before,
-.abs-right-top-after::after,
-.fix-right-top-after::after
+.fix-right-top-before:before,
+.fix-right-top-after:after
 {
     top: 0 !important;
     left: 100% !important;
@@ -173,11 +221,11 @@
 }
 
 .abs-right-middle,
+.abs-right-middle-before:before,
+.abs-right-middle-after:after,
 .fix-right-middle,
-.abs-right-middle-before::before,
-.fix-right-middle-before::before,
-.abs-right-middle-after::after,
-.fix-right-middle-after::after
+.fix-right-middle-before:before,
+.fix-right-middle-after:after
 {
     top: 50% !important;
     left: 100% !important;
@@ -194,11 +242,11 @@
 }
 
 .abs-right-bottom,
+.abs-right-bottom-before:before,
+.abs-right-bottom-after:after,
 .fix-right-bottom,
-.abs-right-bottom-before::before,
-.fix-right-bottom-before::before,
-.abs-right-bottom-after::after,
-.fix-right-bottom-after::after
+.fix-right-bottom-before:before,
+.fix-right-bottom-after:after
 {
     top: 100% !important;
     left: 100% !important;
@@ -217,12 +265,22 @@
 /* -------------------------------------------------------------------------- */
 /* -------------------------------- Utilities ------------------------------- */
 /* -------------------------------------------------------------------------- */
+.abs-left,
+.abs-left-before:before,
+.abs-left-after:after,
+.fix-left,
+.fix-left-before:before,
+.fix-left-after:after
+{
+    left: 0;
+}
+
 .abs-center,
+.abs-center-before:before,
+.abs-center-after:after,
 .fix-center,
-.abs-center-before::before,
-.fix-center-before::before,
-.abs-center-after::after,
-.fix-center-after::after
+.fix-center-before:before,
+.fix-center-after:after
 {
     left: 50% !important;
 
@@ -237,12 +295,42 @@
             transform-style: preserve-3d;
 }
 
+.abs-right,
+.abs-right-before:before,
+.abs-right-after:after,
+.fix-right,
+.fix-right-before:before,
+.fix-right-after:after
+{
+    left: 100% !important;
+
+    -webkit-transform: translateX(-100%) !important;
+       -moz-transform: translateX(-100%) !important;
+        -ms-transform: translateX(-100%) !important;
+         -o-transform: translateX(-100%) !important;
+            transform: translateX(-100%) !important;
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.abs-top,
+.abs-top-before:before,
+.abs-top-after:after,
+.fix-top,
+.fix-top-before:before,
+.fix-top-after:after
+{
+    top: 0;
+}
+
 .abs-middle,
+.abs-middle-before:before,
+.abs-middle-after:after,
 .fix-middle,
-.abs-middle-before::before,
-.fix-middle-before::before,
-.abs-middle-after::after,
-.fix-middle-after::after
+.fix-middle-before:before,
+.fix-middle-after:after
 {
     top: 50% !important;
 
@@ -251,6 +339,26 @@
         -ms-transform: translateY(-50%) !important;
          -o-transform: translateY(-50%) !important;
             transform: translateY(-50%) !important;
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.abs-bottom,
+.abs-bottom-before:before,
+.abs-bottom-after:after,
+.fix-bottom,
+.fix-bottom-before:before,
+.fix-bottom-after:after
+{
+    top: 100% !important;
+
+    -webkit-transform: translateY(-100%) !important;
+       -moz-transform: translateY(-100%) !important;
+        -ms-transform: translateY(-100%) !important;
+         -o-transform: translateY(-100%) !important;
+            transform: translateY(-100%) !important;
 
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;

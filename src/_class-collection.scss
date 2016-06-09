@@ -1,0 +1,188 @@
+// Declaring parts of classes names
+$positions: (
+    'abs',
+    'fix'
+);
+
+$x-axes: (
+    'left',
+    'center',
+    'right'
+);
+
+$y-axes: (
+    'top',
+    'middle',
+    'bottom'
+);
+
+$pseudos: (
+    '',
+    'before',
+    'after'
+);
+
+// Declaring classes lists
+// Lists by position
+$abs-classes: ();
+$fix-classes: ();
+
+// Lists by axes
+$left-top-classes: ();
+$left-middle-classes: ();
+$left-bottom-classes: ();
+
+$center-top-classes: ();
+$center-middle-classes: ();
+$center-bottom-classes: ();
+
+$right-top-classes: ();
+$right-middle-classes: ();
+$right-bottom-classes: ();
+
+// Lists by mono-axis
+$left-classes: ();
+$center-classes: ();
+$right-classes: ();
+
+$top-classes: ();
+$middle-classes: ();
+$bottom-classes: ();
+
+
+
+$current-class: '';
+
+// First loop creates the positions and axes lists
+@each $position in $positions
+{
+    @each $x-axis in $x-axes
+    {
+        @each $y-axis in $y-axes
+        {
+            @each $pseudo in $pseudos
+            {
+                $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
+
+                @if $pseudo != ''
+                {
+                    $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                }
+
+                @if $position == 'abs'
+                {
+                    $abs-classes: append($abs-classes, $current-class, comma);
+                }
+                @else if $position == 'fix'
+                {
+                    $fix-classes: append($fix-classes, $current-class, comma);
+                }
+
+
+                @if $x-axis == 'left'
+                {
+                    @if $y-axis == 'top'
+                    {
+                        $left-top-classes: append($left-top-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'middle'
+                    {
+                        $left-middle-classes: append($left-middle-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'bottom'
+                    {
+                        $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
+                    }
+                }
+
+                @if $x-axis == 'center'
+                {
+                    @if $y-axis == 'top'
+                    {
+                        $center-top-classes: append($center-top-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'middle'
+                    {
+                        $center-middle-classes: append($center-middle-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'bottom'
+                    {
+                        $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
+                    }
+                }
+
+                @if $x-axis == 'right'
+                {
+                    @if $y-axis == 'top'
+                    {
+                        $right-top-classes: append($right-top-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'middle'
+                    {
+                        $right-middle-classes: append($right-middle-classes, $current-class, comma);
+                    }
+                    @if $y-axis == 'bottom'
+                    {
+                        $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Second loop creates the mono-axis lists
+@each $position in $positions
+{
+    @each $x-axis in $x-axes
+    {
+        @each $pseudo in $pseudos
+        {
+            $current-class: '.' + $position + '-' + $x-axis;
+
+            @if $pseudo != ''
+            {
+                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+            }
+
+            @if $x-axis == 'left'
+            {
+                $left-classes: append($left-classes, $current-class, comma);
+            }
+            @if $x-axis == 'center'
+            {
+                $center-classes: append($center-classes, $current-class, comma);
+            }
+            @if $x-axis == 'right'
+            {
+                $right-classes: append($right-classes, $current-class, comma);
+            }
+        }
+    }
+
+    @each $y-axis in $y-axes
+    {
+        @each $pseudo in $pseudos
+        {
+            $current-class: '.' + $position + '-' + $y-axis;
+
+            @if $pseudo != ''
+            {
+                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+            }
+
+            @if $y-axis == 'top'
+            {
+                $top-classes: append($top-classes, $current-class, comma);
+            }
+            @if $y-axis == 'middle'
+            {
+                $middle-classes: append($middle-classes, $current-class, comma);
+            }
+            @if $y-axis == 'bottom'
+            {
+                $bottom-classes: append($bottom-classes, $current-class, comma);
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.3 (CSS part)
+ * absalign v0.0.3b (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -38,7 +38,25 @@
 .abs-right-middle-after:after,
 .abs-right-bottom,
 .abs-right-bottom-before:before,
-.abs-right-bottom-after:after
+.abs-right-bottom-after:after,
+.abs-left,
+.abs-left-before:before,
+.abs-left-after:after,
+.abs-center,
+.abs-center-before:before,
+.abs-center-after:after,
+.abs-right,
+.abs-right-before:before,
+.abs-right-after:after,
+.abs-top,
+.abs-top-before:before,
+.abs-top-after:after,
+.abs-middle,
+.abs-middle-before:before,
+.abs-middle-after:after,
+.abs-bottom,
+.abs-bottom-before:before,
+.abs-bottom-after:after
 {
     position: absolute !important;
 }
@@ -69,7 +87,25 @@
 .fix-right-middle-after:after,
 .fix-right-bottom,
 .fix-right-bottom-before:before,
-.fix-right-bottom-after:after
+.fix-right-bottom-after:after,
+.fix-left,
+.fix-left-before:before,
+.fix-left-after:after,
+.fix-center,
+.fix-center-before:before,
+.fix-center-after:after,
+.fix-right,
+.fix-right-before:before,
+.fix-right-after:after,
+.fix-top,
+.fix-top-before:before,
+.fix-top-after:after,
+.fix-middle,
+.fix-middle-before:before,
+.fix-middle-after:after,
+.fix-bottom,
+.fix-bottom-before:before,
+.fix-bottom-after:after
 {
     position: fixed !important;
 }

@@ -1,3 +1,8 @@
+#v0.0.3b (2016/06/14)
+##Fixes
+- Fixed utilities classes was not positioned, sorry :()
+- Fixed some typos in README.md and CHANGELOG.md
+
 #v0.0.3 (2016/06/09)
 ##Fixes
 - Fixed the classes conflicts due to the CSS selectors like ``[class*='abs-']``
@@ -25,7 +30,7 @@
 #v0.0.2b (2016/05/03)
 ##Fixes
 - Fixed a typo in README.md
-- Fixed the pseudo-elements was not positionned (sorry :|)
+- Fixed the pseudo-elements was not positioned (sorry :|)
 
 
 #v0.0.2 (2016/04/28)

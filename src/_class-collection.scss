@@ -145,6 +145,15 @@ $current-class: '';
                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
             }
 
+            @if $position == 'abs'
+            {
+                $abs-classes: append($abs-classes, $current-class, comma);
+            }
+            @else if $position == 'fix'
+            {
+                $fix-classes: append($fix-classes, $current-class, comma);
+            }
+
             @if $x-axis == 'left'
             {
                 $left-classes: append($left-classes, $current-class, comma);
@@ -169,6 +178,15 @@ $current-class: '';
             @if $pseudo != ''
             {
                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+            }
+
+            @if $position == 'abs'
+            {
+                $abs-classes: append($abs-classes, $current-class, comma);
+            }
+            @else if $position == 'fix'
+            {
+                $fix-classes: append($fix-classes, $current-class, comma);
             }
 
             @if $y-axis == 'top'

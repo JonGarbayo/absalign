@@ -1,13 +1,13 @@
 ![absalign logo](absalign-logo.png "absalign logo")
 
 #What?
-Absalign is a micro CSS framework you can use to **align verticaly and horizontaly** fixed or absolute elements just with some **simple classes**!
+Absalign is a micro CSS framework you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!
 
 #Why?
-Web dev, we all know the pain of verticaly centering elements... It must be cross-browser, responsive, easy to maintain, well coded, without using JavaScript, etc.
+Web dev, we all know the pain of vertically centering elements... It must be cross-browser, responsive, easy to maintain, well coded, without using JavaScript, etc.
 The great ``flex`` implementation is coming cross-browser, we have to be patient. But we have to wait for it using other techniques.
 
-Here is what I propose: a micro CSS framework to **verticaly and horizontaly** center elements with a **great and simple technique**.
+Here is what I propose: a micro CSS framework to **vertically and horizontally** center elements with a **great and simple technique**.
 It's:
 - cross-browser
 - responsive
@@ -68,13 +68,13 @@ Like this:
 </div>
 ```
 
-###JavaScript pollyfill
+###JavaScript polyfill
 The use of JavaScript here is to **simulate the CSS3 ``transform`` property**, which is **the core if this package** (read next part, "How does it works", to learn more about it).
 **Old browsers** like IE8 or old version of Chrome and Firefox **doesn't understand it**, even with prefixes. I know these versions are not really in use today (except IE, ha ha... damn :|), but I chose to support them.
 
-The pollyfill will **only be active on browsers which doesn't support the ``transform``**. But you're free to not include it, if you don't mind about Prehistory ;)
+The polyfill will **only be active on browsers which doesn't support the ``transform``**. But you're free to not include it, if you don't mind about Prehistory ;)
 
-**Note:** This pollyfill is not available for the moment. Will be in a future release ;)
+**Note:** This polyfill is not available for the moment. Will be in a future release ;)
 
 ## … does it works?
 ###The old-fashion technique
@@ -95,12 +95,12 @@ Example:
 But there are a few cons with it:
 - you must know the **element height**
 - you **can't have a dynamic content**, because height is static (or you have to use some JS tricks)
-- it's annoying to maintain (I didnt' say "hard", just annoying ;)
+- it's annoying to maintain (I didn't say "hard", just annoying ;)
 
 ###The modern technique
 Well, in this framework, I used the ``transform: translate();`` **CSS3** function.
 As the 4 position properties are based on the **body dimensions** (or the viewport dimensions for the fixed elements), ``top: 50%;`` will push the element **top border** at the middle of the page.
-But all the transforms functions are **based on the element dimensions**. So, by wrinting something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of it's height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
+But all the transforms functions are **based on the element dimensions**. So, by writing something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of it's height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
 
 Applying on our previous ``.nice-div``:
 ```css
@@ -115,7 +115,7 @@ Applying on our previous ``.nice-div``:
 }
 ```
 
-This technique can also (of course) be applied to the X axis, with ``transform: translateX(-50%)``, or both axises at the same time, with ``transform: translate(-50%, -50%)``.
+This technique can also (of course) be applied to the X axis, with ``transform: translateX(-50%)``, or both axes at the same time, with ``transform: translate(-50%, -50%)``.
 I added other classes to get a more complete set of positions, so you got 9, with 3 per axis (left, center and right for X axis, and top, middle and bottom for the Y).
 
 ###Why do I use ``left: 100%`` and a transform instead of ``right: 0``?

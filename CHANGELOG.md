@@ -1,7 +1,27 @@
+#v0.0.4 (2016/07/08)
+##Maintenance
+- Set two folders for the demo, on a Bower way: ``src`` and ``dist``, as for main package (why not, mmmh ?)
+- Added minification tasks for the demo files (HTML, CSS and JS)
+- Created two sub-grunt-tasks: buildPackage and buildDemo, to build faster depending on needs
+- Set autoprefixer for the demo
+- Now using the load-grunt-tasks module instead of loading each tasks by hand, in Gruntfile.js
+- Added grunt-time task, to play with grunt tasks performances
+- Updated npm modules
+
+##Fixes
+- The demo is again more cross-browser, thanks to jQuery
+
+##Other
+- Redesigned the demo: now it's pretty ;) (but it's not the end))
+- In demo, added the package version
+- In README.md, centered the absalign logo
+
+
 #v0.0.3b (2016/06/14)
 ##Fixes
 - Fixed utilities classes was not positioned, sorry :()
 - Fixed some typos in README.md and CHANGELOG.md
+
 
 #v0.0.3 (2016/06/09)
 ##Fixes

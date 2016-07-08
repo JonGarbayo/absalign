@@ -2,13 +2,20 @@
 
 module.exports = function(grunt)
 {
+    require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);
+
     grunt.initConfig(
     {
     // Getting package.json info
         pkg: grunt.file.readJSON("package.json"),
 
-    // Cleaning the dist directory
-        clean: ['dist/*'],
+    // Cleaning the dist directory, and the one from the demo
+        clean:
+        {
+            dist: ['dist/*'],
+            demo: ['demo/dist/*'],
+        },
 
     // Compiling SCSS to CSS
         compass:
@@ -25,7 +32,7 @@ module.exports = function(grunt)
         },
 
     // Autoprefixing the transforms and transform-styles properties
-    // There is no "all" parameter, and all prefixes are needed, so used a BIG value 
+    // There is no "all" parameter, and all prefixes are needed, so used a BIG value
         postcss:
         {
             options:
@@ -38,6 +45,13 @@ module.exports = function(grunt)
             dist:
             {
                 src: 'dist/absalign.css'
+            },
+            demo:
+            {
+                files:
+                {
+                    'demo/dist/demo.min.css': 'demo/src/demo.css'
+                }
             }
         },
 
@@ -53,7 +67,7 @@ module.exports = function(grunt)
             }
         },
 
-    // Adding some package info, like version or author, to header comments
+    // Adding some package info, like version or author, to header comments and demo
         replace:
         {
             dist:
@@ -74,10 +88,25 @@ module.exports = function(grunt)
                     'dist/absalign.css': ['dist/absalign.css'],
                     'dist/absalign.js': ['src/absalign.js']
                 }
+            },
+            demo:
+            {
+                options:
+                {
+                    variables:
+                    {
+                    // Replaces "@@key" with "value"
+                        'version': "<%= pkg.version %>",
+                    }
+                },
+                files:
+                {
+                    'demo/dist/demo.min.html': 'demo/dist/demo.min.html'
+                }
             }
         },
 
-    // Minifying CSS file
+    // Minifying CSS files
         cssmin:
         {
             dist:
@@ -89,6 +118,16 @@ module.exports = function(grunt)
                     src: ['*.css'],
                     dest: 'dist/',
                     ext: '.min.css'
+                }]
+            },
+            demo:
+            {
+                files:
+                [{
+                    expand: true,
+                    cwd: 'demo/dist/',
+                    src: ['*.css'],
+                    dest: 'demo/dist/'
                 }]
             }
         },
@@ -105,7 +144,57 @@ module.exports = function(grunt)
             {
                 files:
                 {
-                    'dist/absalign.min.js': ['dist/absalign.js']
+                    'dist/absalign.min.js': 'dist/absalign.js'
+                }
+            },
+            demo:
+            {
+                files:
+                {
+                    'demo/dist/demo.min.js': 'demo/src/demo.js'
+                }
+            }
+        },
+
+        copy:
+        {
+            demo:
+            {
+                files:
+                [
+                    {
+                        src: 'demo/src/jquery-1.12.4.min.js',
+                        dest: 'demo/dist/vendor.js'
+                    },
+                ],
+            },
+        },
+
+    // Replacing scripts and links tags with min src
+        processhtml:
+        {
+            demo:
+            {
+                files:
+                {
+                    'demo/dist/demo.min.html': 'demo/src/demo.html'
+                }
+            }
+        },
+
+    // Minifying HTML files
+        htmlmin:
+        {
+            demo:
+            {
+                options:
+                {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files:
+                {
+                    'demo/dist/demo.min.html': 'demo/dist/demo.min.html',
                 }
             }
         },
@@ -113,18 +202,13 @@ module.exports = function(grunt)
     // Executing both minification operations at the same time
         concurrent:
         {
-            min: ['cssmin', 'uglify']
+            minAll: ['cssmin', 'uglify', 'htmlmin'],
+            minPackage: ['cssmin:dist', 'uglify:dist'],
+            minDemo: ['cssmin:demo', 'uglify:demo', 'htmlmin:demo']
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-csscomb');
-    grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-concurrent');
-
-    grunt.registerTask('build', ['clean', 'compass', 'postcss', 'csscomb', 'replace', 'concurrent:min']);
+    grunt.registerTask('buildAll', ['clean', 'compass', 'postcss', 'csscomb', 'copy:demo', 'processhtml', 'replace', 'concurrent:minAll']);
+    grunt.registerTask('buildPackage', ['clean:dist', 'compass:dist', 'postcss:dist', 'csscomb:dist', 'replace:dist', 'concurrent:minPackage']);
+    grunt.registerTask('buildDemo', ['clean:demo', 'copy:demo', 'postcss:demo', 'processhtml:demo', 'replace:demo', 'concurrent:minDemo']);
 };

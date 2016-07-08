@@ -1,4 +1,6 @@
-<p align="center">![absalign logo](absalign-logo.png "absalign logo")</p>
+<p align="center">
+	<img src="absalign-logo.png" alt="absalign logo" title="absalign logo"/>
+</p>
 
 #What?
 Absalign is a micro CSS framework you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!

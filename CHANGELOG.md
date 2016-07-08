@@ -1,3 +1,8 @@
+#v0.0.4b (2016/07/08)
+##Fixes
+- Fixed broken absalign logo in README.md (damn...)
+
+
 #v0.0.4 (2016/07/08)
 ##Maintenance
 - Set two folders for the demo, on a Bower way: ``src`` and ``dist``, as for main package (why not, mmmh ?)

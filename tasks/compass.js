@@ -1,4 +1,13 @@
-// Compiling SCSS to CSS
+/**
+ * Compile Compass to CSS.
+ *
+ * @link https://github.com/gruntjs/grunt-contrib-compass
+ * -----------------------------------------------------------------------------
+ *
+ * Configured to compile the SCSS files from the src folder to
+ * dist/absalign.css.
+ *
+ */
 
 module.exports =
 {

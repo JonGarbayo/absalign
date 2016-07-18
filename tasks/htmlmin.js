@@ -1,4 +1,12 @@
-// Minifying HTML files
+/**
+ * Minify HTML.
+ *
+ * @link https://github.com/gruntjs/grunt-contrib-htmlmin
+ * -----------------------------------------------------------------------------
+ *
+ * Configured to minify the demo HTML file.
+ *
+ */
 
 module.exports =
 {

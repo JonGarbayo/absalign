@@ -1,4 +1,12 @@
-// Minifying JS file
+/**
+ * Minify files with UglifyJS.
+ *
+ * @link https://github.com/gruntjs/grunt-contrib-uglify
+ * -----------------------------------------------------------------------------
+ *
+ * Configured to minify absalign.js and the demo JavaScript file.
+ *
+ */
 
 module.exports =
 {

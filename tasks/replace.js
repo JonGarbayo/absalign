@@ -1,4 +1,15 @@
-// Adding some package info, like version or author, to header comments and demo
+/**
+ * Replace text patterns with applause.
+ *
+ * @link https://github.com/outaTiME/grunt-replace
+ * -----------------------------------------------------------------------------
+ *
+ * Configured to add some package info, like version or author, to header
+ * comments of files in dist folder and in demo HTML file. Thanks to this, a
+ * version change in the package.json is reflected everywhere it needs at each
+ * build.
+ *
+ */
 
 module.exports =
 {
@@ -17,8 +28,8 @@ module.exports =
         },
         files:
         {
-            'dist/absalign.css': ['dist/absalign.css'],
-            'dist/absalign.js': ['src/absalign.js']
+            'dist/absalign.css': 'dist/absalign.css',
+            'dist/absalign.js': 'src/absalign.js'
         }
     },
     demo:

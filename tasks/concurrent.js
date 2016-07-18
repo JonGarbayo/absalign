@@ -1,4 +1,12 @@
-// Executing both minification operations at the same time
+/**
+ * Run grunt tasks concurrently.
+ *
+ * @link https://github.com/sindresorhus/grunt-concurrent
+ * -----------------------------------------------------------------------------
+ *
+ * Configured to execute minification operations at the same time.
+ *
+ */
 
 module.exports =
 {

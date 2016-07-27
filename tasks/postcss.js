@@ -25,9 +25,6 @@ module.exports =
     },
     demo:
     {
-        files:
-        {
-            'demo/dist/demo.min.css': 'demo/src/demo.css'
-        }
+        src: 'demo/.tmp/css/app.css'
     }
 };

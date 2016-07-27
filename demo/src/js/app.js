@@ -30,11 +30,6 @@
 			pseudo_element_controls.$select_suffix.getSelectedValue() + '-' +
 			pseudo_element_controls.$select_pseudo.getSelectedValue());
 		}
-
-		$(window).on('resize', function ()
-		{
-			$demo_block_container.height($demo_block_container.width() + 'px');
-		}).trigger('resize');
 	});
 
 	$.fn.extend(

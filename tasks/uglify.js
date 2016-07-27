@@ -24,9 +24,10 @@ module.exports =
     },
     demo:
     {
-        files:
-        {
-            'demo/dist/demo.min.js': 'demo/src/demo.js'
-        }
+        expand: true,
+        cwd: 'demo/.tmp/js/output/',
+        src: ['*.js', '!*.min.*'],
+        dest: 'demo/dist/js',
+        ext: '.min.js'
     }
 };

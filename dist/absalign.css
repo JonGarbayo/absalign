@@ -4,9 +4,13 @@
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
  */
+
 /* -------------------------------------------------------------------------- */
+
 /* ----------------------------- General classes ---------------------------- */
+
 /* -------------------------------------------------------------------------- */
+
 .absalign-container
 {
     position: relative !important;
@@ -111,8 +115,11 @@
 }
 
 /* -------------------------------------------------------------------------- */
+
 /* ---------------------------------- Left ---------------------------------- */
+
 /* -------------------------------------------------------------------------- */
+
 .abs-left-top,
 .abs-left-top-before:before,
 .abs-left-top-after:after,
@@ -140,9 +147,9 @@
          -o-transform: translateY(-50%) !important;
             transform: translateY(-50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-left-bottom,
@@ -161,14 +168,17 @@
          -o-transform: translate(0, -100%) !important;
             transform: translate(0, -100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 /* -------------------------------------------------------------------------- */
+
 /* --------------------------------- Center --------------------------------- */
+
 /* -------------------------------------------------------------------------- */
+
 .abs-center-top,
 .abs-center-top-before:before,
 .abs-center-top-after:after,
@@ -185,9 +195,9 @@
          -o-transform: translateX(-50%) !important;
             transform: translateX(-50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-center-middle,
@@ -206,9 +216,9 @@
          -o-transform: translate(-50%, -50%) !important;
             transform: translate(-50%, -50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-center-bottom,
@@ -227,14 +237,17 @@
          -o-transform: translate(-50%, -100%) !important;
             transform: translate(-50%, -100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 /* -------------------------------------------------------------------------- */
+
 /* ---------------------------------- Right --------------------------------- */
+
 /* -------------------------------------------------------------------------- */
+
 .abs-right-top,
 .abs-right-top-before:before,
 .abs-right-top-after:after,
@@ -251,9 +264,9 @@
          -o-transform: translateX(-100%) !important;
             transform: translateX(-100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-right-middle,
@@ -272,9 +285,9 @@
          -o-transform: translate(-100%, -50%) !important;
             transform: translate(-100%, -50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-right-bottom,
@@ -293,14 +306,17 @@
          -o-transform: translate(-100%, -100%) !important;
             transform: translate(-100%, -100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 /* -------------------------------------------------------------------------- */
+
 /* -------------------------------- Utilities ------------------------------- */
+
 /* -------------------------------------------------------------------------- */
+
 .abs-left,
 .abs-left-before:before,
 .abs-left-after:after,
@@ -308,7 +324,7 @@
 .fix-left-before:before,
 .fix-left-after:after
 {
-    left: 0;
+    left: 0 !important;
 }
 
 .abs-center,
@@ -326,9 +342,9 @@
          -o-transform: translateX(-50%) !important;
             transform: translateX(-50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-right,
@@ -346,9 +362,9 @@
          -o-transform: translateX(-100%) !important;
             transform: translateX(-100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-top,
@@ -358,7 +374,7 @@
 .fix-top-before:before,
 .fix-top-after:after
 {
-    top: 0;
+    top: 0 !important;
 }
 
 .abs-middle,
@@ -376,9 +392,9 @@
          -o-transform: translateY(-50%) !important;
             transform: translateY(-50%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }
 
 .abs-bottom,
@@ -396,7 +412,7 @@
          -o-transform: translateY(-100%) !important;
             transform: translateY(-100%) !important;
 
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
 }

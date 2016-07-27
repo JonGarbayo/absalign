@@ -14,17 +14,17 @@
 
 .absalign-container
 {
-    position: relative !important;
+    position: relative;
 }
 
 #{$abs-classes}
 {
-    position: absolute !important;
+    position: absolute;
 }
 
 #{$fix-classes}
 {
-    position: fixed !important;
+    position: fixed;
 }
 
 

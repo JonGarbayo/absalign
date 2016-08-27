@@ -9,6 +9,13 @@
  * version change in the package.json is reflected everywhere it needs at each
  * build.
  *
+ * # dist:
+ *   Completes the header comments in absalign.js and absalign.css in [dist]
+ *   with package name, version, author, repo URL and licence URL.
+ *
+ * # demo:
+ *   Adds absalign package version number to the demo HTML file, in [demo/.tmp].
+ *
  */
 
 module.exports =
@@ -44,7 +51,7 @@ module.exports =
         },
         files:
         {
-            'demo/dist/demo.min.html': 'demo/dist/demo.min.html'
+            'demo/.tmp/demo.html': 'demo/.tmp/demo.html'
         }
     }
 };

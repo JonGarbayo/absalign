@@ -4,8 +4,7 @@
  * @link https://github.com/gruntjs/grunt-contrib-compass
  * -----------------------------------------------------------------------------
  *
- * Configured to compile the SCSS files from the src folder to
- * dist/absalign.css.
+ * Configured to compile the SCSS files from [src] to [dist], as absalign.css.
  *
  */
 

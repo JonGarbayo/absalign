@@ -4,7 +4,14 @@
  * @link https://github.com/gruntjs/grunt-contrib-uglify
  * -----------------------------------------------------------------------------
  *
- * Configured to minify absalign.js and the demo JavaScript file.
+ * Configured to minify absalign.js and the demo JS files.
+ *
+ * # dist:
+ *   Minifies absalign.js in [dist] to a new .min file.
+ *
+ * # demo:
+ *   Minifies all non minified demo JS files in [demo/.tmp/js] to their [output]
+ *   folder, as new .min files.
  *
  */
 
@@ -12,7 +19,7 @@ module.exports =
 {
     options:
     {
-    // Preserve the header comments (which begins by /**!)
+    // Preserve the header comments (which start with /**!)
         preserveComments: 'some'
     },
     dist:
@@ -25,9 +32,9 @@ module.exports =
     demo:
     {
         expand: true,
-        cwd: 'demo/.tmp/js/output/',
+        cwd: 'demo/.tmp/js/',
         src: ['*.js', '!*.min.*'],
-        dest: 'demo/dist/js',
+        dest: 'demo/.tmp/js/output/',
         ext: '.min.js'
     }
 };

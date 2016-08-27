@@ -4,9 +4,14 @@
  * @link https://github.com/nDmitry/grunt-postcss
  * -----------------------------------------------------------------------------
  *
- * Configured to autoprefix absalign.css and demo styelsheet, instead of
- * prefixing by hand in source.
+ * Configured to autoprefix absalign.css and the app.css demo styelsheet,
+ * instead of prefixing by hand in source.
  *
+ * # dist:
+ *   Autoprefixes absalign.css in [dist].
+ *
+ * # demo:
+ *   Autoprefixes app.css in [demo/.tmp/css].
  */
 
 module.exports =

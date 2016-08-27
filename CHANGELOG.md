@@ -1,3 +1,11 @@
+#v0.0.5 (2016/08/28)
+##Maintenance
+- Split grunt tasks in multiple files (one by task), and added generous header comments
+- Refactored the grunt tasks: a little bit more operations, but more logical process
+- Refactored the file structure of the demo (with some file concatenation)
+- Added grunt-css-important, to automatically add ``!important`` label to every property of the package CSS file
+
+
 #v0.0.4b (2016/07/08)
 ##Fixes
 - Fixed broken absalign logo in README.md (damn...)

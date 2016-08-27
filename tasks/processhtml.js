@@ -5,8 +5,8 @@
  * @link https://github.com/dciccale/grunt-processhtml
  * -----------------------------------------------------------------------------
  *
- * Configured to replace scripts and links tags src with their minified
- * equivalent in the demo HTML file.
+ * Configured to replace <script>s and <link>s tags src with their minified
+ * equivalent in the demo HTML file, in [demo/.tmp].
  *
  */
 
@@ -16,7 +16,7 @@ module.exports =
     {
         files:
         {
-            'demo/dist/demo.min.html': 'demo/src/demo.html'
+            'demo/.tmp/demo.html': 'demo/.tmp/demo.html'
         }
     }
 };

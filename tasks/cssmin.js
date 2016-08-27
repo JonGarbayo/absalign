@@ -6,6 +6,13 @@
  *
  * Configured to minify absalign.css and the demo stylesheet.
  *
+ * # dist:
+ *   Minifies absalign.css from [dist] to absalign.min.css, in the same folder.
+ *
+ * # demo:
+ *   Minifies app.css from [demo/.tmp/css] to its [output] folder, as
+ *   app.min.css.
+ *
  */
 
 module.exports =

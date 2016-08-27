@@ -16,6 +16,14 @@ module.exports = function(grunt)
         },
     }));
 
+// Registering dynamic and static subtasks in one task
+    grunt.registerTask('copy:demo_tmp',
+    [
+        'copy:demo_tmp_dynamic',
+        'copy:demo_tmp_static'
+    ]);
+
+// buildAll: build package and demo
     grunt.registerTask('buildAll',
     [
         'clean',
@@ -23,19 +31,19 @@ module.exports = function(grunt)
         'css_important:dist',
         'postcss:dist',
         'csscomb:dist',
+        'replace:dist',
         'concurrent:minPackage',
-        'copy:demo_tmp_dynamic',
-        'copy:demo_tmp_static',
+        'copy:demo_tmp',
         'concat:demo',
-        'copy:demo_output_dynamic',
-        'copy:demo_output_static',
+        'copy:demo_output',
         'postcss:demo',
         'processhtml',
-        'replace',
+        'replace:demo',
         'concurrent:minDemo',
         'copy:demo_dist'
     ]);
 
+// buildPackage: build only package
     grunt.registerTask('buildPackage',
     [
         'clean:dist',
@@ -47,14 +55,13 @@ module.exports = function(grunt)
 		'concurrent:minPackage'
     ]);
 
+// buildDemo: build only demo
     grunt.registerTask('buildDemo',
     [
         'clean:demo',
-		'copy:demo_tmp_dynamic',
-		'copy:demo_tmp_static',
+        'copy:demo_tmp',
 		'concat:demo',
-		'copy:demo_output_dynamic',
-		'copy:demo_output_static',
+		'copy:demo_output',
 		'postcss:demo',
 		'processhtml:demo',
 		'replace:demo',

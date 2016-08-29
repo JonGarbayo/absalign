@@ -21,10 +21,6 @@
  *   Copies minified package dist files from [dist] to their respective folder
  *   in [demo/.tmp].
  *
- * # demo_output:
- *   Copies minified CSS package file from [demo/.tmp/css] to the corresponding
- *   [output], renaming to vendor.min.css, as it is the only CSS vendor file.
- *
  * # demo_dist:
  *   Copies minified CSS, JS and HTML demo files from their respective [output]
  *   folder to [dist], also in their respective folder.
@@ -51,11 +47,6 @@ module.exports =
             src: 'dist/absalign.min.js',
             dest: 'demo/.tmp/js/absalign.min.js'
         }]
-    },
-    demo_output:
-    {
-        src: 'demo/.tmp/css/absalign.min.css',
-        dest: 'demo/.tmp/css/output/vendor.min.css'
     },
     demo_dist:
     {

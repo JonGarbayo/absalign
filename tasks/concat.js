@@ -4,7 +4,8 @@
  * @link https://github.com/gruntjs/grunt-contrib-concat
  * -----------------------------------------------------------------------------
  *
- * Configured to concatenate CSS and JS vendor files of the demo.
+ * Configured to concatenate CSS and JS vendor files of the demo, and demo
+ * app JS files.
  *
  */
 
@@ -24,6 +25,10 @@ module.exports =
         {
             src: 'demo/.tmp/js/*.min.js',
             dest: 'demo/.tmp/js/output/vendor.min.js'
+        },
+        {
+            src: ['demo/.tmp/js/demo.js', 'demo/.tmp/js/main.js'],
+            dest: 'demo/.tmp/js/app.js'
         }]
     },
 };

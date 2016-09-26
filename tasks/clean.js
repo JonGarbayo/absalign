@@ -14,6 +14,9 @@
  *   Deletes all files in the [demo] subfolders, except in [src]. Folders will
  *   be kept.
  *
+ * # demo_concat:
+ *   Deletes concatenated source files in [demo/.tmp].
+ *
  */
 
 module.exports =
@@ -24,5 +27,9 @@ module.exports =
         dot: true,              // Includes dotted folder names
         filter: 'isFile',
         src: 'demo/!(src)/**'
+    },
+    demo_concat:
+    {
+        src: ['demo/.tmp/js/demo.js', 'demo/.tmp/js/main.js'],
     }
 };

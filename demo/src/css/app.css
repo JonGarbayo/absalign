@@ -67,7 +67,7 @@ select
 
 .c-header__version
 {
-    margin-left: 0;
+    margin-right: 0;
 
     letter-spacing: 0;
     text-transform: none;

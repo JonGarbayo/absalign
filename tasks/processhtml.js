@@ -16,7 +16,7 @@ module.exports =
     {
         files:
         {
-            'demo/.tmp/demo.html': 'demo/.tmp/demo.html'
+            'demo/.tmp/index.html': 'demo/.tmp/index.html'
         }
     }
 };

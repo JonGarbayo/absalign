@@ -1,9 +1,18 @@
+/* Generic */
+/* -------------------------------------------------------------------------- */
+
+*
+{
+    box-sizing: border-box;
+}
+
+
 /* Elements */
 /* -------------------------------------------------------------------------- */
 
 body
 {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
     background-color: #f5f5f5;
 }
@@ -113,9 +122,134 @@ select
     transition-property: top, left, transform;
 }
 
+.c-app-controllers__controller-block
+{
+    float: left;
+    clear: both;
+
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.c-controller-block__label
+{
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.c-controller-block__selector:first-of-type
+{
+    padding-left: 0;
+}
+
+.c-controller-block__selector:last-of-type
+{
+    padding-right: 0;
+}
+
+.c-controller-block__selector--subject
+{
+    width: 50%;
+}
+
+.c-controller-block__selector--pseudo
+{
+    width: 33.3333333%;
+}
+
 
 /* Trumps */
 /* -------------------------------------------------------------------------- */
+
+.selectize-dropdown,
+.selectize-dropdown .active,
+.selectize-input,
+.selectize-input input
+{
+    color: black;
+}
+
+.selectize-control
+{
+    float: left;
+
+    padding: 0 5px;
+}
+
+.selectize-input,
+.selectize-input.dropdown-active
+{
+    border-radius: 0;
+}
+
+.selectize-input,
+.selectize-input.focus,
+.selectize-dropdown
+{
+    box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 5px rgba(0,0,0,.23);
+}
+
+.selectize-input
+{
+    border: none;
+    border-left: 2px solid #00adef;
+}
+
+.selectize-dropdown
+{
+    width: calc(100% - 10px) !important;
+
+    border: none;
+    border-radius: 0;
+}
+
+.selectize-control:first-of-type .selectize-dropdown,
+.selectize-control:last-of-type .selectize-dropdown
+{
+    width: calc(100% - 5px) !important;
+}
+
+.selectize-dropdown .active
+{
+    background-color: #eee;
+}
+
+.selectize-dropdown [data-selectable]
+{
+    border-left: 2px solid white;
+}
+
+.selectize-dropdown .active
+{
+    border-color: #00adef;
+}
+
+.selectize-control.single .selectize-input:after
+{
+    transition: transform ease 300ms;
+}
+
+.selectize-control.single .selectize-input.dropdown-active:after
+{
+    margin-top: -3px;
+
+    transform: rotateZ(-180deg);
+
+    border-width: 5px 5px 0 5px;
+    border-color: #808080 transparent transparent transparent;
+}
+
+.selectize-control.single .selectize-input.input-active,
+.selectize-control.single .selectize-input.input-active input
+{
+    cursor: pointer;
+}
+
+.u-clearfix
+{
+    clear: both;
+}
 
 .u-container
 {

@@ -4,8 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>Absalign micro framework demo</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
 		<!-- build:css css/vendor.min.css -->
 		<link rel="stylesheet" href="css/normalize.min.css"/>
+		<link rel="stylesheet" href="css/selectize.min.css"/>
 		<link rel="stylesheet" href="../../dist/absalign.min.css"/>
 		<!-- /build -->
 		<!-- build:css css/app.min.css -->
@@ -20,23 +22,18 @@
 		</header>
 
 		<div class="c-app u-container">
-			<div class="c-app__show-zone js-show-zone absalign-container">
-				<div class="c-app-show-zone__subject js-show-subject abs-center-middle abs-center-middle-before"
-					 data-base-class="c-app-show-zone__subject js-show-subject"></div>
-			</div>
-
 			<div class="c-app__controllers">
 				<h2 class="c-app-controllers__title">Controllers</h2>
 
 				<div class="c-app-controllers__controller-block">
-					<label>Block :</label>
+					<label class="c-controller-block__label">Block :</label>
 
-					<select class="c-controller-block__selector js-subject-class-prefix-selector">
+					<select class="c-controller-block__selector c-controller-block__selector--subject js-subject-class-prefix-selector">
 						<option value="abs" selected>abs</option>
 						<option value="fix">fix</option>
 					</select>
 
-					<select class="c-controller-block__selector js-subject-class-suffix-selector">
+					<select class="c-controller-block__selector c-controller-block__selector--subject js-subject-class-suffix-selector">
 						<option value="left-top">left-top</option>
 						<option value="left-middle">left-middle</option>
 						<option value="left-bottom">left-bottom</option>
@@ -51,14 +48,14 @@
 				</div>
 
 				<div class="c-app-controllers__controller-block">
-					<label>Pseudo-element :</label>
+					<label class="c-controller-block__label">Pseudo-element :</label>
 
-					<select class="c-controller-block__selector js-pseudo-subject-class-prefix-selector">
+					<select class="c-controller-block__selector c-controller-block__selector--pseudo js-pseudo-subject-class-prefix-selector">
 						<option value="abs" selected>abs</option>
 						<option value="fix">fix</option>
 					</select>
 
-					<select class="c-controller-block__selector js-pseudo-subject-class-suffix-selector">
+					<select class="c-controller-block__selector c-controller-block__selector--pseudo js-pseudo-subject-class-suffix-selector">
 						<option value="left-top">left-top</option>
 						<option value="left-middle">left-middle</option>
 						<option value="left-bottom">left-bottom</option>
@@ -70,17 +67,25 @@
 						<option value="right-bottom">right-bottom</option>
 					</select>
 
-					<select class="c-controller-block__selector js-pseudo-subject-pseudo-class-selector">
+					<select class="c-controller-block__selector c-controller-block__selector--pseudo js-pseudo-subject-pseudo-class-selector">
 						<option value="before" selected>before</option>
 						<option value="after">after</option>
 					</select>
 
 				</div>
 			</div>
+
+			<div class="u-clearfix"></div>
+
+			<div class="c-app__show-zone js-show-zone absalign-container">
+				<div class="c-app-show-zone__subject js-show-subject abs-center-middle abs-center-middle-before"
+					 data-base-class="c-app-show-zone__subject js-show-subject"></div>
+			</div>
 		</div>
 
 		<!-- build:js js/vendor.min.js -->
 		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/selectize.min.js"></script>
 		<script type="text/javascript" src="../../dist/absalign.min.js"></script>
 		<!-- /build -->
 		<!-- build:js js/app.min.js -->

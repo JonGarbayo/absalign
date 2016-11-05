@@ -2,8 +2,7 @@
 {
 	$(document).ready(function ()
 	{
-		var demo = new Demo();
-		demo.init();
+		var demo = new Demo().init();
 	});
 
 	$.fn.extend(

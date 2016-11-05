@@ -8,5 +8,13 @@
 		{
 			$showZone.height($showZone.width() + 'px');
 		}).trigger('resize');
+
+		$('select').selectize(
+		{
+			onInitialize: function ()
+			{
+				this.$control_input.attr('readonly', true);
+			}
+		});
 	});
 })(jQuery);

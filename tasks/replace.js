@@ -15,6 +15,8 @@
  *
  * # demo:
  *   Adds absalign package version number to the demo HTML file, in [demo/.tmp].
+ *   In the same file, also changes the absalign logo path to get it from
+ *   package root.
  *
  */
 
@@ -47,7 +49,13 @@ module.exports =
             {
             // Replaces "@@key" with "value"
                 'version': "<%= pkg.version %>"
-            }
+            },
+
+			patterns:
+			[{
+			    match: /\.\.\/\.\.\/absalign-logo\.svg/g,
+			    replacement: 'absalign-logo.svg'
+			}]
         },
         files:
         {

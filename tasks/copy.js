@@ -22,8 +22,9 @@
  *   in [demo/.tmp].
  *
  * # demo_dist:
- *   Copies minified CSS, JS and HTML demo files from their respective [output]
- *   folder to [dist], also in their respective folder.
+ *   Copies minified CSSa and JS demo files from their respective [output]
+ *   folder to [dist], also in their respective folder. The HTML demo file is
+ *   copied to the package root, to be accessed via GitHub pages.
  *
  */
 
@@ -66,8 +67,8 @@ module.exports =
         {
             expand: true,
             cwd: 'demo/.tmp/output/',
-            src: ['*.min.html'],
-            dest: 'demo/dist/'
+            src: ['*.html'],
+            dest: './'
         }]
     }
 };

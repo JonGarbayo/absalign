@@ -1,3 +1,25 @@
+#v0.0.6 (2016/11/06)
+#Improvements
+- Demo is now online and accessible from README with just one click!
+
+#Maintenance
+- Refactored demo code respecting ITCSS principles, BEM notation and the CSS namespaces from CSS wizardry [http://csswizardry.com](http://csswizardry.com "CSS Wizardry, Harry Roberts website"). Thanks Harry Roberts for your great articles!
+- Transformed the main behavior of the demo in JS Object style.
+
+#Fixes
+- Fixed titles alignment in demo
+
+#Demo
+- Updated logo in demo from PNG to SVG
+- Added normalize.css to the demo
+- Renamed HTML demo file to index.html
+- Moved the dist HTML demo file to the package root, to be accessed *via* GitHub pages
+- Used selectize.js to style select controls in demo
+- Put the demo controllers above the demo show zone, instead of below, to prevent scroll issues on select controls opening
+- Some UI fixes in demo
+- Change font in demo from Arial to Open Sans
+
+
 #v0.0.5 (2016/08/28)
 ##Maintenance
 - Split grunt tasks in multiple files (one by task), and added generous header comments

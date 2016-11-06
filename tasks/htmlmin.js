@@ -20,7 +20,7 @@ module.exports =
         },
         files:
         {
-            'demo/.tmp/output/index.min.html': 'demo/.tmp/index.html'
+            'demo/.tmp/output/index.html': 'demo/.tmp/index.html'
         }
     }
 };

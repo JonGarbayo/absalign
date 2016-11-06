@@ -5,6 +5,8 @@
 #What?
 Absalign is a micro CSS framework you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!
 
+Check the demo **[here](http://jongarbayo.github.io/absalign "absalign demo page.")**!
+
 #Why?
 Web dev, we all know the pain of vertically centering elements... It must be cross-browser, responsive, easy to maintain, well coded, without using JavaScript, etc.
 The great ``flex`` implementation is coming cross-browser, we have to be patient. But we have to wait for it using other techniques.

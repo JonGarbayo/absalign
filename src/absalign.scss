@@ -27,6 +27,14 @@
     position: fixed;
 }
 
+#{$abs-classes},
+#{$fix-classes}
+{
+	&:fullscreen
+	{
+		transform: none;
+	}
+}
 
 
 /* -------------------------------------------------------------------------- */

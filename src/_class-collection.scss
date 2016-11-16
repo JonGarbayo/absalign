@@ -27,6 +27,8 @@ $pseudos: (
 $abs-classes: ();
 $fix-classes: ();
 
+$transformed-classes: ();
+
 // Lists by axes
 $left-top-classes: ();
 $left-middle-classes: ();
@@ -68,6 +70,10 @@ $current-class: '';
                 {
                     $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
                 }
+				@else if $x-axis != 'left' or $y-axis != 'top'
+				{
+					$transformed-classes: append($transformed-classes, $current-class, comma);
+				}
 
                 @if $position == 'abs'
                 {
@@ -144,6 +150,10 @@ $current-class: '';
             {
                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
             }
+			@else if $x-axis != 'left'
+			{
+				$transformed-classes: append($transformed-classes, $current-class, comma);
+			}
 
             @if $position == 'abs'
             {
@@ -179,6 +189,10 @@ $current-class: '';
             {
                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
             }
+			@else if $y-axis != 'top'
+			{
+				$transformed-classes: append($transformed-classes, $current-class, comma);
+			}
 
             @if $position == 'abs'
             {

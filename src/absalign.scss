@@ -29,10 +29,19 @@
 
 #{$transformed-classes}
 {
-	&:fullscreen
-	{
-		transform: none;
-	}
+    &:-webkit-full-screen
+    {
+        /* autoprefixer: off */
+        -webkit-transform: none;
+                transform: none;
+    }
+
+    &:fullscreen
+    {
+        /* autoprefixer: off */
+        -webkit-transform: none;
+                transform: none;
+    }
 }
 
 

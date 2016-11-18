@@ -4,11 +4,8 @@
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
  */
-
 /* -------------------------------------------------------------------------- */
-
 /* ----------------------------- General classes ---------------------------- */
-
 /* -------------------------------------------------------------------------- */
 
 .absalign-container
@@ -139,66 +136,9 @@
 .fix-middle:-webkit-full-screen,
 .fix-bottom:-webkit-full-screen
 {
+    
     -webkit-transform: none !important;
             transform: none !important;
-}
-
-.abs-left-middle:-moz-full-screen,
-.abs-left-bottom:-moz-full-screen,
-.abs-center-top:-moz-full-screen,
-.abs-center-middle:-moz-full-screen,
-.abs-center-bottom:-moz-full-screen,
-.abs-right-top:-moz-full-screen,
-.abs-right-middle:-moz-full-screen,
-.abs-right-bottom:-moz-full-screen,
-.fix-left-middle:-moz-full-screen,
-.fix-left-bottom:-moz-full-screen,
-.fix-center-top:-moz-full-screen,
-.fix-center-middle:-moz-full-screen,
-.fix-center-bottom:-moz-full-screen,
-.fix-right-top:-moz-full-screen,
-.fix-right-middle:-moz-full-screen,
-.fix-right-bottom:-moz-full-screen,
-.abs-center:-moz-full-screen,
-.abs-right:-moz-full-screen,
-.abs-middle:-moz-full-screen,
-.abs-bottom:-moz-full-screen,
-.fix-center:-moz-full-screen,
-.fix-right:-moz-full-screen,
-.fix-middle:-moz-full-screen,
-.fix-bottom:-moz-full-screen
-{
-    -moz-transform: none !important;
-         transform: none !important;
-}
-
-.abs-left-middle:-ms-fullscreen,
-.abs-left-bottom:-ms-fullscreen,
-.abs-center-top:-ms-fullscreen,
-.abs-center-middle:-ms-fullscreen,
-.abs-center-bottom:-ms-fullscreen,
-.abs-right-top:-ms-fullscreen,
-.abs-right-middle:-ms-fullscreen,
-.abs-right-bottom:-ms-fullscreen,
-.fix-left-middle:-ms-fullscreen,
-.fix-left-bottom:-ms-fullscreen,
-.fix-center-top:-ms-fullscreen,
-.fix-center-middle:-ms-fullscreen,
-.fix-center-bottom:-ms-fullscreen,
-.fix-right-top:-ms-fullscreen,
-.fix-right-middle:-ms-fullscreen,
-.fix-right-bottom:-ms-fullscreen,
-.abs-center:-ms-fullscreen,
-.abs-right:-ms-fullscreen,
-.abs-middle:-ms-fullscreen,
-.abs-bottom:-ms-fullscreen,
-.fix-center:-ms-fullscreen,
-.fix-right:-ms-fullscreen,
-.fix-middle:-ms-fullscreen,
-.fix-bottom:-ms-fullscreen
-{
-    -ms-transform: none !important;
-        transform: none !important;
 }
 
 .abs-left-middle:fullscreen,
@@ -226,17 +166,13 @@
 .fix-middle:fullscreen,
 .fix-bottom:fullscreen
 {
+    
     -webkit-transform: none !important;
-       -moz-transform: none !important;
-        -ms-transform: none !important;
-         -o-transform: none !important;
             transform: none !important;
 }
 
 /* -------------------------------------------------------------------------- */
-
 /* ---------------------------------- Left ---------------------------------- */
-
 /* -------------------------------------------------------------------------- */
 
 .abs-left-top,
@@ -293,9 +229,7 @@
 }
 
 /* -------------------------------------------------------------------------- */
-
 /* --------------------------------- Center --------------------------------- */
-
 /* -------------------------------------------------------------------------- */
 
 .abs-center-top,
@@ -362,9 +296,7 @@
 }
 
 /* -------------------------------------------------------------------------- */
-
 /* ---------------------------------- Right --------------------------------- */
-
 /* -------------------------------------------------------------------------- */
 
 .abs-right-top,
@@ -431,9 +363,7 @@
 }
 
 /* -------------------------------------------------------------------------- */
-
 /* -------------------------------- Utilities ------------------------------- */
-
 /* -------------------------------------------------------------------------- */
 
 .abs-left,

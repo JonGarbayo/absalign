@@ -12,6 +12,7 @@
  * # dist:
  *   Completes the header comments in absalign.js and absalign.css in [dist]
  *   with package name, version, author, repo URL and licence URL.
+ *   Also cleans unwanted compass traces.
  *
  * # demo:
  *   Adds absalign package version number to the demo HTML file, in [demo/.tmp].
@@ -33,7 +34,17 @@ module.exports =
                 'version': "<%= pkg.version %>",
                 'author': "<%= pkg.author %>",
                 'homepage': "<%= pkg.homepage %>"
-            }
+            },
+
+			patterns:
+			[{
+				match: /\/\* autoprefixer: off \*\//g,
+				replacement: ''
+			},
+			{
+				match: /\*\/\n\n\/\*/g,
+				replacement: '*/\n/*'
+			}]
         },
         files:
         {

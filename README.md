@@ -45,21 +45,24 @@ Separate these three parts by an hyphen ``-`` and you've got your class :)
 ###Pseudo-elements (optional)
 Also, if you want to apply the effect to a pseudo-element, add ``before`` or ``after`` at the end of the class name.
 
+###Single axis classes
+If you need absalign for only one axis (like the middle one, mmmh?), a second one is optional.
+
 ###Some examples
 ```html
-<div class="abs-center-middle"></div>
+<div class="abs-center-middle">Absolute with two axes</div>
 ```
 
 ```html
-<div class="abs-left-bottom"></div>
+<div class="abs-left">Absolute with one axis</div>
 ```
 
 ```html
-<div class="fix-right-top"></div>
+<div class="fix-right-top">Fixed with two axes</div>
 ```
 
 ```html
-<div class="fix-center-middle-before"></div>
+<div class="fix-center-middle-before">Before pseudo-element fixed with two axes</div>
 ```
 
 ###Container
@@ -68,7 +71,7 @@ There is also an "E.T." class, ``absalign-container``, which give a ``position: 
 Like this:
 ```html
 <div class="absalign-container">
-	<h1 class="abs-center-middle">absalign</h1>
+	<h1 class="abs-center-middle">absalign is in da place!</h1>
 </div>
 ```
 

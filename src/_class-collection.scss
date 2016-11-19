@@ -64,72 +64,74 @@ $current-class: '';
         {
             @each $pseudo in $pseudos
             {
-                $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
-
-                @if $pseudo != ''
+                @if $position != 'fix' or $pseudo == ''
                 {
-                    $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                }
-				@else if $x-axis != 'left' or $y-axis != 'top'
-				{
-					$transformed-classes: append($transformed-classes, $current-class, comma);
-				}
+                    $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
 
-                @if $position == 'abs'
-                {
-                    $abs-classes: append($abs-classes, $current-class, comma);
-                }
-                @else if $position == 'fix'
-                {
-                    $fix-classes: append($fix-classes, $current-class, comma);
-                }
+                    @if $pseudo != ''
+                    {
+                        $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                    }
+                    @else if $x-axis != 'left' or $y-axis != 'top'
+                    {
+                        $transformed-classes: append($transformed-classes, $current-class, comma);
+                    }
 
+                    @if $position == 'abs'
+                    {
+                        $abs-classes: append($abs-classes, $current-class, comma);
+                    }
+                    @else if $position == 'fix'
+                    {
+                        $fix-classes: append($fix-classes, $current-class, comma);
+                    }
 
-                @if $x-axis == 'left'
-                {
-                    @if $y-axis == 'top'
+                    @if $x-axis == 'left'
                     {
-                        $left-top-classes: append($left-top-classes, $current-class, comma);
+                        @if $y-axis == 'top'
+                        {
+                            $left-top-classes: append($left-top-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $left-middle-classes: append($left-middle-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
+                        }
                     }
-                    @if $y-axis == 'middle'
-                    {
-                        $left-middle-classes: append($left-middle-classes, $current-class, comma);
-                    }
-                    @if $y-axis == 'bottom'
-                    {
-                        $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
-                    }
-                }
 
-                @if $x-axis == 'center'
-                {
-                    @if $y-axis == 'top'
+                    @if $x-axis == 'center'
                     {
-                        $center-top-classes: append($center-top-classes, $current-class, comma);
+                        @if $y-axis == 'top'
+                        {
+                            $center-top-classes: append($center-top-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $center-middle-classes: append($center-middle-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
+                        }
                     }
-                    @if $y-axis == 'middle'
-                    {
-                        $center-middle-classes: append($center-middle-classes, $current-class, comma);
-                    }
-                    @if $y-axis == 'bottom'
-                    {
-                        $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
-                    }
-                }
 
-                @if $x-axis == 'right'
-                {
-                    @if $y-axis == 'top'
+                    @if $x-axis == 'right'
                     {
-                        $right-top-classes: append($right-top-classes, $current-class, comma);
-                    }
-                    @if $y-axis == 'middle'
-                    {
-                        $right-middle-classes: append($right-middle-classes, $current-class, comma);
-                    }
-                    @if $y-axis == 'bottom'
-                    {
-                        $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
+                        @if $y-axis == 'top'
+                        {
+                            $right-top-classes: append($right-top-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $right-middle-classes: append($right-middle-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
+                        }
                     }
                 }
             }
@@ -144,37 +146,40 @@ $current-class: '';
     {
         @each $pseudo in $pseudos
         {
-            $current-class: '.' + $position + '-' + $x-axis;
+            @if $position != 'fix' or $pseudo == ''
+            {
+                $current-class: '.' + $position + '-' + $x-axis;
 
-            @if $pseudo != ''
-            {
-                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-            }
-			@else if $x-axis != 'left'
-			{
-				$transformed-classes: append($transformed-classes, $current-class, comma);
-			}
+                @if $pseudo != ''
+                {
+                    $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                }
+                @else if $x-axis != 'left'
+                {
+                    $transformed-classes: append($transformed-classes, $current-class, comma);
+                }
 
-            @if $position == 'abs'
-            {
-                $abs-classes: append($abs-classes, $current-class, comma);
-            }
-            @else if $position == 'fix'
-            {
-                $fix-classes: append($fix-classes, $current-class, comma);
-            }
+                @if $position == 'abs'
+                {
+                    $abs-classes: append($abs-classes, $current-class, comma);
+                }
+                @else if $position == 'fix'
+                {
+                    $fix-classes: append($fix-classes, $current-class, comma);
+                }
 
-            @if $x-axis == 'left'
-            {
-                $left-classes: append($left-classes, $current-class, comma);
-            }
-            @if $x-axis == 'center'
-            {
-                $center-classes: append($center-classes, $current-class, comma);
-            }
-            @if $x-axis == 'right'
-            {
-                $right-classes: append($right-classes, $current-class, comma);
+                @if $x-axis == 'left'
+                {
+                    $left-classes: append($left-classes, $current-class, comma);
+                }
+                @if $x-axis == 'center'
+                {
+                    $center-classes: append($center-classes, $current-class, comma);
+                }
+                @if $x-axis == 'right'
+                {
+                    $right-classes: append($right-classes, $current-class, comma);
+                }
             }
         }
     }
@@ -183,37 +188,40 @@ $current-class: '';
     {
         @each $pseudo in $pseudos
         {
-            $current-class: '.' + $position + '-' + $y-axis;
+            @if $position != 'fix' or $pseudo == ''
+            {
+                $current-class: '.' + $position + '-' + $y-axis;
 
-            @if $pseudo != ''
-            {
-                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-            }
-			@else if $y-axis != 'top'
-			{
-				$transformed-classes: append($transformed-classes, $current-class, comma);
-			}
+                @if $pseudo != ''
+                {
+                    $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                }
+                @else if $y-axis != 'top'
+                {
+                    $transformed-classes: append($transformed-classes, $current-class, comma);
+                }
 
-            @if $position == 'abs'
-            {
-                $abs-classes: append($abs-classes, $current-class, comma);
-            }
-            @else if $position == 'fix'
-            {
-                $fix-classes: append($fix-classes, $current-class, comma);
-            }
+                @if $position == 'abs'
+                {
+                    $abs-classes: append($abs-classes, $current-class, comma);
+                }
+                @else if $position == 'fix'
+                {
+                    $fix-classes: append($fix-classes, $current-class, comma);
+                }
 
-            @if $y-axis == 'top'
-            {
-                $top-classes: append($top-classes, $current-class, comma);
-            }
-            @if $y-axis == 'middle'
-            {
-                $middle-classes: append($middle-classes, $current-class, comma);
-            }
-            @if $y-axis == 'bottom'
-            {
-                $bottom-classes: append($bottom-classes, $current-class, comma);
+                @if $y-axis == 'top'
+                {
+                    $top-classes: append($top-classes, $current-class, comma);
+                }
+                @if $y-axis == 'middle'
+                {
+                    $middle-classes: append($middle-classes, $current-class, comma);
+                }
+                @if $y-axis == 'bottom'
+                {
+                    $bottom-classes: append($bottom-classes, $current-class, comma);
+                }
             }
         }
     }

@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.7 (CSS part)
+ * absalign v0.0.8 (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -63,50 +63,20 @@
 }
 
 .fix-left-top,
-.fix-left-top-before:before,
-.fix-left-top-after:after,
 .fix-left-middle,
-.fix-left-middle-before:before,
-.fix-left-middle-after:after,
 .fix-left-bottom,
-.fix-left-bottom-before:before,
-.fix-left-bottom-after:after,
 .fix-center-top,
-.fix-center-top-before:before,
-.fix-center-top-after:after,
 .fix-center-middle,
-.fix-center-middle-before:before,
-.fix-center-middle-after:after,
 .fix-center-bottom,
-.fix-center-bottom-before:before,
-.fix-center-bottom-after:after,
 .fix-right-top,
-.fix-right-top-before:before,
-.fix-right-top-after:after,
 .fix-right-middle,
-.fix-right-middle-before:before,
-.fix-right-middle-after:after,
 .fix-right-bottom,
-.fix-right-bottom-before:before,
-.fix-right-bottom-after:after,
 .fix-left,
-.fix-left-before:before,
-.fix-left-after:after,
 .fix-center,
-.fix-center-before:before,
-.fix-center-after:after,
 .fix-right,
-.fix-right-before:before,
-.fix-right-after:after,
 .fix-top,
-.fix-top-before:before,
-.fix-top-after:after,
 .fix-middle,
-.fix-middle-before:before,
-.fix-middle-after:after,
-.fix-bottom,
-.fix-bottom-before:before,
-.fix-bottom-after:after
+.fix-bottom
 {
     position: fixed !important;
 }
@@ -178,9 +148,7 @@
 .abs-left-top,
 .abs-left-top-before:before,
 .abs-left-top-after:after,
-.fix-left-top,
-.fix-left-top-before:before,
-.fix-left-top-after:after
+.fix-left-top
 {
     top: 0 !important;
     left: 0 !important;
@@ -189,9 +157,7 @@
 .abs-left-middle,
 .abs-left-middle-before:before,
 .abs-left-middle-after:after,
-.fix-left-middle,
-.fix-left-middle-before:before,
-.fix-left-middle-after:after
+.fix-left-middle
 {
     top: 50% !important;
     left: 0 !important;
@@ -210,9 +176,7 @@
 .abs-left-bottom,
 .abs-left-bottom-before:before,
 .abs-left-bottom-after:after,
-.fix-left-bottom,
-.fix-left-bottom-before:before,
-.fix-left-bottom-after:after
+.fix-left-bottom
 {
     top: 100% !important;
     left: 0 !important;
@@ -235,9 +199,7 @@
 .abs-center-top,
 .abs-center-top-before:before,
 .abs-center-top-after:after,
-.fix-center-top,
-.fix-center-top-before:before,
-.fix-center-top-after:after
+.fix-center-top
 {
     top: 0 !important;
     left: 50% !important;
@@ -256,9 +218,7 @@
 .abs-center-middle,
 .abs-center-middle-before:before,
 .abs-center-middle-after:after,
-.fix-center-middle,
-.fix-center-middle-before:before,
-.fix-center-middle-after:after
+.fix-center-middle
 {
     top: 50% !important;
     left: 50% !important;
@@ -277,9 +237,7 @@
 .abs-center-bottom,
 .abs-center-bottom-before:before,
 .abs-center-bottom-after:after,
-.fix-center-bottom,
-.fix-center-bottom-before:before,
-.fix-center-bottom-after:after
+.fix-center-bottom
 {
     top: 100% !important;
     left: 50% !important;
@@ -302,9 +260,7 @@
 .abs-right-top,
 .abs-right-top-before:before,
 .abs-right-top-after:after,
-.fix-right-top,
-.fix-right-top-before:before,
-.fix-right-top-after:after
+.fix-right-top
 {
     top: 0 !important;
     left: 100% !important;
@@ -323,9 +279,7 @@
 .abs-right-middle,
 .abs-right-middle-before:before,
 .abs-right-middle-after:after,
-.fix-right-middle,
-.fix-right-middle-before:before,
-.fix-right-middle-after:after
+.fix-right-middle
 {
     top: 50% !important;
     left: 100% !important;
@@ -344,9 +298,7 @@
 .abs-right-bottom,
 .abs-right-bottom-before:before,
 .abs-right-bottom-after:after,
-.fix-right-bottom,
-.fix-right-bottom-before:before,
-.fix-right-bottom-after:after
+.fix-right-bottom
 {
     top: 100% !important;
     left: 100% !important;
@@ -369,9 +321,7 @@
 .abs-left,
 .abs-left-before:before,
 .abs-left-after:after,
-.fix-left,
-.fix-left-before:before,
-.fix-left-after:after
+.fix-left
 {
     left: 0 !important;
 }
@@ -379,9 +329,7 @@
 .abs-center,
 .abs-center-before:before,
 .abs-center-after:after,
-.fix-center,
-.fix-center-before:before,
-.fix-center-after:after
+.fix-center
 {
     left: 50% !important;
 
@@ -399,9 +347,7 @@
 .abs-right,
 .abs-right-before:before,
 .abs-right-after:after,
-.fix-right,
-.fix-right-before:before,
-.fix-right-after:after
+.fix-right
 {
     left: 100% !important;
 
@@ -419,9 +365,7 @@
 .abs-top,
 .abs-top-before:before,
 .abs-top-after:after,
-.fix-top,
-.fix-top-before:before,
-.fix-top-after:after
+.fix-top
 {
     top: 0 !important;
 }
@@ -429,9 +373,7 @@
 .abs-middle,
 .abs-middle-before:before,
 .abs-middle-after:after,
-.fix-middle,
-.fix-middle-before:before,
-.fix-middle-after:after
+.fix-middle
 {
     top: 50% !important;
 
@@ -449,9 +391,7 @@
 .abs-bottom,
 .abs-bottom-before:before,
 .abs-bottom-after:after,
-.fix-bottom,
-.fix-bottom-before:before,
-.fix-bottom-after:after
+.fix-bottom
 {
     top: 100% !important;
 

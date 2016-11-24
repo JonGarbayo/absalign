@@ -86,15 +86,18 @@ $current-class: '';
                         {
                             $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
 
-                            @if $strict
-                            {
-                                $current-class: $current-class + '-strict';
-                            }
+							@if $strict or $pseudo
+							{
+								@if $strict
+								{
+									$current-class: $current-class + '-strict';
+								}
 
-                            @if $pseudo
-                            {
-                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                            }
+								@if $pseudo
+								{
+									$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+								}
+							}
                             @else if $x-axis != 'left' or $y-axis != 'top'
                             {
                                 $transformed-classes: append($transformed-classes, $current-class, comma);
@@ -179,15 +182,18 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $x-axis;
 
-                        @if $strict
-                        {
-                            $current-class: $current-class + '-strict';
-                        }
+						@if $strict or $pseudo
+						{
+							@if $strict
+							{
+								$current-class: $current-class + '-strict';
+							}
 
-                        @if $pseudo
-                        {
-                            $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                        }
+							@if $pseudo
+							{
+								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+							}
+						}
                         @else if $x-axis != 'left'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
@@ -232,15 +238,18 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $y-axis;
 
-                        @if $strict
-                        {
-                            $current-class: $current-class + '-strict';
-                        }
+						@if $strict or $pseudo
+						{
+							@if $strict
+							{
+								$current-class: $current-class + '-strict';
+							}
 
-                        @if $pseudo
-                        {
-                            $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                        }
+							@if $pseudo
+							{
+								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+							}
+						}
                         @else if $y-axis != 'top'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);

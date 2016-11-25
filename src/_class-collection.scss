@@ -34,6 +34,7 @@ $fix-classes: ();
 
 $transformed-classes: ();
 
+
 // Axes lists
 $left-top-classes: ();
 $left-middle-classes: ();
@@ -47,14 +48,6 @@ $right-top-classes: ();
 $right-middle-classes: ();
 $right-bottom-classes: ();
 
-// Strict classes lists
-$left-bottom-strict-classes: ();
-
-$center-bottom-strict-classes: ();
-
-$right-top-strict-classes: ();
-$right-middle-strict-classes: ();
-$right-bottom-strict-classes: ();
 
 // Mono-axis lists
 $left-classes: ();
@@ -64,6 +57,16 @@ $right-classes: ();
 $top-classes: ();
 $middle-classes: ();
 $bottom-classes: ();
+
+
+// Strict classes lists
+$left-bottom-strict-classes: ();
+
+$center-bottom-strict-classes: ();
+
+$right-top-strict-classes: ();
+$right-middle-strict-classes: ();
+$right-bottom-strict-classes: ();
 
 $right-strict-classes: ();
 $bottom-strict-classes: ();

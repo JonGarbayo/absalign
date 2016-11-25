@@ -1,7 +1,8 @@
 @mixin transform($function)
 {
-    transform-style: preserve-3d;
     transform: $function;
+
+    transform-style: preserve-3d;
 }
 
 @mixin left-top
@@ -111,4 +112,48 @@
     top: 100%;
 
     @include transform(translateY(-100%));
+}
+
+@mixin left-bottom-strict
+{
+    bottom: 0;
+    left: 0;
+}
+
+@mixin center-bottom-strict
+{
+    bottom: 0;
+    left: 50%;
+
+    @include transform(translateX(-50%));
+}
+
+@mixin right-top-strict
+{
+    top: 0;
+    right: 0;
+}
+
+@mixin right-middle-strict
+{
+    top: 50%;
+    right: 0;
+
+    @include transform(translateY(-50%));
+}
+
+@mixin right-bottom-strict
+{
+    right: 0;
+    bottom: 0;
+}
+
+@mixin right-strict
+{
+    right: 0;
+}
+
+@mixin bottom-strict
+{
+    bottom: 0;
 }

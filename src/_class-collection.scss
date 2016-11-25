@@ -83,7 +83,7 @@ $current-class: '';
         {
 			@each $strict in $stricts
 			{
-                @if ((not $strict) or ($strict and ($x-axis == 'right' or $y-axis == 'bottom')))
+                @if not $strict or ($strict and ($x-axis == 'right' or $y-axis == 'bottom'))
                 {
                     @each $pseudo in $pseudos
                     {
@@ -91,19 +91,16 @@ $current-class: '';
                         {
                             $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
 
-							@if $strict or $pseudo
+							@if $strict
 							{
-								@if $strict
-								{
-									$current-class: $current-class + '-strict';
-								}
-
-								@if $pseudo
-								{
-									$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-								}
+								$current-class: $current-class + '-strict';
 							}
-                            @else if $x-axis != 'left' or $y-axis != 'top'
+
+							@if $pseudo
+							{
+								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+							}
+                            @else if (not $strict or ($strict and ($x-axis == 'center' or $y-axis == 'middle'))) and ($x-axis != 'left' or $y-axis != 'top')
                             {
                                 $transformed-classes: append($transformed-classes, $current-class, comma);
                             }
@@ -214,7 +211,7 @@ $current-class: '';
     {
         @each $strict in $stricts
         {
-            @if ((not $strict) or ($strict and $x-axis == 'right'))
+            @if not $strict or ($strict and $x-axis == 'right')
             {
                 @each $pseudo in $pseudos
                 {
@@ -222,19 +219,16 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $x-axis;
 
-						@if $strict or $pseudo
+						@if $strict
 						{
-							@if $strict
-							{
-								$current-class: $current-class + '-strict';
-							}
-
-							@if $pseudo
-							{
-								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-							}
+							$current-class: $current-class + '-strict';
 						}
-                        @else if $x-axis != 'left'
+
+						@if $pseudo
+						{
+							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+						}
+                        @else if (not $strict or ($strict and $x-axis == 'center')) and $x-axis != 'left'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }
@@ -277,7 +271,7 @@ $current-class: '';
     {
         @each $strict in $stricts
         {
-            @if ((not $strict) or ($strict and $y-axis == 'bottom'))
+            @if not $strict or ($strict and $y-axis == 'bottom')
             {
                 @each $pseudo in $pseudos
                 {
@@ -285,19 +279,16 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $y-axis;
 
-						@if $strict or $pseudo
+						@if $strict
 						{
-							@if $strict
-							{
-								$current-class: $current-class + '-strict';
-							}
-
-							@if $pseudo
-							{
-								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-							}
+							$current-class: $current-class + '-strict';
 						}
-                        @else if $y-axis != 'top'
+
+						@if $pseudo
+						{
+							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+						}
+                        @else if (not $strict or ($strict and $y-axis == 'middle')) and $y-axis != 'top'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }

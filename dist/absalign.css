@@ -431,3 +431,88 @@
        -moz-transform-style: preserve-3d !important;
             transform-style: preserve-3d !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- Strict classes ----------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.abs-left-bottom-strict,
+.abs-left-bottom-strict-before:before,
+.abs-left-bottom-strict-after:after,
+.fix-left-bottom-strict
+{
+    bottom: 0 !important;
+    left: 0 !important;
+}
+
+.abs-center-bottom-strict,
+.abs-center-bottom-strict-before:before,
+.abs-center-bottom-strict-after:after,
+.fix-center-bottom-strict
+{
+    bottom: 0 !important;
+    left: 50% !important;
+
+    -webkit-transform: translateX(-50%) !important;
+       -moz-transform: translateX(-50%) !important;
+        -ms-transform: translateX(-50%) !important;
+         -o-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
+
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
+}
+
+.abs-right-top-strict,
+.abs-right-top-strict-before:before,
+.abs-right-top-strict-after:after,
+.fix-right-top-strict
+{
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.abs-right-middle-strict,
+.abs-right-middle-strict-before:before,
+.abs-right-middle-strict-after:after,
+.fix-right-middle-strict
+{
+    top: 50% !important;
+    right: 0 !important;
+
+    -webkit-transform: translateY(-50%) !important;
+       -moz-transform: translateY(-50%) !important;
+        -ms-transform: translateY(-50%) !important;
+         -o-transform: translateY(-50%) !important;
+            transform: translateY(-50%) !important;
+
+    -webkit-transform-style: preserve-3d !important;
+       -moz-transform-style: preserve-3d !important;
+            transform-style: preserve-3d !important;
+}
+
+.abs-right-bottom-strict,
+.abs-right-bottom-strict-before:before,
+.abs-right-bottom-strict-after:after,
+.fix-right-bottom-strict
+{
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.abs-right-strict,
+.abs-right-strict-before:before,
+.abs-right-strict-after:after,
+.fix-right-strict
+{
+    right: 0 !important;
+}
+
+.abs-bottom-strict,
+.abs-bottom-strict-before:before,
+.abs-bottom-strict-after:after,
+.fix-bottom-strict
+{
+    bottom: 0 !important;
+}

@@ -142,3 +142,44 @@
 {
     @include bottom();
 }
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- Strict classes ----------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#{$left-bottom-strict-classes}
+{
+    @include left-bottom-strict();
+}
+
+#{$center-bottom-strict-classes}
+{
+    @include center-bottom-strict();
+}
+
+#{$right-top-strict-classes}
+{
+    @include right-top-strict();
+}
+
+#{$right-middle-strict-classes}
+{
+    @include right-middle-strict();
+}
+
+#{$right-bottom-strict-classes}
+{
+    @include right-bottom-strict();
+}
+
+#{$right-strict-classes}
+{
+    @include right-strict();
+}
+
+#{$bottom-strict-classes}
+{
+    @include bottom-strict();
+}

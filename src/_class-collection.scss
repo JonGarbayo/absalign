@@ -65,6 +65,8 @@ $top-classes: ();
 $middle-classes: ();
 $bottom-classes: ();
 
+$right-strict-classes: ();
+$bottom-strict-classes: ();
 
 
 $current-class: '';
@@ -128,6 +130,10 @@ $current-class: '';
                                     {
                                         $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
                                     }
+                                    @else
+                                    {
+                                        $left-bottom-strict-classes: append($left-bottom-strict-classes, $current-class, comma);
+                                    }
                                 }
                             }
 
@@ -147,6 +153,10 @@ $current-class: '';
                                     {
                                         $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
                                     }
+                                    @else
+                                    {
+                                        $center-bottom-strict-classes: append($center-bottom-strict-classes, $current-class, comma);
+                                    }
                                 }
                             }
 
@@ -158,6 +168,10 @@ $current-class: '';
                                     {
                                         $right-top-classes: append($right-top-classes, $current-class, comma);
                                     }
+									@else
+									{
+										$right-top-strict-classes: append($right-top-strict-classes, $current-class, comma);
+									}
                                 }
                                 @if $y-axis == 'middle'
                                 {
@@ -165,6 +179,10 @@ $current-class: '';
                                     {
                                         $right-middle-classes: append($right-middle-classes, $current-class, comma);
                                     }
+									@else
+									{
+										$right-middle-strict-classes: append($right-middle-strict-classes, $current-class, comma);
+									}
                                 }
                                 @if $y-axis == 'bottom'
                                 {
@@ -172,6 +190,10 @@ $current-class: '';
                                     {
                                         $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
                                     }
+									@else
+									{
+										$right-bottom-strict-classes: append($right-bottom-strict-classes, $current-class, comma);
+									}
                                 }
                             }
                         }
@@ -237,6 +259,10 @@ $current-class: '';
                             {
                                 $right-classes: append($right-classes, $current-class, comma);
                             }
+                            @else
+                            {
+                                $right-strict-classes: append($right-strict-classes, $current-class, comma);
+                            }
                         }
                     }
                 }
@@ -295,6 +321,10 @@ $current-class: '';
                             @if not $strict
                             {
                                 $bottom-classes: append($bottom-classes, $current-class, comma);
+                            }
+                            @else
+                            {
+                                $bottom-strict-classes: append($bottom-strict-classes, $current-class, comma);
                             }
                         }
                     }

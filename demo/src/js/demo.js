@@ -42,7 +42,7 @@ Demo.prototype =
         this._$showSubject.attr('class', this._$showSubject.data('base-class') + ' ' +
         this._controls.subject.$prefix.getSelectedValue() + '-' +
         this._controls.subject.$suffix.getSelectedValue() + ' ' +
-        this._controls.pseudo.$prefix.getSelectedValue() + '-' +
+        'abs-' +
         this._controls.pseudo.$suffix.getSelectedValue() + '-' +
         this._controls.pseudo.$pseudo.getSelectedValue());
     }

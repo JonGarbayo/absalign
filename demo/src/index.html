@@ -28,12 +28,12 @@
 				<div class="c-app-controllers__controller-block">
 					<label class="c-controller-block__label">Block :</label>
 
-					<select class="c-controller-block__selector c-controller-block__selector--subject js-subject-class-prefix-selector">
+					<select class="o-control c-controller-block__selector js-subject-class-prefix-selector">
 						<option value="abs" selected>abs</option>
 						<option value="fix">fix</option>
 					</select>
 
-					<select class="c-controller-block__selector c-controller-block__selector--subject js-subject-class-suffix-selector">
+					<select class="o-control c-controller-block__selector js-subject-class-suffix-selector">
 						<option value="left-top">left-top</option>
 						<option value="left-middle">left-middle</option>
 						<option value="left-bottom">left-bottom</option>
@@ -45,12 +45,16 @@
 						<option value="right-bottom">right-bottom</option>
 					</select>
 
+					<div class="o-control">
+						<input id="subject-class-strict-checkbox" type="checkbox" class="c-controller-block__selector js-subject-class-strict-checkbox" />
+						<label for="subject-class-strict-checkbox">Strict</label>
+					</div>
 				</div>
 
 				<div class="c-app-controllers__controller-block">
 					<label class="c-controller-block__label">Pseudo-element :</label>
 
-					<select class="c-controller-block__selector c-controller-block__selector--pseudo js-pseudo-subject-class-suffix-selector">
+					<select class="o-control c-controller-block__selector js-pseudo-subject-class-suffix-selector">
 						<option value="left-top">left-top</option>
 						<option value="left-middle">left-middle</option>
 						<option value="left-bottom">left-bottom</option>
@@ -62,11 +66,15 @@
 						<option value="right-bottom">right-bottom</option>
 					</select>
 
-					<select class="c-controller-block__selector c-controller-block__selector--pseudo js-pseudo-subject-pseudo-class-selector">
+					<select class="o-control c-controller-block__selector js-pseudo-subject-pseudo-class-selector">
 						<option value="before" selected>before</option>
 						<option value="after">after</option>
 					</select>
 
+					<div class="o-control">
+						<input id="pseudo-subject-class-strict-checkbox" type="checkbox" class="c-controller-block__selector js-pseudo-subject-class-strict-checkbox" />
+						<label for="pseudo-subject-class-strict-checkbox">Strict</label>
+					</div>
 				</div>
 			</div>
 

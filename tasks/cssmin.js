@@ -28,7 +28,8 @@ module.exports =
     {
         files:
         {
-            'demo/.tmp/css/output/app.min.css': 'demo/.tmp/css/app.css'
+            'demo/.tmp/css/output/app.min.css': 'demo/.tmp/css/app.css',
+            'demo/.tmp/css/output/ui.min.css': 'demo/.tmp/css/ui.css'
         }
     }
 };

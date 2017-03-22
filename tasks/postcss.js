@@ -30,6 +30,6 @@ module.exports =
     },
     demo:
     {
-        src: 'demo/.tmp/css/app.css'
+        src: ['demo/.tmp/css/app.css', 'demo/.tmp/css/ui.css']
     }
 };

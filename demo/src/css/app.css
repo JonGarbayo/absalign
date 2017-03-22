@@ -82,7 +82,7 @@ select
     text-transform: none;
 }
 
-.c-app__show-zone
+.c-demo__test-area
 {
     width: 100%;
     height: 400px;
@@ -93,7 +93,7 @@ select
     box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 5px rgba(0,0,0,.23);
 }
 
-.c-app-show-zone__subject
+.c-demo__test-area__test-block
 {
     width: 33.33%;
     max-width: 100px;
@@ -103,8 +103,8 @@ select
     border: 2px dashed #00ADEF;
 }
 
-.c-app-show-zone__subject::before,
-.c-app-show-zone__subject::after
+.c-demo__test-area__test-block::before,
+.c-demo__test-area__test-block::after
 {
     width: 10%;
     height: 10%;
@@ -114,15 +114,15 @@ select
     background-color: #3A3A3C;
 }
 
-.c-app-show-zone__subject,
-.c-app-show-zone__subject::before,
-.c-app-show-zone__subject::after
+.c-demo__test-area__test-block,
+.c-demo__test-area__test-block::before,
+.c-demo__test-area__test-block::after
 {
     transition: ease 500ms;
     transition-property: top, right, bottom, left, transform;
 }
 
-.c-app-controllers__controller-block
+.c-controls-group
 {
     float: left;
     clear: both;
@@ -131,29 +131,60 @@ select
     margin-bottom: 25px;
 }
 
-.c-controller-block__label
+.c-controls-group__label
 {
     display: block;
 
     margin-bottom: 5px;
 }
 
-.o-control
+.c-control
 {
     float: left;
 
     width: 33.3333333%;
+    padding: 0 5px;
+
+    cursor: pointer;
 }
 
-.o-control:first-of-type
+.c-control:first-of-type
 {
     padding-left: 0;
 }
 
-.o-control:last-of-type
+.c-control:last-of-type
 {
     padding-right: 0;
 }
+
+.c-control--checkbox label
+{
+    font-size: 13px;
+    line-height: 34px;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 34px;
+
+    transition: border-left-color ease 200ms;
+
+    border-left: 2px solid #A6A4A8;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 5px rgba(0,0,0,.23);
+}
+
+.c-control--checkbox label:before
+{
+    transition: border-color ease 200ms;
+}
+
+.c-control--checkbox input[type='checkbox']:checked + label
+{
+    border-left-color: #00ADEF;
+}
+
 
 
 /* Trumps */
@@ -165,11 +196,6 @@ select
 .selectize-input input
 {
     color: black;
-}
-
-.selectize-control
-{
-    padding: 0 5px;
 }
 
 .selectize-input,

@@ -1,19 +1,22 @@
 function Demo()
 {
-    this._$showSubject = jQuery('.js-show-subject');
+	var $testBlockControls       = jQuery('.js-test-block-controls');
+	var $pseudoTestBlockControls = jQuery('.js-pseudo-test-block-controls');
+
+    this._$testBlock = jQuery('.js-test-block');
     this._controls =
     {
-        'subject':
+        'testBlock':
         {
-            '$prefix': jQuery('.js-subject-class-prefix-selector'),
-            '$suffix': jQuery('.js-subject-class-suffix-selector'),
-			'$strict': jQuery('.js-subject-class-strict-checkbox')
+            '$prefix': $testBlockControls.find('.js-prefix-selector'),
+            '$suffix': $testBlockControls.find('.js-suffix-selector'),
+			'$strict': $testBlockControls.find('.js-strict-checkbox')
         },
-        'pseudo':
+        'pseudoTestBlock':
         {
-            '$suffix': jQuery('.js-pseudo-subject-class-suffix-selector'),
-            '$strict': jQuery('.js-pseudo-subject-class-strict-checkbox'),
-            '$pseudo': jQuery('.js-pseudo-subject-pseudo-class-selector')
+            '$suffix': $pseudoTestBlockControls.find('.js-suffix-selector'),
+            '$pseudo': $pseudoTestBlockControls.find('.js-pseudo-selector'),
+            '$strict': $pseudoTestBlockControls.find('.js-strict-checkbox')
         }
     };
 
@@ -28,29 +31,29 @@ Demo.prototype =
     {
         var demo = this;
 
-        jQuery.each([this._controls.subject, this._controls.pseudo], function()
+        jQuery.each([this._controls.testBlock, this._controls.pseudoTestBlock], function()
         {
             jQuery.each(this, function()
             {
                 this.on('change', function()
                 {
-                    demo.updateShowSubjectClass();
+                    demo.updateTestBlockClass();
                 });
             });
         });
     },
 
-    updateShowSubjectClass: function()
+    updateTestBlockClass: function()
     {
-        var newClass = this._$showSubject.data('base-class') + ' ' +
-        this._controls.subject.$prefix.getSelectedValue() + '-' +
-        this._controls.subject.$suffix.getSelectedValue() +
-        (this._controls.subject.$strict.isChecked() === true ? '-strict' : '') + ' ' +
+        var newClass = this._$testBlock.data('base-class') + ' ' +
+        this._controls.testBlock.$prefix.getSelectedValue() + '-' +
+        this._controls.testBlock.$suffix.getSelectedValue() +
+        (this._controls.testBlock.$strict.isChecked() === true ? '-strict' : '') + ' ' +
         'abs-' +
-        this._controls.pseudo.$suffix.getSelectedValue() + '-' +
-        (this._controls.pseudo.$strict.isChecked() === true ? 'strict-' : '') +
-        this._controls.pseudo.$pseudo.getSelectedValue();
+        this._controls.pseudoTestBlock.$suffix.getSelectedValue() + '-' +
+        (this._controls.pseudoTestBlock.$strict.isChecked() === true ? 'strict-' : '') +
+        this._controls.pseudoTestBlock.$pseudo.getSelectedValue();
 
-        this._$showSubject.attr('class', newClass);
+        this._$testBlock.attr('class', newClass);
     }
 };

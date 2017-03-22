@@ -2,7 +2,7 @@
 {
 	$(document).ready(function ()
 	{
-		var $showZone = $('.js-show-zone');
+		var $showZone = $('.js-test-area');
 
 		$(window).on('resize', function ()
 		{
@@ -11,6 +11,8 @@
 
 		$('select').selectize(
 		{
+			'copyClassesToDropdown': false,
+
 			onInitialize: function ()
 			{
 				this.$control_input.attr('readonly', true);

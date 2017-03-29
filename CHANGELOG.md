@@ -1,5 +1,24 @@
+#v0.0.8 (2017/03/29)
+##Features
+- Added strict classes: classes with no (or at least "the minimum") ``transform`` properties.
+
+##Improvements
+- (breaking change) Removed unnecessary fixed pseudo-elements classes (``like .fix-left-before``): same effect than absolute position. Also removed pseudo-element position selector from demo (always absolute from now on).
+
+##Maintenance
+- Updated selectize plugin.
+- Updated dependencies.
+
+##Demo
+- Refactored the BEM tree in demo to a cleaner and more... "BEM" one.
+- Added checkboxes to show the strict classes feature.
+
+##Other
+- Replaced all "framework" words by the "library" one: actually, absalign is not really a framework...
+
+
 #v0.0.7 (2016/11/18)
-#Maintenance
+##Maintenance
 - Updated dependencies.
 
 ##Fixes
@@ -11,17 +30,17 @@ When an element is fullscreened, webkit browsers reset some properties, like top
 
 
 #v0.0.6 (2016/11/06)
-#Improvements
+##Improvements
 - Demo is now online and accessible from README with just one click!
 
-#Maintenance
+##Maintenance
 - Refactored demo code respecting ITCSS principles, BEM notation and the CSS namespaces from CSS wizardry [http://csswizardry.com](http://csswizardry.com "CSS Wizardry, Harry Roberts website"). Thanks Harry Roberts for your great articles!
 - Transformed the main behavior of the demo in JS Object style.
 
-#Fixes
+##Fixes
 - Fixed titles alignment in demo.
 
-#Demo
+##Demo
 - Updated logo in demo from PNG to SVG.
 - Added normalize.css to the demo.
 - Renamed HTML demo file to index.html.

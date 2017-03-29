@@ -1,7 +1,7 @@
 {
   "name": "absalign",
   "version": "0.0.8",
-  "description": "Micro CSS framework to easily and properly align DOM elements.",
+  "description": "Micro CSS library to easily and properly align DOM elements.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonGarbayo/absalign.git"
@@ -9,8 +9,8 @@
   "keywords": [
     "css",
     "html",
-    "framework",
-    "micro-framework",
+    "library",
+    "micro-library",
     "align",
     "vertical-align",
     "absolute",

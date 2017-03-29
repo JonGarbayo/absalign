@@ -3,7 +3,7 @@
 </p>
 
 #What?
-Absalign is a micro CSS framework you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!
+Absalign is a micro CSS library you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!
 
 Check the demo **[here](http://jongarbayo.github.io/absalign "absalign demo page.")**!
 
@@ -11,7 +11,7 @@ Check the demo **[here](http://jongarbayo.github.io/absalign "absalign demo page
 Web dev, we all know the pain of vertically centering elements... It must be cross-browser, responsive, easy to maintain, well coded, without using JavaScript, etc.
 The great ``flex`` implementation is coming cross-browser, we have to be patient. But we have to wait for it using other techniques.
 
-Here is what I propose: a micro CSS framework to **vertically and horizontally** center elements with a **great and simple technique**.
+Here is what I propose: a micro CSS library to **vertically and horizontally** center elements with a **great and simple technique**.
 It's:
 - cross-browser
 - responsive
@@ -122,7 +122,7 @@ But there are a few cons with it:
 - it's annoying to maintain (I didn't say "hard", just annoying ;)
 
 ###The modern technique
-Well, in this framework, I used the ``transform: translate();`` **CSS3** function.
+Well, in this library, I used the ``transform: translate();`` **CSS3** function.
 As the 4 position properties are based on the **body dimensions** (or the viewport dimensions for the fixed elements), ``top: 50%;`` will push the element **top border** at the middle of the page.
 But all the transforms functions are **based on the element dimensions**. So, by writing something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of it's height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
 

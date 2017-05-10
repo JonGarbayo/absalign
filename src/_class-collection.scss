@@ -16,7 +16,7 @@ $y-axes: (
     'bottom'
 );
 
-$stricts: (
+$inanimate: (
     false,
     true
 );
@@ -59,17 +59,17 @@ $middle-classes: ();
 $bottom-classes: ();
 
 
-// Strict classes lists
-$left-bottom-strict-classes: ();
+// Inanimate classes lists
+$left-bottom-inanimate-classes: ();
 
-$center-bottom-strict-classes: ();
+$center-bottom-inanimate-classes: ();
 
-$right-top-strict-classes: ();
-$right-middle-strict-classes: ();
-$right-bottom-strict-classes: ();
+$right-top-inanimate-classes: ();
+$right-middle-inanimate-classes: ();
+$right-bottom-inanimate-classes: ();
 
-$right-strict-classes: ();
-$bottom-strict-classes: ();
+$right-inanimate-classes: ();
+$bottom-inanimate-classes: ();
 
 
 $current-class: '';
@@ -81,9 +81,9 @@ $current-class: '';
     {
         @each $y-axis in $y-axes
         {
-			@each $strict in $stricts
+			@each $is__inanimate in $inanimate
 			{
-                @if not $strict or ($strict and ($x-axis == 'right' or $y-axis == 'bottom'))
+                @if not $is__inanimate or ($is__inanimate and ($x-axis == 'right' or $y-axis == 'bottom'))
                 {
                     @each $pseudo in $pseudos
                     {
@@ -91,7 +91,7 @@ $current-class: '';
                         {
                             $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
 
-							@if $strict
+							@if $is__inanimate
 							{
 								$current-class: $current-class + '-strict';
 							}
@@ -100,7 +100,7 @@ $current-class: '';
 							{
 								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 							}
-                            @else if (not $strict or ($strict and ($x-axis == 'center' or $y-axis == 'middle'))) and ($x-axis != 'left' or $y-axis != 'top')
+                            @else if (not $is__inanimate or ($is__inanimate and ($x-axis == 'center' or $y-axis == 'middle'))) and ($x-axis != 'left' or $y-axis != 'top')
                             {
                                 $transformed-classes: append($transformed-classes, $current-class, comma);
                             }
@@ -126,13 +126,13 @@ $current-class: '';
                                 }
                                 @if $y-axis == 'bottom'
                                 {
-                                    @if not $strict
+                                    @if not $is__inanimate
                                     {
                                         $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
                                     }
                                     @else
                                     {
-                                        $left-bottom-strict-classes: append($left-bottom-strict-classes, $current-class, comma);
+                                        $left-bottom-inanimate-classes: append($left-bottom-inanimate-classes, $current-class, comma);
                                     }
                                 }
                             }
@@ -149,13 +149,13 @@ $current-class: '';
                                 }
                                 @if $y-axis == 'bottom'
                                 {
-                                    @if not $strict
+                                    @if not $is__inanimate
                                     {
                                         $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
                                     }
                                     @else
                                     {
-                                        $center-bottom-strict-classes: append($center-bottom-strict-classes, $current-class, comma);
+                                        $center-bottom-inanimate-classes: append($center-bottom-inanimate-classes, $current-class, comma);
                                     }
                                 }
                             }
@@ -164,35 +164,35 @@ $current-class: '';
                             {
                                 @if $y-axis == 'top'
                                 {
-                                    @if not $strict
+                                    @if not $is__inanimate
                                     {
                                         $right-top-classes: append($right-top-classes, $current-class, comma);
                                     }
 									@else
 									{
-										$right-top-strict-classes: append($right-top-strict-classes, $current-class, comma);
+										$right-top-inanimate-classes: append($right-top-inanimate-classes, $current-class, comma);
 									}
                                 }
                                 @if $y-axis == 'middle'
                                 {
-                                    @if not $strict
+                                    @if not $is__inanimate
                                     {
                                         $right-middle-classes: append($right-middle-classes, $current-class, comma);
                                     }
 									@else
 									{
-										$right-middle-strict-classes: append($right-middle-strict-classes, $current-class, comma);
+										$right-middle-inanimate-classes: append($right-middle-inanimate-classes, $current-class, comma);
 									}
                                 }
                                 @if $y-axis == 'bottom'
                                 {
-                                    @if not $strict
+                                    @if not $is__inanimate
                                     {
                                         $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
                                     }
 									@else
 									{
-										$right-bottom-strict-classes: append($right-bottom-strict-classes, $current-class, comma);
+										$right-bottom-inanimate-classes: append($right-bottom-inanimate-classes, $current-class, comma);
 									}
                                 }
                             }
@@ -209,9 +209,9 @@ $current-class: '';
 {
     @each $x-axis in $x-axes
     {
-        @each $strict in $stricts
+        @each $is__inanimate in $inanimate
         {
-            @if not $strict or ($strict and $x-axis == 'right')
+            @if not $is__inanimate or ($is__inanimate and $x-axis == 'right')
             {
                 @each $pseudo in $pseudos
                 {
@@ -219,7 +219,7 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $x-axis;
 
-						@if $strict
+						@if $is__inanimate
 						{
 							$current-class: $current-class + '-strict';
 						}
@@ -228,7 +228,7 @@ $current-class: '';
 						{
 							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 						}
-                        @else if (not $strict or ($strict and $x-axis == 'center')) and $x-axis != 'left'
+                        @else if (not $is__inanimate or ($is__inanimate and $x-axis == 'center')) and $x-axis != 'left'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }
@@ -252,13 +252,13 @@ $current-class: '';
                         }
                         @if $x-axis == 'right'
                         {
-                            @if not $strict
+                            @if not $is__inanimate
                             {
                                 $right-classes: append($right-classes, $current-class, comma);
                             }
                             @else
                             {
-                                $right-strict-classes: append($right-strict-classes, $current-class, comma);
+                                $right-inanimate-classes: append($right-inanimate-classes, $current-class, comma);
                             }
                         }
                     }
@@ -269,9 +269,9 @@ $current-class: '';
 
     @each $y-axis in $y-axes
     {
-        @each $strict in $stricts
+        @each $is__inanimate in $inanimate
         {
-            @if not $strict or ($strict and $y-axis == 'bottom')
+            @if not $is__inanimate or ($is__inanimate and $y-axis == 'bottom')
             {
                 @each $pseudo in $pseudos
                 {
@@ -279,7 +279,7 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $y-axis;
 
-						@if $strict
+						@if $is__inanimate
 						{
 							$current-class: $current-class + '-strict';
 						}
@@ -288,7 +288,7 @@ $current-class: '';
 						{
 							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 						}
-                        @else if (not $strict or ($strict and $y-axis == 'middle')) and $y-axis != 'top'
+                        @else if (not $is__inanimate or ($is__inanimate and $y-axis == 'middle')) and $y-axis != 'top'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }
@@ -312,13 +312,13 @@ $current-class: '';
                         }
                         @if $y-axis == 'bottom'
                         {
-                            @if not $strict
+                            @if not $is__inanimate
                             {
                                 $bottom-classes: append($bottom-classes, $current-class, comma);
                             }
                             @else
                             {
-                                $bottom-strict-classes: append($bottom-strict-classes, $current-class, comma);
+                                $bottom-inanimate-classes: append($bottom-inanimate-classes, $current-class, comma);
                             }
                         }
                     }

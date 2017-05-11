@@ -91,11 +91,6 @@ $current-class: '';
                         {
                             $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
 
-							@if $is__inanimate
-							{
-								$current-class: $current-class + '-strict';
-							}
-
 							@if $pseudo
 							{
 								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
@@ -219,11 +214,6 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $x-axis;
 
-						@if $is__inanimate
-						{
-							$current-class: $current-class + '-strict';
-						}
-
 						@if $pseudo
 						{
 							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
@@ -278,11 +268,6 @@ $current-class: '';
                     @if $position != 'fix' or not $pseudo
                     {
                         $current-class: '.' + $position + '-' + $y-axis;
-
-						@if $is__inanimate
-						{
-							$current-class: $current-class + '-strict';
-						}
 
 						@if $pseudo
 						{

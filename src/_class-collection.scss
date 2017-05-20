@@ -32,7 +32,9 @@ $pseudos: (
 $abs-classes: ();
 $fix-classes: ();
 
-$transformed-classes: ();
+$transformed-classes: (
+    '.absalign-animate'    // All absalign-animate classes are transformed
+);
 
 
 // Axes lists
@@ -60,16 +62,16 @@ $bottom-classes: ();
 
 
 // Inanimate classes lists
-$left-bottom-inanimate-classes: ();
+$left-bottom-animate-classes: ();
 
-$center-bottom-inanimate-classes: ();
+$center-bottom-animate-classes: ();
 
-$right-top-inanimate-classes: ();
-$right-middle-inanimate-classes: ();
-$right-bottom-inanimate-classes: ();
+$right-top-animate-classes: ();
+$right-middle-animate-classes: ();
+$right-bottom-animate-classes: ();
 
-$right-inanimate-classes: ();
-$bottom-inanimate-classes: ();
+$right-animate-classes: ();
+$bottom-animate-classes: ();
 
 
 $current-class: '';
@@ -95,16 +97,26 @@ $current-class: '';
 							{
 								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 							}
-                            @else if (not $is__inanimate or ($is__inanimate and ($x-axis == 'center' or $y-axis == 'middle'))) and ($x-axis != 'left' or $y-axis != 'top')
+                            @else if not $is__inanimate and ($x-axis != 'left' or $y-axis != 'top')
                             {
                                 $transformed-classes: append($transformed-classes, $current-class, comma);
                             }
 
-                            @if $position == 'abs'
+							@if $is__inanimate
+							{
+								$current-class: $current-class + '.absalign-animate';
+
+								@if $pseudo
+								{
+									$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+								}
+							}
+
+                            @if $position == 'abs' and not $is__inanimate
                             {
                                 $abs-classes: append($abs-classes, $current-class, comma);
                             }
-                            @else if $position == 'fix'
+                            @else if $position == 'fix' and not $is__inanimate
                             {
                                 $fix-classes: append($fix-classes, $current-class, comma);
                             }
@@ -127,7 +139,7 @@ $current-class: '';
                                     }
                                     @else
                                     {
-                                        $left-bottom-inanimate-classes: append($left-bottom-inanimate-classes, $current-class, comma);
+                                        $left-bottom-animate-classes: append($left-bottom-animate-classes, $current-class, comma);
                                     }
                                 }
                             }
@@ -150,7 +162,7 @@ $current-class: '';
                                     }
                                     @else
                                     {
-                                        $center-bottom-inanimate-classes: append($center-bottom-inanimate-classes, $current-class, comma);
+                                        $center-bottom-animate-classes: append($center-bottom-animate-classes, $current-class, comma);
                                     }
                                 }
                             }
@@ -165,7 +177,7 @@ $current-class: '';
                                     }
 									@else
 									{
-										$right-top-inanimate-classes: append($right-top-inanimate-classes, $current-class, comma);
+										$right-top-animate-classes: append($right-top-animate-classes, $current-class, comma);
 									}
                                 }
                                 @if $y-axis == 'middle'
@@ -176,7 +188,7 @@ $current-class: '';
                                     }
 									@else
 									{
-										$right-middle-inanimate-classes: append($right-middle-inanimate-classes, $current-class, comma);
+										$right-middle-animate-classes: append($right-middle-animate-classes, $current-class, comma);
 									}
                                 }
                                 @if $y-axis == 'bottom'
@@ -187,7 +199,7 @@ $current-class: '';
                                     }
 									@else
 									{
-										$right-bottom-inanimate-classes: append($right-bottom-inanimate-classes, $current-class, comma);
+										$right-bottom-animate-classes: append($right-bottom-animate-classes, $current-class, comma);
 									}
                                 }
                             }
@@ -218,16 +230,26 @@ $current-class: '';
 						{
 							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 						}
-                        @else if (not $is__inanimate or ($is__inanimate and $x-axis == 'center')) and $x-axis != 'left'
+                        @else if not $is__inanimate and $x-axis != 'left'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }
 
-                        @if $position == 'abs'
+                        @if $is__inanimate
+                        {
+                            $current-class: $current-class + '.absalign-animate';
+
+                            @if $pseudo
+                            {
+                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                            }
+                        }
+
+                        @if $position == 'abs' and not $is__inanimate
                         {
                             $abs-classes: append($abs-classes, $current-class, comma);
                         }
-                        @else if $position == 'fix'
+                        @else if $position == 'fix' and not $is__inanimate
                         {
                             $fix-classes: append($fix-classes, $current-class, comma);
                         }
@@ -248,7 +270,7 @@ $current-class: '';
                             }
                             @else
                             {
-                                $right-inanimate-classes: append($right-inanimate-classes, $current-class, comma);
+                                $right-animate-classes: append($right-animate-classes, $current-class, comma);
                             }
                         }
                     }
@@ -273,16 +295,26 @@ $current-class: '';
 						{
 							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
 						}
-                        @else if (not $is__inanimate or ($is__inanimate and $y-axis == 'middle')) and $y-axis != 'top'
+                        @else if not $is__inanimate and $y-axis != 'top'
                         {
                             $transformed-classes: append($transformed-classes, $current-class, comma);
                         }
 
-                        @if $position == 'abs'
+                        @if $is__inanimate
+                        {
+                            $current-class: $current-class + '.absalign-animate';
+
+                            @if $pseudo
+                            {
+                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                            }
+                        }
+
+                        @if $position == 'abs' and not $is__inanimate
                         {
                             $abs-classes: append($abs-classes, $current-class, comma);
                         }
-                        @else if $position == 'fix'
+                        @else if $position == 'fix' and not $is__inanimate
                         {
                             $fix-classes: append($fix-classes, $current-class, comma);
                         }
@@ -303,7 +335,7 @@ $current-class: '';
                             }
                             @else
                             {
-                                $bottom-inanimate-classes: append($bottom-inanimate-classes, $current-class, comma);
+                                $bottom-animate-classes: append($bottom-animate-classes, $current-class, comma);
                             }
                         }
                     }

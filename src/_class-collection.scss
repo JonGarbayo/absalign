@@ -95,22 +95,29 @@ $current-class: '';
 
 							@if $pseudo
 							{
-								$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+								$current-class: $current-class + '-' + $pseudo;
 							}
-                            @else if not $is__inanimate and ($x-axis != 'left' or $y-axis != 'top')
-                            {
-                                $transformed-classes: append($transformed-classes, $current-class, comma);
-                            }
 
 							@if $is__inanimate
-							{
-								$current-class: $current-class + '.absalign-animate';
+	                        {
+	                            $current-class: $current-class + '.absalign-animate';
 
-								@if $pseudo
-								{
-									$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-								}
-							}
+	                            @if $pseudo
+	                            {
+	                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+	                            }
+	                        }
+	                        @else
+	                        {
+	                            @if $pseudo
+	                            {
+	                                $current-class: $current-class + ':' + $pseudo;
+	                            }
+	                            @else if $x-axis != 'left' or $y-axis != 'top'
+	                            {
+	                                $transformed-classes: append($transformed-classes, $current-class, comma);
+	                            }
+	                        }
 
                             @if $position == 'abs' and not $is__inanimate
                             {
@@ -228,20 +235,27 @@ $current-class: '';
 
 						@if $pseudo
 						{
-							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+							$current-class: $current-class + '-' + $pseudo;
 						}
-                        @else if not $is__inanimate and $x-axis != 'left'
-                        {
-                            $transformed-classes: append($transformed-classes, $current-class, comma);
-                        }
 
-                        @if $is__inanimate
+						@if $is__inanimate
                         {
                             $current-class: $current-class + '.absalign-animate';
 
                             @if $pseudo
                             {
                                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                            }
+                        }
+                        @else
+                        {
+                            @if $pseudo
+                            {
+                                $current-class: $current-class + ':' + $pseudo;
+                            }
+                            @else if $x-axis != 'left'
+                            {
+                                $transformed-classes: append($transformed-classes, $current-class, comma);
                             }
                         }
 
@@ -291,22 +305,29 @@ $current-class: '';
                     {
                         $current-class: '.' + $position + '-' + $y-axis;
 
-						@if $pseudo
+                        @if $pseudo
 						{
-							$current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+							$current-class: $current-class + '-' + $pseudo;
 						}
-                        @else if not $is__inanimate and $y-axis != 'top'
-                        {
-                            $transformed-classes: append($transformed-classes, $current-class, comma);
-                        }
 
-                        @if $is__inanimate
+						@if $is__inanimate
                         {
                             $current-class: $current-class + '.absalign-animate';
 
                             @if $pseudo
                             {
                                 $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
+                            }
+                        }
+                        @else
+                        {
+                            @if $pseudo
+                            {
+                                $current-class: $current-class + ':' + $pseudo;
+                            }
+                            @else if $y-axis != 'top'
+                            {
+                                $transformed-classes: append($transformed-classes, $current-class, comma);
                             }
                         }
 

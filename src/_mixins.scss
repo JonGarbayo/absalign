@@ -21,10 +21,8 @@
 
 @mixin left-bottom
 {
-    top: 100%;
+    bottom: 0;
     left: 0;
-
-    @include transform(translate(0, -100%));
 }
 
 @mixin center-top
@@ -43,37 +41,32 @@
     @include transform(translate(-50%, -50%));
 }
 
-
 @mixin center-bottom
 {
-    top: 100%;
+    bottom: 0;
     left: 50%;
 
-    @include transform(translate(-50%, -100%));
+    @include transform(translateX(-50%));
 }
 
 @mixin right-top
 {
     top: 0;
-    left: 100%;
-
-    @include transform(translateX(-100%));
+    right: 0;
 }
 
 @mixin right-middle
 {
     top: 50%;
-    left: 100%;
+    right: 0;
 
-    @include transform(translate(-100%, -50%));
+    @include transform(translateY(-50%));
 }
 
 @mixin right-bottom
 {
-    top: 100%;
-    left: 100%;
-
-    @include transform(translate(-100%, -100%));
+    right: 0;
+    bottom: 0;
 }
 
 @mixin left
@@ -90,9 +83,7 @@
 
 @mixin right
 {
-    left: 100%;
-
-    @include transform(translateX(-100%));
+    right: 0;
 }
 
 @mixin top
@@ -109,51 +100,72 @@
 
 @mixin bottom
 {
+    bottom: 0;
+}
+
+
+
+
+
+
+@mixin left-bottom-animate
+{
     top: 100%;
-
-    @include transform(translateY(-100%));
-}
-
-@mixin left-bottom-strict
-{
-    bottom: 0;
+    bottom: auto;
     left: 0;
+
+	@include transform(translate(0, -100%));
 }
 
-@mixin center-bottom-strict
+@mixin center-bottom-animate
 {
-    bottom: 0;
+    top: 100%;
+    bottom: auto;
     left: 50%;
 
-    @include transform(translateX(-50%));
+	@include transform(translate(-50%, -100%));
 }
 
-@mixin right-top-strict
+@mixin right-top-animate
 {
     top: 0;
-    right: 0;
+    right: auto;
+    left: 100%;
+
+	@include transform(translateX(-100%));
 }
 
-@mixin right-middle-strict
+@mixin right-middle-animate
 {
     top: 50%;
-    right: 0;
+    right: auto;
+    left: 100%;
 
-    @include transform(translateY(-50%));
+	@include transform(translate(-100%, -50%));
 }
 
-@mixin right-bottom-strict
+@mixin right-bottom-animate
 {
-    right: 0;
-    bottom: 0;
+    top: 100%;
+    right: auto;
+    bottom: auto;
+    left: 100%;
+
+	@include transform(translate(-100%, -100%));
 }
 
-@mixin right-strict
+@mixin right-animate
 {
-    right: 0;
+    right: auto;
+    left: 100%;
+
+	@include transform(translateX(-100%));
 }
 
-@mixin bottom-strict
+@mixin bottom-animate
 {
-    bottom: 0;
+    top: 100%;
+    bottom: auto;
+
+	@include transform(translateY(-100%));
 }

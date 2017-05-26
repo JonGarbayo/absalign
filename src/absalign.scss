@@ -146,40 +146,40 @@
 
 
 /* -------------------------------------------------------------------------- */
-/* ----------------------------- Strict classes ----------------------------- */
+/* ----------------------------- Animate classes ---------------------------- */
 /* -------------------------------------------------------------------------- */
 
-#{$left-bottom-strict-classes}
+#{$left-bottom-animate-classes}
 {
-    @include left-bottom-strict();
+    @include left-bottom-animate();
 }
 
-#{$center-bottom-strict-classes}
+#{$center-bottom-animate-classes}
 {
-    @include center-bottom-strict();
+    @include center-bottom-animate();
 }
 
-#{$right-top-strict-classes}
+#{$right-top-animate-classes}
 {
-    @include right-top-strict();
+    @include right-top-animate();
 }
 
-#{$right-middle-strict-classes}
+#{$right-middle-animate-classes}
 {
-    @include right-middle-strict();
+    @include right-middle-animate();
 }
 
-#{$right-bottom-strict-classes}
+#{$right-bottom-animate-classes}
 {
-    @include right-bottom-strict();
+    @include right-bottom-animate();
 }
 
-#{$right-strict-classes}
+#{$right-animate-classes}
 {
-    @include right-strict();
+    @include right-animate();
 }
 
-#{$bottom-strict-classes}
+#{$bottom-animate-classes}
 {
-    @include bottom-strict();
+    @include bottom-animate();
 }

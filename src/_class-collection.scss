@@ -16,11 +16,6 @@ $y-axes: (
     'bottom'
 );
 
-$inanimate: (
-    false,
-    true
-);
-
 $pseudos: (
     false,
     'before',
@@ -75,6 +70,7 @@ $bottom-animate-classes: ();
 
 
 $current-class: '';
+$current-inanimate-class: '';
 
 // First loop creates the positions and axes lists
 @each $position in $positions
@@ -83,137 +79,121 @@ $current-class: '';
     {
         @each $y-axis in $y-axes
         {
-			@each $is__inanimate in $inanimate
-			{
-                @if not $is__inanimate or ($is__inanimate and ($x-axis == 'right' or $y-axis == 'bottom'))
+            @each $pseudo in $pseudos
+            {
+                $is__inanimate: ($x-axis == 'right' or $y-axis == 'bottom');
+
+                @if $position != 'fix' or not $pseudo
                 {
-                    @each $pseudo in $pseudos
+                    $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
+
+					@if $pseudo
+					{
+						$current-class: $current-class + '-' + $pseudo;
+					}
+
+					@if $is__inanimate
                     {
-                        @if $position != 'fix' or not $pseudo
+                        $current-inanimate-class: $current-class + '.absalign-animate';
+
+                        @if $pseudo
                         {
-                            $current-class: '.' + $position + '-' + $x-axis + '-' + $y-axis;
+                            $current-inanimate-class: $current-inanimate-class + '-' + $pseudo + ':' + $pseudo;
+                        }
+                    }
 
-							@if $pseudo
-							{
-								$current-class: $current-class + '-' + $pseudo;
-							}
+                    @if $pseudo
+                    {
+                        $current-class: $current-class + ':' + $pseudo;
+                    }
+                    @else if $x-axis != 'left' or $y-axis != 'top'
+                    {
+                        $transformed-classes: append($transformed-classes, $current-class, comma);
+                    }
 
-							@if $is__inanimate
-	                        {
-	                            $current-class: $current-class + '.absalign-animate';
+                    @if $position == 'abs'
+                    {
+                        $abs-classes: append($abs-classes, $current-class, comma);
+                    }
+                    @else if $position == 'fix'
+                    {
+                        $fix-classes: append($fix-classes, $current-class, comma);
+                    }
 
-	                            @if $pseudo
-	                            {
-	                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-	                            }
-	                        }
-	                        @else
-	                        {
-	                            @if $pseudo
-	                            {
-	                                $current-class: $current-class + ':' + $pseudo;
-	                            }
-	                            @else if $x-axis != 'left' or $y-axis != 'top'
-	                            {
-	                                $transformed-classes: append($transformed-classes, $current-class, comma);
-	                            }
-	                        }
+                    @if $x-axis == 'left'
+                    {
+                        @if $y-axis == 'top'
+                        {
+                            $left-top-classes: append($left-top-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $left-middle-classes: append($left-middle-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
 
-                            @if $position == 'abs' and not $is__inanimate
+                            @if $is__inanimate
                             {
-                                $abs-classes: append($abs-classes, $current-class, comma);
-                            }
-                            @else if $position == 'fix' and not $is__inanimate
-                            {
-                                $fix-classes: append($fix-classes, $current-class, comma);
-                            }
-
-                            @if $x-axis == 'left'
-                            {
-                                @if $y-axis == 'top'
-                                {
-                                    $left-top-classes: append($left-top-classes, $current-class, comma);
-                                }
-                                @if $y-axis == 'middle'
-                                {
-                                    $left-middle-classes: append($left-middle-classes, $current-class, comma);
-                                }
-                                @if $y-axis == 'bottom'
-                                {
-                                    @if not $is__inanimate
-                                    {
-                                        $left-bottom-classes: append($left-bottom-classes, $current-class, comma);
-                                    }
-                                    @else
-                                    {
-                                        $left-bottom-animate-classes: append($left-bottom-animate-classes, $current-class, comma);
-                                    }
-                                }
-                            }
-
-                            @if $x-axis == 'center'
-                            {
-                                @if $y-axis == 'top'
-                                {
-                                    $center-top-classes: append($center-top-classes, $current-class, comma);
-                                }
-                                @if $y-axis == 'middle'
-                                {
-                                    $center-middle-classes: append($center-middle-classes, $current-class, comma);
-                                }
-                                @if $y-axis == 'bottom'
-                                {
-                                    @if not $is__inanimate
-                                    {
-                                        $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
-                                    }
-                                    @else
-                                    {
-                                        $center-bottom-animate-classes: append($center-bottom-animate-classes, $current-class, comma);
-                                    }
-                                }
-                            }
-
-                            @if $x-axis == 'right'
-                            {
-                                @if $y-axis == 'top'
-                                {
-                                    @if not $is__inanimate
-                                    {
-                                        $right-top-classes: append($right-top-classes, $current-class, comma);
-                                    }
-									@else
-									{
-										$right-top-animate-classes: append($right-top-animate-classes, $current-class, comma);
-									}
-                                }
-                                @if $y-axis == 'middle'
-                                {
-                                    @if not $is__inanimate
-                                    {
-                                        $right-middle-classes: append($right-middle-classes, $current-class, comma);
-                                    }
-									@else
-									{
-										$right-middle-animate-classes: append($right-middle-animate-classes, $current-class, comma);
-									}
-                                }
-                                @if $y-axis == 'bottom'
-                                {
-                                    @if not $is__inanimate
-                                    {
-                                        $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
-                                    }
-									@else
-									{
-										$right-bottom-animate-classes: append($right-bottom-animate-classes, $current-class, comma);
-									}
-                                }
+                                $left-bottom-animate-classes: append($left-bottom-animate-classes, $current-inanimate-class, comma);
                             }
                         }
                     }
+
+                    @if $x-axis == 'center'
+                    {
+                        @if $y-axis == 'top'
+                        {
+                            $center-top-classes: append($center-top-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $center-middle-classes: append($center-middle-classes, $current-class, comma);
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $center-bottom-classes: append($center-bottom-classes, $current-class, comma);
+
+                            @if $is__inanimate
+                            {
+                                $center-bottom-animate-classes: append($center-bottom-animate-classes, $current-inanimate-class, comma);
+                            }
+                        }
+                    }
+
+                    @if $x-axis == 'right'
+                    {
+                        @if $y-axis == 'top'
+                        {
+                            $right-top-classes: append($right-top-classes, $current-class, comma);
+
+                            @if $is__inanimate
+							{
+								$right-top-animate-classes: append($right-top-animate-classes, $current-inanimate-class, comma);
+							}
+                        }
+                        @if $y-axis == 'middle'
+                        {
+                            $right-middle-classes: append($right-middle-classes, $current-class, comma);
+
+                            @if $is__inanimate
+							{
+								$right-middle-animate-classes: append($right-middle-animate-classes, $current-inanimate-class, comma);
+							}
+                        }
+                        @if $y-axis == 'bottom'
+                        {
+                            $right-bottom-classes: append($right-bottom-classes, $current-class, comma);
+
+                            @if $is__inanimate
+							{
+								$right-bottom-animate-classes: append($right-bottom-animate-classes, $current-inanimate-class, comma);
+							}
+                        }
+                    }
                 }
-			}
+            }
         }
     }
 }
@@ -223,70 +203,62 @@ $current-class: '';
 {
     @each $x-axis in $x-axes
     {
-        @each $is__inanimate in $inanimate
+        @each $pseudo in $pseudos
         {
-            @if not $is__inanimate or ($is__inanimate and $x-axis == 'right')
+            $is__inanimate: ($x-axis == 'right');
+
+            @if $position != 'fix' or not $pseudo
             {
-                @each $pseudo in $pseudos
+                $current-class: '.' + $position + '-' + $x-axis;
+
+				@if $pseudo
+				{
+					$current-class: $current-class + '-' + $pseudo;
+				}
+
+				@if $is__inanimate
                 {
-                    @if $position != 'fix' or not $pseudo
+                    $current-inanimate-class: $current-class + '.absalign-animate';
+
+                    @if $pseudo
                     {
-                        $current-class: '.' + $position + '-' + $x-axis;
+                        $current-inanimate-class: $current-inanimate-class + '-' + $pseudo + ':' + $pseudo;
+                    }
+                }
 
-						@if $pseudo
-						{
-							$current-class: $current-class + '-' + $pseudo;
-						}
+                @if $pseudo
+                {
+                    $current-class: $current-class + ':' + $pseudo;
+                }
+                @else if $x-axis != 'left'
+                {
+                    $transformed-classes: append($transformed-classes, $current-class, comma);
+                }
 
-						@if $is__inanimate
-                        {
-                            $current-class: $current-class + '.absalign-animate';
+                @if $position == 'abs'
+                {
+                    $abs-classes: append($abs-classes, $current-class, comma);
+                }
+                @else if $position == 'fix'
+                {
+                    $fix-classes: append($fix-classes, $current-class, comma);
+                }
 
-                            @if $pseudo
-                            {
-                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                            }
-                        }
-                        @else
-                        {
-                            @if $pseudo
-                            {
-                                $current-class: $current-class + ':' + $pseudo;
-                            }
-                            @else if $x-axis != 'left'
-                            {
-                                $transformed-classes: append($transformed-classes, $current-class, comma);
-                            }
-                        }
+                @if $x-axis == 'left'
+                {
+                    $left-classes: append($left-classes, $current-class, comma);
+                }
+                @if $x-axis == 'center'
+                {
+                    $center-classes: append($center-classes, $current-class, comma);
+                }
+                @if $x-axis == 'right'
+                {
+                    $right-classes: append($right-classes, $current-class, comma);
 
-                        @if $position == 'abs' and not $is__inanimate
-                        {
-                            $abs-classes: append($abs-classes, $current-class, comma);
-                        }
-                        @else if $position == 'fix' and not $is__inanimate
-                        {
-                            $fix-classes: append($fix-classes, $current-class, comma);
-                        }
-
-                        @if $x-axis == 'left'
-                        {
-                            $left-classes: append($left-classes, $current-class, comma);
-                        }
-                        @if $x-axis == 'center'
-                        {
-                            $center-classes: append($center-classes, $current-class, comma);
-                        }
-                        @if $x-axis == 'right'
-                        {
-                            @if not $is__inanimate
-                            {
-                                $right-classes: append($right-classes, $current-class, comma);
-                            }
-                            @else
-                            {
-                                $right-animate-classes: append($right-animate-classes, $current-class, comma);
-                            }
-                        }
+                    @if $is__inanimate
+                    {
+                        $right-animate-classes: append($right-animate-classes, $current-inanimate-class, comma);
                     }
                 }
             }
@@ -295,70 +267,62 @@ $current-class: '';
 
     @each $y-axis in $y-axes
     {
-        @each $is__inanimate in $inanimate
+        @each $pseudo in $pseudos
         {
-            @if not $is__inanimate or ($is__inanimate and $y-axis == 'bottom')
+            $is__inanimate: ($y-axis == 'bottom');
+
+            @if $position != 'fix' or not $pseudo
             {
-                @each $pseudo in $pseudos
+                $current-class: '.' + $position + '-' + $y-axis;
+
+                @if $pseudo
+				{
+					$current-class: $current-class + '-' + $pseudo;
+				}
+
+				@if $is__inanimate
                 {
-                    @if $position != 'fix' or not $pseudo
+                    $current-inanimate-class: $current-class + '.absalign-animate';
+
+                    @if $pseudo
                     {
-                        $current-class: '.' + $position + '-' + $y-axis;
+                        $current-inanimate-class: $current-inanimate-class + '-' + $pseudo + ':' + $pseudo;
+                    }
+                }
 
-                        @if $pseudo
-						{
-							$current-class: $current-class + '-' + $pseudo;
-						}
+                @if $pseudo
+                {
+                    $current-class: $current-class + ':' + $pseudo;
+                }
+                @else if $y-axis != 'top'
+                {
+                    $transformed-classes: append($transformed-classes, $current-class, comma);
+                }
 
-						@if $is__inanimate
-                        {
-                            $current-class: $current-class + '.absalign-animate';
+                @if $position == 'abs'
+                {
+                    $abs-classes: append($abs-classes, $current-class, comma);
+                }
+                @else if $position == 'fix'
+                {
+                    $fix-classes: append($fix-classes, $current-class, comma);
+                }
 
-                            @if $pseudo
-                            {
-                                $current-class: $current-class + '-' + $pseudo + ':' + $pseudo;
-                            }
-                        }
-                        @else
-                        {
-                            @if $pseudo
-                            {
-                                $current-class: $current-class + ':' + $pseudo;
-                            }
-                            @else if $y-axis != 'top'
-                            {
-                                $transformed-classes: append($transformed-classes, $current-class, comma);
-                            }
-                        }
+                @if $y-axis == 'top'
+                {
+                    $top-classes: append($top-classes, $current-class, comma);
+                }
+                @if $y-axis == 'middle'
+                {
+                    $middle-classes: append($middle-classes, $current-class, comma);
+                }
+                @if $y-axis == 'bottom'
+                {
+                    $bottom-classes: append($bottom-classes, $current-class, comma);
 
-                        @if $position == 'abs' and not $is__inanimate
-                        {
-                            $abs-classes: append($abs-classes, $current-class, comma);
-                        }
-                        @else if $position == 'fix' and not $is__inanimate
-                        {
-                            $fix-classes: append($fix-classes, $current-class, comma);
-                        }
-
-                        @if $y-axis == 'top'
-                        {
-                            $top-classes: append($top-classes, $current-class, comma);
-                        }
-                        @if $y-axis == 'middle'
-                        {
-                            $middle-classes: append($middle-classes, $current-class, comma);
-                        }
-                        @if $y-axis == 'bottom'
-                        {
-                            @if not $is__inanimate
-                            {
-                                $bottom-classes: append($bottom-classes, $current-class, comma);
-                            }
-                            @else
-                            {
-                                $bottom-animate-classes: append($bottom-animate-classes, $current-class, comma);
-                            }
-                        }
+                    @if $is__inanimate
+                    {
+                        $bottom-animate-classes: append($bottom-animate-classes, $current-inanimate-class, comma);
                     }
                 }
             }

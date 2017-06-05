@@ -10,13 +10,13 @@ function Demo()
         {
             '$prefix': $testBlockControls.find('.js-prefix-selector'),
             '$suffix': $testBlockControls.find('.js-suffix-selector'),
-			'$strict': $testBlockControls.find('.js-strict-checkbox')
+			'$animate': $testBlockControls.find('.js-animate-checkbox')
         },
         'pseudoTestBlock':
         {
             '$suffix': $pseudoTestBlockControls.find('.js-suffix-selector'),
             '$pseudo': $pseudoTestBlockControls.find('.js-pseudo-selector'),
-            '$strict': $pseudoTestBlockControls.find('.js-strict-checkbox')
+            '$animate': $pseudoTestBlockControls.find('.js-animate-checkbox')
         }
     };
 
@@ -48,11 +48,11 @@ Demo.prototype =
         var newClass = this._$testBlock.data('base-class') + ' ' +
         this._controls.testBlock.$prefix.getSelectedValue() + '-' +
         this._controls.testBlock.$suffix.getSelectedValue() +
-        (this._controls.testBlock.$strict.isChecked() === true ? '-strict' : '') + ' ' +
+        (this._controls.testBlock.$animate.isChecked() === true ? ' absalign-animate' : '') + ' ' +
         'abs-' +
         this._controls.pseudoTestBlock.$suffix.getSelectedValue() + '-' +
-        (this._controls.pseudoTestBlock.$strict.isChecked() === true ? 'strict-' : '') +
-        this._controls.pseudoTestBlock.$pseudo.getSelectedValue();
+        this._controls.pseudoTestBlock.$pseudo.getSelectedValue() +
+		(this._controls.pseudoTestBlock.$animate.isChecked() === true ? ' absalign-animate-' + this._controls.pseudoTestBlock.$pseudo.getSelectedValue() : '');
 
         this._$testBlock.attr('class', newClass);
     }

@@ -19,8 +19,6 @@ function Demo()
             '$animate': $pseudoTestBlockControls.find('.js-animate-checkbox')
         }
     };
-
-    console.log(this._controls);
 }
 
 Demo.prototype =

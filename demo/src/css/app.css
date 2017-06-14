@@ -61,6 +61,7 @@ select
     max-width: 500px;
     margin: 0 auto;
     margin-bottom: 50px;
+    padding: 0 15px;
 }
 
 .c-header__logo
@@ -277,6 +278,7 @@ select
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .u-center-block

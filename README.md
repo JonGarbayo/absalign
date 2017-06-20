@@ -9,7 +9,6 @@ Check the demo **[here](http://jongarbayo.github.io/absalign "absalign demo page
 
 # Why?
 Web dev, we all know the pain of vertically centering elements... It must be cross-browser, responsive, easy to maintain, well coded, without using JavaScript, etc.
-The great ``flex`` implementation is coming cross-browser, we have to be patient. But we have to wait for it using other techniques.
 
 Here is what I propose: a micro CSS library to **vertically and horizontally** center elements with a **great and simple technique**.
 It's:
@@ -42,17 +41,15 @@ Finally, you have to define the value for the Y axis, which have to be one of th
 
 Separate these three parts by an hyphen ``-`` and you've got your class :)
 
-### Strict (optional)
-With some absalign classes, **you may prefer to don't use ``transform`` property** (see the reasons in the "Why do I use ``left: 100%`` and a transform instead of ``right: 0``?" part), and instead **use the classical absolute positioning** with ``right: 0`` or ``bottom: 0``. To achieve this, add ``strict`` at the end of the class name.
-It only works with this set:
-- right-top
-- right-middle (only for the "right")
-- right-bottom
-- right
-- bottom
-
 ### Pseudo-elements (optional)
-Also, if you want to **apply the effect to a pseudo-element**, add ``before`` or ``after`` at the end of the class name, after the ``strict`` word if present.
+Also, if you want to **apply the effect to a pseudo-element**, add ``-before`` or ``-after`` at the end of the class name.
+
+### ``.absalign-animate`` (optional)
+As absalign classes uses **the most simple positioning** most of the time (with ``top``, ``left``, ``right`` and ``bottom`` properties), they are **not always animatable** if you switch them.
+
+In fact, you can't apply a CSS transition between **two different properties** (like ``left`` and ``right`` for example).
+
+To use only ``top``, ``left`` and ``transform`` properties (so, to be sure you can apply **smooth CSS transitions**), add the ``.absalign-animate`` class to the desired element. To apply the effect to a pseudo-element, just add ``-before`` or ``-after`` at the end of this class name.
 
 ### Single axis classes
 If you need absalign for only **one axis** (like the middle one, mmmh?), a second one is optional.
@@ -75,11 +72,11 @@ If you need absalign for only **one axis** (like the middle one, mmmh?), a secon
 ```
 
 ```html
-<div class="fix-right-top-strict">Fixed strict position with two axes</div>
+<div class="fix-right-top absalign-animate">Fixed and animatable with two axes</div>
 ```
 
 ```html
-<div class="abs-right-bottom-strict-after">After pseudo-element strictly positioned with two axes</div>
+<div class="abs-right-bottom-after absalign-animate-after">After pseudo-element absolute and animatable with two axes</div>
 ```
 
 ### Container
@@ -123,7 +120,8 @@ But there are a few cons with it:
 
 ### The modern technique
 Well, in this library, I used the ``transform: translate();`` **CSS3** function.
-As the 4 position properties are based on the **body dimensions** (or the viewport dimensions for the fixed elements), ``top: 50%;`` will push the element **top border** at the middle of the page.
+As the 4 position properties are based on the **closest relative parent dimensions** (or the viewport dimensions for the fixed elements), ``top: 50%;`` will push the element **top border** at the middle of the page.
+
 But all the transforms functions are **based on the element dimensions**. So, by writing something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of it's height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
 
 Applying on our previous ``.nice-div``:
@@ -140,8 +138,5 @@ Applying on our previous ``.nice-div``:
 ```
 
 This technique can also (of course) be applied to the X axis, with ``transform: translateX(-50%)``, or both axes at the same time, with ``transform: translate(-50%, -50%)``.
-I added other classes to get a more complete set of positions, so you got 9, with 3 per axis (left, center and right for X axis, and top, middle and bottom for the Y).
 
-### Why do I use ``left: 100%`` and a transform instead of ``right: 0``?
-Hum, very simple: you can't apply a CSS transition between **two different properties**, as ``left`` and ``right`` here. So, to keep it **animatable**, I choose to only use ``top`` and ``left``, and let ``bottom`` and ``right`` to the mob ;)
-If you don't need to change the absalign class of an element, or if you need to animate it with transforms, you should consider using the ``strict`` classes (see the "How to use it" part).
+I added the other classes described in the "How to use it?" part to get a more complete set of positions.

@@ -1,9 +1,22 @@
+# v0.0.9 (2017/06/20)
+## Features
+- (breaking change) Inverted the strict classes logic: classes are now strict by default, and animatable via an optional class, ``.absalign-animate`` (and its pseudo-elements variants). So the "strict" word disappears from absalign.
+Adding these classes to an element with an absalign class will change its behavior to only use "top", "left" and "transform" properties.
+
+## Demo
+- Updated the demo to show the absalign-animate behavior.
+- Fixed the horizontal scrollbar on little screens in demo.
+
+## Maintenance
+- Updated dependencies.
+
+
 # v0.0.8 (2017/03/29)
 ## Features
 - Added strict classes: classes with no (or at least "the minimum") ``transform`` properties.
 
 ## Improvements
-- (breaking change) Removed unnecessary fixed pseudo-elements classes (``like .fix-left-before``): same effect than absolute position. Also removed pseudo-element position selector from demo (always absolute from now on).
+- (breaking change) Removed unnecessary fixed pseudo-elements classes (like ``.fix-left-before``): same effect than absolute position. Also removed pseudo-element position selector from demo (always absolute from now on).
 
 ## Maintenance
 - Updated selectize plugin.

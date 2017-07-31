@@ -106,7 +106,7 @@ $current-inanimate-class: '';
                     {
                         $current-class: $current-class + ':' + $pseudo;
                     }
-                    @else if $x-axis != 'left' or $y-axis != 'top'
+                    @else if $x-axis == 'center' or $y-axis == 'middle'
                     {
                         $transformed-classes: append($transformed-classes, $current-class, comma);
                     }
@@ -230,7 +230,7 @@ $current-inanimate-class: '';
                 {
                     $current-class: $current-class + ':' + $pseudo;
                 }
-                @else if $x-axis != 'left'
+                @else if $x-axis == 'center'
                 {
                     $transformed-classes: append($transformed-classes, $current-class, comma);
                 }
@@ -294,7 +294,7 @@ $current-inanimate-class: '';
                 {
                     $current-class: $current-class + ':' + $pseudo;
                 }
-                @else if $y-axis != 'top'
+                @else if $y-axis == 'middle'
                 {
                     $transformed-classes: append($transformed-classes, $current-class, comma);
                 }

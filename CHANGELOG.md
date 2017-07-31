@@ -1,3 +1,8 @@
+# v0.0.10 (2017/07/31)
+## Improvements
+- Removed no more necessary classes from the fullscreen fix.
+
+
 # v0.0.9 (2017/06/20)
 ## Features
 - (breaking change) Inverted the strict classes logic: classes are now strict by default, and animatable via an optional class, ``.absalign-animate`` (and its pseudo-elements variants). So the "strict" word disappears from absalign.

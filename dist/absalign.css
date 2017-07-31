@@ -1,5 +1,5 @@
 /*!
- * absalign v0.0.9 (CSS part)
+ * absalign v0.0.10 (CSS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)
@@ -83,29 +83,19 @@
 
 .absalign-animate:-webkit-full-screen,
 .abs-left-middle:-webkit-full-screen,
-.abs-left-bottom:-webkit-full-screen,
 .abs-center-top:-webkit-full-screen,
 .abs-center-middle:-webkit-full-screen,
 .abs-center-bottom:-webkit-full-screen,
-.abs-right-top:-webkit-full-screen,
 .abs-right-middle:-webkit-full-screen,
-.abs-right-bottom:-webkit-full-screen,
 .fix-left-middle:-webkit-full-screen,
-.fix-left-bottom:-webkit-full-screen,
 .fix-center-top:-webkit-full-screen,
 .fix-center-middle:-webkit-full-screen,
 .fix-center-bottom:-webkit-full-screen,
-.fix-right-top:-webkit-full-screen,
 .fix-right-middle:-webkit-full-screen,
-.fix-right-bottom:-webkit-full-screen,
 .abs-center:-webkit-full-screen,
-.abs-right:-webkit-full-screen,
 .abs-middle:-webkit-full-screen,
-.abs-bottom:-webkit-full-screen,
 .fix-center:-webkit-full-screen,
-.fix-right:-webkit-full-screen,
-.fix-middle:-webkit-full-screen,
-.fix-bottom:-webkit-full-screen
+.fix-middle:-webkit-full-screen
 {
     -webkit-transform: none !important;
             transform: none !important;
@@ -113,29 +103,19 @@
 
 .absalign-animate:fullscreen,
 .abs-left-middle:fullscreen,
-.abs-left-bottom:fullscreen,
 .abs-center-top:fullscreen,
 .abs-center-middle:fullscreen,
 .abs-center-bottom:fullscreen,
-.abs-right-top:fullscreen,
 .abs-right-middle:fullscreen,
-.abs-right-bottom:fullscreen,
 .fix-left-middle:fullscreen,
-.fix-left-bottom:fullscreen,
 .fix-center-top:fullscreen,
 .fix-center-middle:fullscreen,
 .fix-center-bottom:fullscreen,
-.fix-right-top:fullscreen,
 .fix-right-middle:fullscreen,
-.fix-right-bottom:fullscreen,
 .abs-center:fullscreen,
-.abs-right:fullscreen,
 .abs-middle:fullscreen,
-.abs-bottom:fullscreen,
 .fix-center:fullscreen,
-.fix-right:fullscreen,
-.fix-middle:fullscreen,
-.fix-bottom:fullscreen
+.fix-middle:fullscreen
 {
     -webkit-transform: none !important;
             transform: none !important;

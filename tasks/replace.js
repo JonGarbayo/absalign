@@ -49,7 +49,7 @@ module.exports =
         files:
         {
             'dist/absalign.css': 'dist/absalign.css',
-            'dist/absalign.js': 'src/absalign.js'
+            'dist/absalign.js': 'dist/absalign.js'
         }
     },
     demo:

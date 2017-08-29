@@ -5,6 +5,8 @@
  * Licensed under MIT (@@homepage/blob/master/LICENSE)
  */
 
+/* include _class-collection.js */
+
 if (canUseTransform() === false)
 {
 	var absalignPolyfill = new AbsalignPolyfill().init();

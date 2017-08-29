@@ -30,6 +30,7 @@ module.exports = function(grunt)
         'compass',
         'css_important:dist',
         'postcss:dist',
+        'include_file:dist',
         'replace:dist',
 		'csscomb:dist',
         'concurrent:minPackage',
@@ -50,6 +51,7 @@ module.exports = function(grunt)
 		'compass:dist',
         'css_important:dist',
         'postcss:dist',
+        'include_file:dist',
 		'replace:dist',
 		'csscomb:dist',
 		'concurrent:minPackage'

@@ -396,15 +396,17 @@ function AbsalignPolyfill()
 
     function _scan()
     {
-        _classesCollection.forEach(function (className)
+        for (var i = 0; i < _classesCollection.length; i++)
         {
+            var className = _classesCollection[i];
+
             var elements = document.querySelectorAll(className);
 
-            for (var i = 0; i < elements.length; i++)
+            for (var j = 0; j < elements.length; j++)
             {
-                _elements.push(new AbsalignElement(elements[i], className).init());
+                _elements.push(new AbsalignElement(elements[j], className).init());
             }
-        });
+        }
     }
 
     return OBJ;

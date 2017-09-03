@@ -5,8 +5,6 @@
  * Licensed under MIT (@@homepage/blob/master/LICENSE)
  */
 
-/* include _class-collection.js */
-
 if (canUseTransform() === false)
 {
 	var absalignPolyfill = new AbsalignPolyfill().init();
@@ -54,7 +52,7 @@ function AbsalignPolyfill()
 
     function _populateClassCollection()
     {
-    // Declaring parts of classes names
+    /*// Declaring parts of classes names
         var positions =
         [
             'abs',
@@ -391,7 +389,9 @@ function AbsalignPolyfill()
             });
         });
 
-        _classesCollection = transformedClasses;
+        _classesCollection = transformedClasses;*/
+
+        /* include _class-collection.js */
     }
 
     function _scan()

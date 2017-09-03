@@ -1,4 +1,4 @@
-window.absalignClasses =
+_classesCollection =
 [
     ".abs-left-middle",
     ".abs-center-top",

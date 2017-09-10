@@ -5,33 +5,9 @@
  * Licensed under MIT (@@homepage/blob/master/LICENSE)
  */
 
-if (canUseTransform() === false)
+if (absalignUtilities().canUseTransform() === false)
 {
 	var absalignPolyfill = new AbsalignPolyfill().init();
-}
-
-function canUseTransform()
-{
-    var prefixes =
-	[
-		'transform',
-		'WebkitTransform',
-		'MozTransform',
-		'OTransform',
-		'msTransform'
-	];
-
-	var prefixes_length = prefixes.length;
-
-    for (var i = 0; i < prefixes_length; i++)
-	{
-        if (document.createElement('div').style[prefixes[i]] !== undefined)
-		{
-            return prefixes[i];
-        }
-    }
-
-    return false;
 }
 
 function AbsalignPolyfill()
@@ -156,6 +132,30 @@ function absalignUtilities()
     OBJ.isYAxis = function (axis)
     {
         return (_yAxes.indexOf(axis) !== -1);
+    };
+
+    OBJ.canUseTransform = function ()
+    {
+        var prefixes =
+    	[
+    		'transform',
+    		'WebkitTransform',
+    		'MozTransform',
+    		'OTransform',
+    		'msTransform'
+    	];
+
+    	var prefixes_length = prefixes.length;
+
+        for (var i = 0; i < prefixes_length; i++)
+    	{
+            if (document.createElement('div').style[prefixes[i]] !== undefined)
+    		{
+                return prefixes[i];
+            }
+        }
+
+        return false;
     };
 
     return OBJ;

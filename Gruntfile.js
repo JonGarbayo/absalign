@@ -117,7 +117,7 @@ module.exports = function(grunt)
 
                         if (position !== 'fix' || !pseudo)
                         {
-                            currentClass = '.' + position + '-' + xAxis + '-' + yAxis;
+                            currentClass = position + '-' + xAxis + '-' + yAxis;
 
         					if (pseudo)
         					{
@@ -241,7 +241,7 @@ module.exports = function(grunt)
 
                     if (position !== 'fix' || !pseudo)
                     {
-                        currentClass = '.' + position + '-' + xAxis;
+                        currentClass = position + '-' + xAxis;
 
         				if (pseudo)
         				{
@@ -305,7 +305,7 @@ module.exports = function(grunt)
 
                     if (position !== 'fix' || !pseudo)
                     {
-                        currentClass = '.' + position + '-' + yAxis;
+                        currentClass = position + '-' + yAxis;
 
                         if (pseudo)
         				{

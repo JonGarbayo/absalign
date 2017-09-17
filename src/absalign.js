@@ -5,6 +5,56 @@
  * Licensed under MIT (@@homepage/blob/master/LICENSE)
  */
 
+// document.getElementsByClassName polyfill
+// https://gist.github.com/eikes/2299607
+// https://gist.github.com/darthwade/82d89666dc4ece05be4f
+if (!document.getElementsByClassName)
+{
+    var getElementsByClassName = function (search)
+    {
+        var d = this,
+            elements, pattern, i, results = [];
+
+        if (d.querySelectorAll) // IE8
+        {
+            return d.querySelectorAll("." + search);
+        }
+
+        if (d.evaluate) // IE6, IE7
+        {
+            pattern  = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
+            elements = d.evaluate(pattern, d, null, 0, null);
+
+            while ((i = elements.iterateNext()))
+            {
+                 results.push(i);
+            }
+        }
+        else
+        {
+            elements = d.getElementsByTagName("*");
+            pattern  = new RegExp("(^|\\s)" + search + "(\\s|$)");
+
+            for (i = 0; i < elements.length; i++)
+            {
+                if (pattern.test(elements[i].className))
+                {
+                     results.push(elements[i]);
+                }
+            }
+        }
+
+        return results;
+    };
+
+    if (typeof Element !== 'undefined')
+    {
+        Element.prototype.getElementsByClassName = getElementsByClassName;
+    }
+
+    document.getElementsByClassName = getElementsByClassName;
+}
+
 if (absalignUtilities().canUseTransform() === false)
 {
 	var absalignPolyfill = new AbsalignPolyfill().init();
@@ -37,7 +87,7 @@ function AbsalignPolyfill()
         {
             var className = _classesCollection[i];
 
-            var elements = document.querySelectorAll(className);
+            var elements = document.getElementsByClassName(className);
 
             for (var j = 0; j < elements.length; j++)
             {

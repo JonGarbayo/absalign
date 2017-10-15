@@ -5,7 +5,7 @@
  * Licensed under MIT (@@homepage/blob/master/LICENSE)
  */
 
-/* include polyfills.js */
+/* include _polyfills.js */
 
 if (absalignUtilities().canUseTransform() === false)
 {

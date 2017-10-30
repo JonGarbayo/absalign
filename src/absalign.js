@@ -7,11 +7,11 @@
 
 /* include _polyfills.js */
 
-if (absalignUtilities().canUseTransform() === false)
-{
-	var absalignPolyfill = new AbsalignPolyfill().init();
-}
-
+/**
+ * Core of the polyfill. Scans the DOM to build the AbsalignElements
+ * list.
+ * @constructor
+ */
 function AbsalignPolyfill()
 {
     var OBJ = this;
@@ -21,6 +21,10 @@ function AbsalignPolyfill()
 
     _populateClassCollection();
 
+    /**
+     * After instatiation, launch DOM operations.
+     * @return {AbsalignPolyfill} AbsalignPolyfill after scanning the DOM.
+     */
     OBJ.init = function ()
     {
         _scan();
@@ -28,11 +32,20 @@ function AbsalignPolyfill()
         return OBJ;
     };
 
+    /**
+     * Add the generated absalign classes from Grunt to the
+     * AbsalignPolyfill.
+     */
     function _populateClassCollection()
     {
         /* include _class-collection.js */
     }
 
+    /**
+     * Scans the DOM using the absalign classes collection. A new
+     * AbsalignElement object is instantiated for each element found, and
+     * stored in the _elements collection.
+     */
     function _scan()
     {
         for (var i = 0; i < _classesCollection.length; i++)
@@ -51,6 +64,13 @@ function AbsalignPolyfill()
     return OBJ;
 }
 
+/**
+ * Wraper object for every DOM element with an absalign class.
+ * @param       {Object} element       DOM element.
+ * @param       {String} absalignClass absalign class found on element
+ *                                     to process.
+ * @constructor
+ */
 function AbsalignElement(element, absalignClass)
 {
     var OBJ = this;
@@ -63,6 +83,7 @@ function AbsalignElement(element, absalignClass)
 
     var nbAxes = absalignClass.length - 1;
 
+// Mono axis case (i.e.: abs-left)
     if (nbAxes === 1)
     {
         if (absalignUtilities().isXAxis(absalignClass[1]))
@@ -76,12 +97,17 @@ function AbsalignElement(element, absalignClass)
         }
     }
 
+// Double axis case (i.e.: abs-center-right)
     if (nbAxes === 2)
     {
         _xAxis = absalignClass[1];
         _yAxis = absalignClass[2];
     }
 
+    /**
+     * After instatiation, launch DOM operations.
+     * @return {AbsalignElement} AbsalignElement after placing it.
+     */
     OBJ.init = function ()
     {
         _place();
@@ -89,6 +115,13 @@ function AbsalignElement(element, absalignClass)
         return OBJ;
     };
 
+    /**
+     * Main action of the polyfill: replace the transform() CSS function.
+     * The effect only applies to element with "center" as X axis or "middle" as
+     * Y axis.
+     * The idea is to put the half of the element width or height as negative
+     * margin-left or margin-top.
+     */
     function _place()
     {
         if (_xAxis === 'center')
@@ -106,11 +139,19 @@ function AbsalignElement(element, absalignClass)
         }
     }
 
+    /**
+     * Get the element width.
+     * @return {Number} The element width, as number.
+     */
     function _getWidth()
     {
         return _element.offsetWidth;
     }
 
+    /**
+     * Get the element height.
+     * @return {Number} The element height, as number.
+     */
     function _getHeight()
     {
         return _element.offsetHeight;
@@ -119,23 +160,44 @@ function AbsalignElement(element, absalignClass)
     return OBJ;
 }
 
+/**
+ * Utilities factory function.
+ * @return {Object} An absalignUtilities instance.
+ */
 function absalignUtilities()
 {
     var OBJ = OBJ || { };
 
-    var _xAxes = ['left', 'center', 'right'];
-    var _yAxes = ['top', 'middle', 'bottom'];
+    var _xPositions = ['left', 'center', 'right'];
+    var _yPositions = ['top', 'middle', 'bottom'];
 
-    OBJ.isXAxis = function (axis)
+    /**
+     * From a position name, tell if it's from X axis or not.
+     * @param  {String} position The position name.
+     * @return {Boolean}         True if position is from the X axis, else
+     *                           false.
+     */
+    OBJ.isXAxis = function (position)
     {
-        return (_xAxes.indexOf(axis) !== -1);
+        return (_xPositions.indexOf(position) !== -1);
     };
 
-    OBJ.isYAxis = function (axis)
+    /**
+     * From a position name, tell if it's from Y axis or not.
+     * @param  {String} position The position name.
+     * @return {Boolean}         True if position is from the Y axis, else
+     *                           false.
+     */
+    OBJ.isYAxis = function (position)
     {
-        return (_yAxes.indexOf(axis) !== -1);
+        return (_yPositions.indexOf(position) !== -1);
     };
 
+    /**
+     * Tell if the browser knows the transform CSS property.
+     * @return {Boolean} True if if the browser knows the transform CSS
+     *                   property, else false.
+     */
     OBJ.canUseTransform = function ()
     {
         var prefixes =
@@ -161,4 +223,10 @@ function absalignUtilities()
     };
 
     return OBJ;
+}
+
+// Starting the polyfill
+if (absalignUtilities().canUseTransform() === false)
+{
+	var absalignPolyfill = new AbsalignPolyfill().init();
 }

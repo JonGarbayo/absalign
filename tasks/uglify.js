@@ -19,8 +19,11 @@ module.exports =
 {
     options:
     {
-    // Preserve the header comments (which start with /**!)
-        preserveComments: 'some'
+    // Preserve the header comments (which start with /*!)
+        preserveComments: function (node, comment)
+        {
+            return comment.value[0] === '!';
+        }
     },
     dist:
     {

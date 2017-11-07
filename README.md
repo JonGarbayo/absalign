@@ -93,13 +93,21 @@ Like this:
 The use of JavaScript here is to **simulate the CSS3 ``transform`` property**, which is **the core if this package** (read next part, "How does it works", to learn more about it).
 **Old browsers** like IE8 or old version of Chrome and Firefox **doesn't understand it**, even with prefixes. I know these versions are not really in use today (except IE, ha ha... damn :|), but I chose to support them.
 
-The polyfill will **only be active on browsers which doesn't support the ``transform``**. But you're free to not include it, if you don't mind about Prehistory ;)
+The polyfill will **only be active on browsers which doesn't support the ``transform``**, just include it:
 
-**Note:** This polyfill is not available for the moment. Will be in a future release ;)
+```html
+<script type="text/javascript" src="absalign.min.js"></script>
+```
+
+It's written in pure JavaScript, you don't need any jQuery.
+
+But you're free to not use it, if you don't mind about Prehistory ;)
+
+**Note:** This polyfill is in beta phase. It only works on page load for the moment, and doesn't watch for DOM updates. Also, it doesn't work with pseudo-elements and doesn't apply the ``absalign-animate`` class effect.
 
 ## … does it works?
 ### The old-fashion technique
-I suppose you know this very famous "static" technique which consists in giving a ``top: 50%;`` to the desired element and also **a negative margin-top equal to the half of it's height**. And it works very well!
+I suppose you know this very famous "static" technique which consists in giving a ``top: 50%;`` to the desired element and also **a negative margin-top equal to the half of its height**. And it works very well!
 
 Example:
 ```css
@@ -122,7 +130,7 @@ But there are a few cons with it:
 Well, in this library, I used the ``transform: translate();`` **CSS3** function.
 As the 4 position properties are based on the **closest relative parent dimensions** (or the viewport dimensions for the fixed elements), ``top: 50%;`` will push the element **top border** at the middle of the page.
 
-But all the transforms functions are **based on the element dimensions**. So, by writing something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of it's height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
+But all the transforms functions are **based on the element dimensions**. So, by writing something like ``transform: translateY(-50%);``, the element will be pushed to the top by **the half of its height**. Yes: with percentages, so on a **dynamic way**! Oww yeah :o!
 
 Applying on our previous ``.nice-div``:
 ```css
@@ -140,3 +148,7 @@ Applying on our previous ``.nice-div``:
 This technique can also (of course) be applied to the X axis, with ``transform: translateX(-50%)``, or both axes at the same time, with ``transform: translate(-50%, -50%)``.
 
 I added the other classes described in the "How to use it?" part to get a more complete set of positions.
+
+### What happens in the polyfill
+The polyfill just dynamically applies the old-fashion technique described higher, *via* JavaScript: it uses **a negative margin-top equal to the half of the element height** (or margin-left for a horizontal centering).
+So be sure to don't use any kind of margins in your absalign elements to keep away from bad surprises!

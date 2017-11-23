@@ -1,3 +1,11 @@
+# v0.1.0 (2017/11/23)
+## Features
+- First release of the JavaScript polyfill! It only works on page load for the moment.
+
+## Other
+- Added a table of content to the README.
+
+
 # v0.0.10 (2017/07/31)
 ## Improvements
 - Removed no more necessary classes from the fullscreen fix.

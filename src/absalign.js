@@ -66,43 +66,21 @@ function AbsalignPolyfill()
 
 /**
  * Wraper object for every DOM element with an absalign class.
- * @param       {Object} element       DOM element.
- * @param       {String} absalignClass absalign class found on element
- *                                     to process.
+ * @param {Object} element       DOM element.
+ * @param {String} absalignClass absalign class found on element to process.
+ *
  * @constructor
  */
 function AbsalignElement(element, absalignClass)
 {
     var OBJ = this;
 
-    var _element = element,
+    var _element       = element,
+        _absalignClass = absalignClass,
         _xAxis,
         _yAxis;
 
-    absalignClass = absalignClass.split('-');
-
-    var nbAxes = absalignClass.length - 1;
-
-// Mono axis case (i.e.: abs-left)
-    if (nbAxes === 1)
-    {
-        if (absalignUtilities().isXAxis(absalignClass[1]))
-        {
-            _xAxis = absalignClass[1];
-        }
-
-        if (absalignUtilities().isYAxis(absalignClass[1]))
-        {
-            _yAxis = absalignClass[1];
-        }
-    }
-
-// Double axis case (i.e.: abs-center-right)
-    if (nbAxes === 2)
-    {
-        _xAxis = absalignClass[1];
-        _yAxis = absalignClass[2];
-    }
+    _fetch__axesFromAbsalignClass(_absalignClass);
 
     /**
      * After instatiation, launch DOM operations.
@@ -116,6 +94,39 @@ function AbsalignElement(element, absalignClass)
     };
 
     /**
+     * Extract axes from the provided absalign class and populate _xAxis and
+     * _yAxis with it.
+     * @param {String} absalignClass absalign class of the element.
+     */
+    function _fetch__axesFromAbsalignClass(absalignClass)
+    {
+        absalignClass = absalignClass.split('-');
+
+        var nbAxes = absalignClass.length - 1;
+
+    // Mono axis case (i.e.: abs-left)
+        if (nbAxes === 1)
+        {
+            if (absalignUtilities().isXAxis(absalignClass[1]))
+            {
+                _xAxis = absalignClass[1];
+            }
+
+            if (absalignUtilities().isYAxis(absalignClass[1]))
+            {
+                _yAxis = absalignClass[1];
+            }
+        }
+
+    // Double axis case (i.e.: abs-center-right)
+        if (nbAxes === 2)
+        {
+            _xAxis = absalignClass[1];
+            _yAxis = absalignClass[2];
+        }
+    }
+
+    /**
      * Main action of the polyfill: replace the transform() CSS function.
      * The effect only applies to element with "center" as X axis or "middle" as
      * Y axis.
@@ -126,14 +137,14 @@ function AbsalignElement(element, absalignClass)
     {
         if (_xAxis === 'center')
         {
-            var elementWidth = _getWidth();
+            var elementWidth = _get__width();
 
             _element.style.marginLeft = -(elementWidth / 2) + 'px';
         }
 
         if (_yAxis === 'middle')
         {
-            var elementHeight = _getHeight();
+            var elementHeight = _get__height();
 
             _element.style.marginTop = -(elementHeight / 2) + 'px';
         }
@@ -143,7 +154,7 @@ function AbsalignElement(element, absalignClass)
      * Get the element width.
      * @return {Number} The element width, as number.
      */
-    function _getWidth()
+    function _get__width()
     {
         return _element.offsetWidth;
     }
@@ -152,7 +163,7 @@ function AbsalignElement(element, absalignClass)
      * Get the element height.
      * @return {Number} The element height, as number.
      */
-    function _getHeight()
+    function _get__height()
     {
         return _element.offsetHeight;
     }

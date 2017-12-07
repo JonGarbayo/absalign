@@ -1,6 +1,6 @@
 {
   "name": "absalign",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Micro CSS library to easily and properly align DOM elements.",
   "repository": {
     "type": "git",

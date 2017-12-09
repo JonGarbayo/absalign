@@ -19,7 +19,7 @@ function AbsalignPolyfill()
     var _classesCollection = [],
         _elements = [];
 
-    _populateClassCollection();
+    _populateClassesCollection();
 
     /**
      * After instatiation, launch DOM operations.
@@ -33,10 +33,19 @@ function AbsalignPolyfill()
     };
 
     /**
+     * Returns the absalign classes collection.
+     * @return {Array} absalign classes collection as array of strings.
+     */
+    OBJ.get__classesCollection = function ()
+    {
+        return _classesCollection;
+    };
+
+    /**
      * Add the generated absalign classes from Grunt to the
      * AbsalignPolyfill.
      */
-    function _populateClassCollection()
+    function _populateClassesCollection()
     {
         /* include _class-collection.js */
     }
@@ -56,7 +65,7 @@ function AbsalignPolyfill()
 
             for (var j = 0; j < elements.length; j++)
             {
-                _elements.push(new AbsalignElement(elements[j], className).init());
+                _elements.push(new AbsalignElement(elements[j], className, OBJ).init());
             }
         }
     }
@@ -71,7 +80,7 @@ function AbsalignPolyfill()
  *
  * @constructor
  */
-function AbsalignElement(element, absalignClass)
+function AbsalignElement(element, absalignClass, absalignPolyfill)
 {
     var OBJ = this;
 
@@ -80,7 +89,7 @@ function AbsalignElement(element, absalignClass)
         _xAxis,
         _yAxis;
 
-    _fetch__axesFromAbsalignClass(_absalignClass);
+    _populate__axesFromAbsalignClass(_absalignClass);
 
     /**
      * After instatiation, launch DOM operations.
@@ -98,7 +107,7 @@ function AbsalignElement(element, absalignClass)
      * _yAxis with it.
      * @param {String} absalignClass absalign class of the element.
      */
-    function _fetch__axesFromAbsalignClass(absalignClass)
+    function _populate__axesFromAbsalignClass(absalignClass)
     {
         absalignClass = absalignClass.split('-');
 

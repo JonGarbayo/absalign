@@ -99,6 +99,8 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
     {
         _place();
 
+        _on__classChange();
+
         return OBJ;
     };
 
@@ -135,6 +137,31 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
         }
     }
 
+    function _fetch__absalignClassFromClass()
+    {
+        var elementClass  = _element.className,
+
+            classes      = elementClass.split(' '),
+            classes__it  = 0,
+            classes__len = classes.length,
+
+            absalignClassesCollection = absalignPolyfill.get__classesCollection();
+
+            absalignClass = false;
+
+        while (absalignClass === false && classes__it < classes__len)
+        {
+            if (absalignClassesCollection.indexOf(classes[classes__it]) !== -1)
+            {
+                absalignClass = classes[classes__it];
+            }
+
+            classes__it++;
+        }
+
+        return absalignClass;
+    }
+
     /**
      * Main action of the polyfill: replace the transform() CSS function.
      * The effect only applies to element with "center" as X axis or "middle" as
@@ -157,6 +184,22 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
 
             _element.style.marginTop = -(elementHeight / 2) + 'px';
         }
+    }
+
+    function _on__classChange()
+    {
+        var newAbsalignClass           = _fetch__absalignClassFromClass(),
+            is__absalignClassDifferent = (_absalignClass !== newAbsalignClass);
+
+        if (is__absalignClassDifferent)
+        {
+            _absalignClass = newAbsalignClass;
+
+            _populate__axesFromAbsalignClass(_absalignClass);
+            _place();
+        }
+
+        setTimeout(_on__classChange, 100);
     }
 
     /**

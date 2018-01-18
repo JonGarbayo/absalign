@@ -115,16 +115,25 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
 
         var nbAxes = absalignClass.length - 1;
 
+    // No absalign class case (only after class change)
+        if (nbAxes === 0)
+        {
+            _xAxis = '';
+            _yAxis = '';
+        }
+
     // Mono axis case (i.e.: abs-left)
         if (nbAxes === 1)
         {
             if (absalignUtilities().isXAxis(absalignClass[1]))
             {
                 _xAxis = absalignClass[1];
+                _yAxis = '';
             }
 
             if (absalignUtilities().isYAxis(absalignClass[1]))
             {
+                _xAxis = '';
                 _yAxis = absalignClass[1];
             }
         }
@@ -147,9 +156,9 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
 
             absalignClassesCollection = absalignPolyfill.get__classesCollection();
 
-            absalignClass = false;
+            absalignClass = '';
 
-        while (absalignClass === false && classes__it < classes__len)
+        while (absalignClass === '' && classes__it < classes__len)
         {
             if (absalignClassesCollection.indexOf(classes[classes__it]) !== -1)
             {
@@ -177,12 +186,20 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
 
             _element.style.marginLeft = -(elementWidth / 2) + 'px';
         }
+        else
+        {
+            _element.style.marginLeft = '';
+        }
 
         if (_yAxis === 'middle')
         {
             var elementHeight = _get__height();
 
             _element.style.marginTop = -(elementHeight / 2) + 'px';
+        }
+        else
+        {
+            _element.style.marginTop = '';
         }
     }
 

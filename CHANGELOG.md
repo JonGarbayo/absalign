@@ -1,3 +1,8 @@
+# v0.2.0 (2018/03/18)
+## Features
+- Added the "on class change" behavior to the JavaScript polyfill.
+
+
 # v0.1.0 (2017/11/23)
 ## Features
 - First release of the JavaScript polyfill! It only works on page load for the moment.

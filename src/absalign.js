@@ -21,7 +21,7 @@ function AbsalignPolyfill()
     _populateClassesCollection();
 
     /**
-     * After instatiation, launch DOM operations.
+     * After instantiation, launch DOM operations.
      * @return {AbsalignPolyfill} AbsalignPolyfill after scanning the DOM.
      */
     OBJ.init = function ()
@@ -91,7 +91,7 @@ function AbsalignElement(element, absalignClass, absalignPolyfill)
     _populate__axesFromAbsalignClass(_absalignClass);
 
     /**
-     * After instatiation, launch DOM operations.
+     * After instantiation, launch DOM operations.
      * @return {AbsalignElement} AbsalignElement after placing it.
      */
     OBJ.init = function ()

@@ -2,23 +2,23 @@
 	<img src="absalign-logo.png" alt="absalign logo" title="absalign logo"/>
 </p>
 
-* [What?](#what)
-* [Why?](#why)
-* [How …](#how)
-	* [… to use it?](#to-use-it)
-		* [Position](#position)
-		* [X Axis](#x-axis)
-		* [Y Axis](#y-axis)
-		* [Pseudo-elements (optional)](#pseudo-elements-optional)
-		* [``.absalign-animate`` (optional)](#absalign-animate-optional)
-		* [Single axis classes](#single-axis-classes)
-		* [Some examples](#some-examples)
-		* [Container](#container)
-		* [JavaScript polyfill](#javascript-polyfill)
-	* [… does it works?](#does-it-works)
-		* [The old-fashion technique](#the-old-fashion-technique)
-		* [The modern technique](#the-modern-technique)
-		* [What happens in the polyfill](#what-happens-in-the-polyfill)
+- [What?](#what)
+- [Why?](#why)
+- [How …](#how-%E2%80%A6)
+	- [… to use it?](#%E2%80%A6-to-use-it)
+		- [Position](#position)
+		- [X Axis](#x-axis)
+		- [Y Axis](#y-axis)
+		- [Pseudo-elements (optional)](#pseudo-elements-optional)
+		- [``.absalign-animate`` (optional)](#absalign-animate-optional)
+		- [Single axis classes](#single-axis-classes)
+		- [Some examples](#some-examples)
+		- [Container](#container)
+		- [JavaScript polyfill](#javascript-polyfill)
+	- [… does it works?](#%E2%80%A6-does-it-works)
+		- [The old-fashion technique](#the-old-fashion-technique)
+		- [The modern technique](#the-modern-technique)
+		- [What happens in the polyfill](#what-happens-in-the-polyfill)
 
 # What?
 Absalign is a micro CSS library you can use to **align vertically and horizontally** fixed or absolute elements just with some **simple classes**!
@@ -121,7 +121,7 @@ It's written in pure JavaScript, you don't need any jQuery.
 
 But you're free to not use it, if you don't mind about Prehistory ;)
 
-**Note:** This polyfill is in beta phase. It only works on page load for the moment, and doesn't watch for DOM updates. Also, it doesn't work with pseudo-elements and doesn't apply the ``absalign-animate`` class effect.
+**Note:** This polyfill is in beta phase. It only works on page load and on class change for the moment. It doesn't watch nor for DOM updates (element insertion or removal) neither elements dimensions changes. Also, it doesn't work with pseudo-elements and doesn't apply the ``absalign-animate`` class effect.
 
 ## … does it works?
 ### The old-fashion technique

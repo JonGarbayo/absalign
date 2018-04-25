@@ -1,3 +1,8 @@
+# v0.2.1 (2018/04/25)
+## Maintenance
+- Replaced the grunt-contrib-compass module by grunt-sass: got rid of the (annoying :) Ruby dependency, and improved compilation speed (≈ 6s to ≈ 4s on my laptop).
+
+
 # v0.2.0 (2018/03/18)
 ## Features
 - Added the "on class change" behavior to the JavaScript polyfill.

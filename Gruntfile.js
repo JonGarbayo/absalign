@@ -393,7 +393,7 @@ module.exports = function(grunt)
     grunt.registerTask('buildAll',
     [
         'clean',
-        'compass',
+        'sass:dist',
         'css_important:dist',
         'postcss:dist',
         'generateAbsalignClasses',
@@ -415,7 +415,7 @@ module.exports = function(grunt)
     grunt.registerTask('buildPackage',
     [
         'clean:dist',
-		'compass:dist',
+		'sass:dist',
         'css_important:dist',
         'postcss:dist',
         'generateAbsalignClasses',

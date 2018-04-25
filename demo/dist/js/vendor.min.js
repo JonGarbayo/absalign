@@ -1,5 +1,5 @@
 /*!
- * absalign v0.2.0 (JS part)
+ * absalign v0.2.1 (JS part)
  * Author: Jon Garbayo <jon.garbayo@gmail.com>
  * Repo: https://github.com/JonGarbayo/absalign
  * Licensed under MIT (https://github.com/JonGarbayo/absalign/blob/master/LICENSE)

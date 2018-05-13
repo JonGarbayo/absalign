@@ -1,3 +1,9 @@
+# v0.2.2 (2018/05/13)
+## Maintenance
+- Fixed blocking errors from most recent npm versions, generating a new package-json.lock file.
+- Cleaned some residues of previous SASS grunt plugin (grunt-contrib-compass).
+
+
 # v0.2.1 (2018/04/25)
 ## Maintenance
 - Replaced the grunt-contrib-compass module by grunt-sass: got rid of the (annoying :) Ruby dependency, and improved compilation speed (≈ 6s to ≈ 4s on my laptop).
